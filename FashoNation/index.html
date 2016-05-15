@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modern Business - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+ <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-social.css" rel="stylesheet">
+	<link href="css/nav.css" rel="stylesheet">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+        .offer img{
+            width: 70% important;
+        }
+
+        .no-padding{
+            padding: 0px 0px !important;
+        }
+
+        footer{
+         margin: 0px 0px !important; 
+         background-color: black;
+         color: white; 
+        }
+
+        .nav>li>a:focus, .nav>li>a:hover {
+            text-decoration: none;
+            background-color: transparent;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        
+                    function check_credentials(mail,pwd)
+                    {
+                        alert(mail);
+                        alert(pwd);
+                        if(mail && pwd){
+                            
+                            
+                            if (window.XMLHttpRequest) {
+                            // code for IE7+, Firefox, Chrome, Opera, Safari
+                            xmlhttp = new XMLHttpRequest();
+                            } 
+                            else 
+                            {  // code for IE6, IE5
+                                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                            }
+                            xmlhttp.onreadystatechange = function () {
+                                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                    alert(xmlhttp.responseText);
+                                    if(xmlhttp.responseText == "Success"){
+                                        document.getElementById("fields").innerHTML = xmlhttp.responseText;
+                                        location.href = "tester.php";
+                                        //window.location = "User.php";
+                                        
+                                        
+                                    }
+                                    else
+                                    {
+                                        document.getElementById("fields").innerHTML = "Invalid credentials";
+                                        document.getElementById("uname").value = "";
+                                        document.getElementById("pwd").value = "";
+                                    }
+                                    
+                                        //document.getElementById("fields").innerHTML = xmlhttp.responseText;
+                                }
+                            }
+                        xmlhttp.open("GET", "user_login_handler.php?u_mail="+mail+"&pwd="+pwd, true);
+                        xmlhttp.send();
+                    }
+                    else
+                    {
+                        document.getElementById("fields").innerHTML = "Fill all the required fields";
+                    }
+                    }
+
+        
+        
+    </script>
+</head>
+
+<body>
+
+
+  
+
+
+   <header class="masthead">
+    	<div class="col-lg-12 col-md-12 col-sm-12">
+        <div id="infosec" class="col-lg-3 col-lg-offset-0 col-md-3 col-sm-4">
+            <div>Email: FasoNation@gmail.com<br></div>
+            <div>PhoneNumber: 9033808520</div>
+        </div>
+        <div id="fullnmlogo" class="col-lg-3 col-lg-offset-1 col-md-offset-0 col-md-3 col-sm-4">
+            <!--<h1 style="color:white;"> FASHIONATION  </h1>-->
+            <a href="#"><img class="img-responsive" src="namelogo.png"></a>
+        </div>
+        <div class="col-lg-4  col-md-offset-1 col-md-4 col-sm-4">
+            <form class="navbar-form navbar-left col-lg-12 col-sm-12 col-md-12" role="search">
+                <div class="form-group">
+                    <input type="text" id="searchbx" placeholder="Search Here" class="col-md-10 col-lg-9">
+                    <!-- <input type="text" id="searchbx" class="form-control" placeholder="Search Here"> -->
+                	<button type="submit" class="btn btn-default col=md-2"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+                
+            </form>
+        </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="nav" class="navbar yamm navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+           	 <a id="logolink" href="index.html">FASHONATION</a>
+     
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li >
+                            	<div class="yamm-content">
+                            		
+                            	 <div class="col-lg-6">
+                                    <div class="col-lg-6">
+                                        <a href="portfolio-1-col.html">hehehehe</a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="portfolio-1-col.html">vvvvvvvvvvv</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-6">
+                                        <a href="portfolio-1-col.html">hehehehe</a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="portfolio-1-col.html">vvvvvvvvvvv</a>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-lg-6">
+                                    <div class="col-lg-6">
+                                        <a href="portfolio-1-col.html">hehehehe</a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="portfolio-1-col.html">vvvvvvvvvvv</a>
+                                    </div>
+                                </div>
+                                </div>
+                                    
+</li>
+                            <li>
+                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-item.html">Single Portfolio Item</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="full-width.html">Full Width Page</a>
+                            </li>
+                            <li>
+                                <a href="sidebar.html">Sidebar Page</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="404.html">404</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">Pricing Table</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a data-toggle="modal" data-target="#myModal">Login/Signup</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Cart</a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" ><img src="./images/img1.png" style="background-size:cover;" /></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill"><img src="./images/img2.png" style="background-size:cover;" /></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill"><img src="./images/img1.png" style="background-size:cover;" /></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- OFFER ZONE -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    OFFER ZONE
+                </h1>
+            </div>
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail offer">
+                    <img src="images/offerzone/image1.jpg" alt="">
+                    
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="images/offerzone/image4.jpg" alt="">
+                    
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="images/offerzone/image2.jpg" alt="">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 col-lg-5 col-md-4 col-lg-offset-1">
+                <div class="thumbnail" >
+                    <img src="images/offerzone/image3.jpg" alt="">
+                    
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-lg-5 col-md-4">
+                <div class="thumbnail" style="width:95%;">
+                    <img src="images/offerzone/image5.jpg" alt="">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+                <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Featured Products
+                            </h1>
+                        </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/featured/image1.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/featured/image5.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="#">Second Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/featured/image6.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="#">Third Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">31 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Recent Products
+                            </h1>
+                        </div>
+                    <div class="col-sm-4 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                            <img src="images/recent/image1.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                            <img src="images/recent/image2.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="#">Second Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                            <img src="images/recent/image3.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="#">Third Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">31 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                            <img src="images/recent/image4.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="#">Fourth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">31 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        <hr>
+
+        <hr>
+
+        <!-- Footer -->
+        <!-- <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer> -->
+
+        <footer id="footer"><!--Footer-->
+                    <div class="footer-top">
+                            <div class="container">
+                                    <div class="row">
+
+                                        <div class="col-sm-4" style="margin-top: 20px;">
+                                            <img src="namelogo.png" width="350px" style="padding-top:25%;"/>
+                                                    <div class="companyinfo">
+
+                                                        <!-- <h3><span>L</span>ounge <span>D</span>e <span>J</span>ewel</h3> -->
+                                                    </div>
+                                            </div>
+                                        <div class="col-sm-6 col-sm-offset-2" style="margin-top: 20px;">
+                                            <div class="col-sm-6">
+                                                    <div class="single-widget">
+                                                            <h2>Service</h2>
+                                                            <ul class="nav nav-pills nav-stacked" style="padding: 0px 0px !important;">
+                                                                    <li class="no-padding"><a href="#">Online Help</a></li>
+                                                                    <li class="no-padding"><a href="contact_us.php">Contact Us</a></li>
+                                                                    <li class="no-padding"><a href="#">Order Status</a></li>
+                                                                    <li class="no-padding"><a href="FAQ.php">FAQ's</a></li>
+                                                            </ul>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                    <div class="single-widget">
+                                                            <h2>Policies</h2>
+                                                            <ul class="nav nav-pills nav-stacked">
+                                                                    <li class="no-padding"><a href="Terms&Conditions.php">Terms of Use</a></li>
+                                                                    <li class="no-padding"><a href="#">Privacy Policy</a></li>
+                                                                    <li class="no-padding"><a href="#">Billing System</a></li>
+                                                            </ul>
+                                                    </div>
+                                            </div>
+                                            </div>
+
+                                    </div>
+                            </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                            <div class="container">
+                                    <div class="row">
+                                            <p class="text-center"><br/>Copyright © 2016 Fashonation. All rights reserved.<br/></p>
+
+                                    </div>
+                            </div>
+                    </div>
+            </footer><!--/Footer-->
+
+
+         <!-- <LoginModal> -->
+
+
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    �</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Login/Registration - <a href="http://www.jquery2dotnet.com">jquery2dotnet.com</a></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                        <a href="javascript:;">Forgot your password?</a>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Name</label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select class="form-control">
+                                                    <option>Mr.</option>
+                                                    <option>Ms.</option>
+                                                    <option>Mrs.</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" placeholder="Name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile" class="col-sm-2 control-label">
+                                        Mobile</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="button" class="btn btn-primary btn-sm">
+                                            Save & Continue</button>
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            Cancel</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="OR" class="hidden-xs">
+                            OR</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+         <!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog modal-lg">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Login to your account</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="col-lg-12 col-md-12 col-sm-12">
+		        	<div class="col-lg-6 form-group" >
+                                    <form role="from" action="user_login_handler.php" method="post">
+		        		
+		        		<div class="col-lg-12 lbl">
+		        			<span class="fa fa-user fa-2x lgn" style="position: absolute;"></span><input type="text" id='uname' name='uname' placeholder="E-mail" class="form-control lgntb" />
+		        		</div>
+		        		<div class="col-lg-12 form-group" lbl>
+		        			<span class="fa fa-lock fa-2x lgn" style="position: absolute;"></span><input type="password" id = 'pwd' name='pwd' placeholder="Password" class="form-control lgntb" />
+		        		</div>
+		        		<div class="col-lg-12 col-md-12 col-sm-12 form-group" lbl>
+                                            <input type="button" value="Login" onclick="check_credentials(uname.value , pwd.value)" id="lgnbtn" class="btn btn-md col-lg-12 col-md-12 col-sm-12" />
+		        		</div>
+		        		<div class="col-lg-12 col-md-12 col-sm-12 form-group" lbl>
+		        			<a href="#">Forgot Password?</a>
+		        		</div>
+                                        
+                                        <div class="col-lg-12 form-group" lbl>
+                                            <span id="fields" name="fields"></span>
+		        		</div>
+		        	</form>	
+		        	</div>
+		        	<!-- <div class="col-lg-1 col-md-2 col-sm-12">
+		        		<label id="orlbl">OR</label>
+		        	 </div>-->
+		        	<div class="col-lg-6 col-md-6 col-sm-12" >
+		        			
+		        		<div class="col-lg-12 lbl">
+		        			<a class="btn btn-block btn-social btn-facebook">
+							  <span class="fa fa-facebook"></span> Login with Facebook
+							</a>
+		        		</div>
+		        		<div class="col-lg-12 form-group" lbl>
+		        			<a class="btn btn-block btn-social btn-twitter">
+							  <span class="fa fa-twitter"></span> Login with Twitter
+							</a>
+		        		</div>
+		        		<div class="col-lg-12 col-md-12 col-sm-12 form-group" lbl>
+		        			<a class="btn btn-block btn-social btn-google">
+							  <span class="fa fa-google"></span> Login with Google
+							</a>
+		        		</div>
+		        		<div class="col-lg-12 col-md-12 col-sm-12 form-group" lbl>
+		        			<a class="btn btn-block btn-social btn-linkedin">
+							  <span class="fa fa-linkedin"></span> Login with LinkedIn
+							</a>
+		        		</div>
+		        	</div>
+		        	
+		        	
+		        </div>
+		        
+		      </div>
+		      <br/>
+		      <div class="modal-footer">
+		        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+
+        <!-- </LoginModal> -->
+
+
+
+    </div>
+    <!-- /.container -->
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        });
+
+
+
+    $('#nav').affix({
+        offset: {
+            top: $('header').height()
+        }
+    });
+
+
+    $(document).ready(function () {
+        $(".dropdown, .btn-group").hover(function () {
+            var dropdownMenu = $(this).children(".dropdown-menu");
+            if (dropdownMenu.is(":visible")) {
+                dropdownMenu.parent().toggleClass("open");
+            }
+        });
+    });
+
+    </script>
+
+</body>
+
+</html>
