@@ -13,7 +13,6 @@
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,6 +93,12 @@
 		background-color: transparent;
 	}
 
+    .rounded {
+    border-radius: 57px;
+    margin: 0px 30px;
+    width: 20px;
+    background-color: #000;
+    }
 
     </style>
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -164,15 +169,26 @@
 									</div>
 								</div>
 						</div> -->
-
-						<br/><br/>
+                            <div class="brands_products"><!--brands_products-->
+                            <h2 data-toggle="collapse" data-parent="#accordian" href="#designer" class="collapsed">Designers <span class="glyphicon glyphicon-menu-down"></span></h2>
+                            <div id="designer" class="brands-name">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#"> <span class="pull-right">(50)</span>Manish Malhotra</a></li>
+                                    <li><a href="#"> <span class="pull-right">(56)</span>Neeta Patel</a></li>
+                                    <li><a href="#"> <span class="pull-right">(27)</span>Anusha Bhatt</a></li>
+                                    <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
+                                    <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                                </ul>
+                            </div>
+                        </div><!--/brands_products-->
+                        <br/><br/>
 						<div class="brands_products"><!--brands_products-->
 							<h2 data-toggle="collapse" data-parent="#accordian" href="#sportswear" class="collapsed">Category <span class="glyphicon glyphicon-menu-down"></span></h2>
 							<div id="sportswear" class="brands-name panel-collapse collapse">
 								<form method="get" class="form-horizontal">
 								<div class="form-group">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+									
 									<li><a href="#"> 
 												<div class="checkbox">
 														<input id="checkbox1" type="checkbox">
@@ -184,8 +200,8 @@
 									 </a></li>
 									<li><a href="#"> 
 												<div class="checkbox">
-														<input id="checkbox1" type="checkbox">
-														<label for="checkbox1">
+														<input id="checkbox2" type="checkbox">
+														<label for="checkbox2">
 															Acne
 														</label>
 														<span class="pull-right">(56)</span>
@@ -193,8 +209,8 @@
 									 </a></li>
 									 <li><a href="#"> 
 												<div class="checkbox">
-														<input id="checkbox1" type="checkbox">
-														<label for="checkbox1">
+														<input id="checkbox3" type="checkbox">
+														<label for="checkbox3">
 															Albiro
 														</label>
 														<span class="pull-right">(27)</span>
@@ -202,8 +218,8 @@
 									 </a></li>
 									 <li><a href="#"> 
 												<div class="checkbox">
-														<input id="checkbox1" type="checkbox">
-														<label for="checkbox1">
+														<input id="checkbox4" type="checkbox">
+														<label for="checkbox4">
 															Ronhill
 														</label>
 														<span class="pull-right">(78)</span>
@@ -219,29 +235,43 @@
 						<br/><br/>
 						
 
+                        <div class="brands_products"><!--brands_products-->
+                            <h2 data-toggle="collapse" data-parent="#accordian" href="#colorfilters" class="collapsed">Color Filters <span class="glyphicon glyphicon-menu-down"></span></h2>
+                            <div id="colorfilters" class="brands-name panel-collapse collapse">
+                                   <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#"> <span class="pull-left rounded " style="background-color:black;">&nbsp;</span>Black</a></li>
+                                    <li><a href="#"> <span class="pull-left rounded" style="background-color:red;">&nbsp;</span>Red</a></li>
+                                    <li><a href="#"> <span class="pull-left rounded" style="background-color:blue;">&nbsp;</span>Blue</a></li>
+                                    <li><a href="#"> <span class="pull-left rounded" style="background-color:green;">&nbsp;</span>Green</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
 
-						<div class="brands_products"><!--brands_products-->
-							<h2>Brands</h2>
-							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-									<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-									<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-									<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-									<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-									<li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
-								</ul>
-							</div>
-						</div><!--/brands_products-->
-						<br/><br/>
-						<div class="price-range"><!--price-range-->
-							<h2>Price Range</h2>
+
+
+                        <br/><br/>
+
+
+
+
+                        <div class="brands_products"><!--brands_products-->
+                            <h2 data-toggle="collapse" data-parent="#accordian" href="#pricerange" class="collapsed">Price Range <span class="glyphicon glyphicon-menu-down"></span></h2>
+                            <div id="pricerange" class="brands-name panel-collapse collapse">
+                                   <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b>
+
+                            </div>
+                        </div><!--/brands_products-->
+                        
+						<!-- <div class="price-range"> -->
+                        <!--price-range-->
+							<!-- <h2>Price Range</h2>
 							<div class="well text-center">
 								 <div class="slider slider-horizontal" style="width: 174px;"><div class="slider-track"><div class="slider-selection" style="left: 41.6667%; width: 33.3333%;"></div><div class="slider-handle round left-round" style="left: 41.6667%;"></div><div class="slider-handle round" style="left: 75%;"></div></div><div class="tooltip top" style="top: -30px; left: 68px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">250 : 450</div></div><input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"></div><br>
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-							</div>
-						</div><!--/price-range-->
+							</div> -->
+						<!-- </div> -->
+                        <!--/price-range-->
 						
 						
 					</div>
