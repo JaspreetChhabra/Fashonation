@@ -1,11 +1,15 @@
  header {
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
             padding-top: 30px;
-            padding-bottom: 12px;
+            padding-bottom: 4px;
             margin-top: -50px;
-            height: 110px;
+            font-size: 16px;
+            font-family: ubuntu;
+            /*height: 110px;*/
+            margin-bottom: 10px;
         }
+
         .navbar-inverse {
         background-color: #fff;
         border-color: #fff;
@@ -14,7 +18,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 10;
+            /*z-index: 10;*/
+            opacity: 0.98;
+            z-index: 10000;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 35px 2px;
+            transition: all 0.3s ease;
         }
 
         @media (max-width :767px){
@@ -22,27 +30,79 @@
             {display:none;}
             #fullnmlogo
             {display: none;}
+            .nav-items{
+                margin-bottom: 20px;
+                background-color: white;
+            }
+
         }
 
         @media (max-width :767px){
+            .searchbox{
+                height: 64px;
+            }
             #fullnmlogo
             {display: none;}
+            /*.cart{
+                display: none;
+            }*/
             header
             { 
-            margin-top: -87px;
+            margin-top: -47px;
             }
             #logolink
             {display: block; color: black; font-size: 2em;padding: 10px 10px;}
-            
+
+            .nav-items{
+                margin-bottom: 20px;
+                background-color: white;
+            }
+            .email{
+                margin-bottom: 35px;
+            }
+             .navbar_items{
+                margin-left: 12% !important;
+            }
         }
 
+        @media (min-width:768px) and (max-width:990px) { 
+            .navbar_items{
+                margin-left: 12% !important;
+            }
+            .namebar img{
+                width: 40%;
+                height: 70%;
+            }
+        }
 
-/*         @media (min-width: 767px and max-width: 1080px) {
-            #searchbx
-            {width: 100px;}
+         @media (min-width: 767px) {
+            /*#searchbx
+            {width: 100px;}*/
+            .nav-items{
+                margin-bottom: 10px;
+                background-color: white;
+                /*box-shadow: rgb(239, 239, 239) 0px 0px 35px 2px;*/
+                /*box-shadow: 0 8px 20px 0px rgb(239, 239, 239);*/
+            }
+            .email{
+                margin-bottom: 30px;
+            }
+            .namebar img{
+                width: 35%;
+                height: 70%;
+            }
+
+            header{
+                padding-bottom: 0px;
+            }
+
+            .searchbox{
+                height: 64px;
+            }
         }       
-*/        
+        
         @media (min-width: 767px) {
+
             #logolink
             {
                 display: none;
@@ -78,7 +138,7 @@
                 }
 
         }
-        .navbar-inverse .navbar-nav>li:hover
+        /*.navbar-inverse .navbar-nav>li:hover
         {
             background-color: black;
             color:white;
@@ -86,7 +146,7 @@
         .navbar-inverse .navbar-nav>li>a
         {
             color:#000;
-        }
+        }*/
         header.carousel {
             height: 85%;
         }
@@ -109,7 +169,7 @@
         }
 
         .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover
-        {   background-color: black;}
+        {   background-color: white;}
 
         .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:hover {
             color: #fff;
@@ -209,5 +269,267 @@ border-radius:0px;
 }
 
 #searchbx {
-    width: 80%;
+   border: none;
+   border-bottom:1px solid white;  
 }
+
+
+/*My customized css*/
+.nav-items{
+    border: 1px solid white;
+    margin-top: -30px; 
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.8s ease-in-out;
+    /*transition: background-color 1000ms linear;*/
+}
+.search{
+    margin-top:7px; 
+}
+
+.nav-items a{
+    color: black;
+}
+
+.nav-items a:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+.nav-items:hover{
+    background-color: white;
+}
+.email:hover{
+    font-size: 17px;
+     color: grey;
+}
+.namebar{
+    height: 70px;
+    overflow: hidden;
+}
+
+.namebar img{
+    margin-left: 37%;
+}
+.namebar a{
+
+    font-family: 'Roboto Slab', serif;
+    /*color: black;*/
+    /*margin-left: 40%;
+    color: #633434; 
+    font-size: 42px;*/
+}
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+
+    margin-left: 27%;
+}
+.navbar_items{
+    
+    font-size: 17px;
+    font-family: ubuntu;
+    text-transform: uppercase;
+    /*margin-bottom: 1%;
+    margin-top: 1%;*/
+}
+
+/*.navbar-inverse .navbar-nav>li>a{
+    margin: 5%;
+}*/ 
+
+.navbar{
+    /*box-shadow: rgb(239, 239, 239) 0px 0px 35px 2px;*/
+    margin-bottom: 0px !important;
+    border-radius: 0px; 
+}
+
+.navbar-inverse{
+    box-shadow: rgb(239, 239, 239) 0px 0px 35px 2px;
+    z-index: 100;
+}
+
+/*Navbar items focus hover etc effect css*/
+.navbar-inverse .navbar-nav>.active>a{
+    background-color: white;
+    color: black;
+    border-color: white;
+    -webkit-transition:0.9s;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    background-color: white;
+    color: black;
+    border-color: white;
+    position: relative;
+    -webkit-transition:0.9s;
+
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    background-color: white;
+    color: black;
+/*    border: none !important;*/
+}
+
+.navbar-inverse .navbar-toggle .icon-bar
+{
+    color: black;
+}
+
+        .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover
+        {   background-color: white;
+            color: black;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:hover {
+            color: black;
+            background-color: white; 
+            /*border: none !important;*/
+        }
+        /*.nav>li:hover
+        {   color: black;
+            
+        }*/
+         /*.navbar-inverse {
+            box-shadow: 0px 2px 9px black;
+        }*/
+
+       .navbar-inverse .navbar-nav>li>a:hover,.navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover
+        {
+            cursor: pointer;
+            background-color:white;
+            color:black;
+            /*border: none;*/
+            /*border: 2px solid white !important;*/
+        }
+
+        .navbar-inverse .navbar-nav>li:hover
+        {
+            background-color: white;
+            color:black;
+            /*border: 2px solid #0b7 !important;*/
+        }
+        .navbar-inverse .navbar-nav>li>a
+        {
+            color:black;
+        }
+
+        .navbar-inverse .navbar-nav>li>a::before, .navbar-inverse .navbar-nav>li>a::after{
+          width: 100%;
+          height:100%;
+          z-index: 3;
+          content:'';
+          position: absolute;
+          top:0;
+          left:0;
+          box-sizing: border-box;
+          -webkit-transform: scale(0);
+          transition: 0.5s;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a::before, .navbar-inverse .navbar-nav>.active>a::after {
+          width: 100%;
+          height:100%;
+          z-index: 3;
+          content:'';
+          position: absolute;
+          top:0;
+          left:0;
+          box-sizing: border-box;
+          -webkit-transform: scale(0);
+          transition: 0.5s;
+        }
+        
+        .navbar-inverse .navbar-nav>li>a::before,.navbar-inverse .navbar-nav>.active>a::before {
+          border-bottom: 2px solid black;
+          border-left: 2px solid black;
+          -webkit-transform-origin: 0% 100%;
+        }
+
+        .navbar-inverse .navbar-nav>li>a::after, .navbar-inverse .navbar-nav>.active>a::after {
+          border-top: 2px solid black;
+          border-right: 2px solid black;
+          -webkit-transform-origin: 100% 0%;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover::after, .navbar-inverse .navbar-nav>li>a:hover::before {
+          -webkit-transform: scale(1);
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover::after, .navbar-inverse .navbar-nav>.active>a:hover::before {
+          -webkit-transform: scale(1);
+        }
+
+        ul.nav li.dropdown > .dropdown-menu{
+        visibility:hidden;
+        display:block;
+        /*opacity:0;*/
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        -o-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+        }
+        ul.nav li.dropdown:hover > .dropdown-menu{
+        visibility:visible;
+        /*opacity:1;*/
+        display: block;
+        background: white;
+        }
+        .dropdown-menu.sub-menu {
+            margin-left: 147px;
+            margin-top: -20px;
+        }
+
+/*Dropdown menu effects*/
+.navbar-nav>li>.dropdown-menu{
+    width: 90%;
+    margin-left: 4%;
+    margin-top: 0.5%;   
+    opacity: 1;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    height: 352px;
+    box-sizing: border-box;
+    box-shadow: rgba(51, 51, 51, 0.14902) 1px 1px 14px;
+    /*background: url("C:/xampp/htdocs/git/Fashonation/FashoNation/images/featured/image1.jpg") 100% 0% no-repeat rgb(255, 255, 255);*/
+    /*background-repeat: no-repeat;*/
+    background-position: 100% 0%;
+}
+
+.dropdown-image>img{
+    margin-left: 28%;
+}
+
+.nav-items i{
+    margin-right: 2px;
+    display: inline-block;
+    text-align: center;
+    font-size: 19px;
+    line-height: 42px;
+    width: 42px;
+    height: 42px;
+    color: rgb(180, 163, 118);
+    box-shadow: rgba(0, 0, 0, 0.0980392) 2px 3px 5px 0px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    transition: all 0.6s ease;
+}
+
+.nav-items i:hover{
+
+    background: rgb(51,51,51);
+    transition: all 0.6s ease;
+}
+
+.boxShadow{
+    box-shadow: rgb(239, 239, 239) 0px 0px 35px 2px;
+}
+
+/*.navbar-brand {
+    float: none;
+    height: 0px;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 5px;
+}*/
