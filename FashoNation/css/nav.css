@@ -560,3 +560,862 @@ border-radius:0px;
     line-height: 20px;
     padding: 5px;
 }*/
+
+/*.tab-bg-image{
+    background: url("file:///C:/xampp/htdocs/git/Fashonation/FashoNation/images/abc.jpg") no-repeat center;
+    background-size: cover;
+    opacity: 0.3;
+}*/
+
+.dropdown-image img{
+    height: 345px !important;
+    width: 250px !important;
+}
+
+.dropdown-image{
+    float: right;
+    margin-right: 10% !important;
+}
+
+.tab-content-align{
+    float: right !important;
+}
+
+.dropdown_ul{
+    list-style-type: none;
+    font-weight: bold;
+    font: Black bolder ;
+}
+
+.dropdown_ul{
+    list-style-type: none;
+    font-weight: bold;
+    text:white;
+}
+
+
+.dropdown_li{
+    margin:20px;
+}
+
+/*.dropdown_li:hover{
+    margin-left: 40px;
+}*/
+
+.nav-hover a {
+    position: relative;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 1.35em;
+}
+
+.nav-hover a:hover,
+.nav-hover a:focus {
+    outline: none;
+}
+
+
+/* Effect 11: text fill based on Lea Verou's animation http://dabblet.com/gist/6046779 */
+.cl-effect-11 a {
+    padding: 2px 0;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    color: black;
+    text-shadow: none;
+} 
+
+.cl-effect-11 a::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    /*padding: 2px 0;*/
+    max-width: 0;
+    border-bottom: 2px solid red;
+    border-top: 2px solid red;
+    color: red;
+    content: attr(data-hover);
+    /*-webkit-transition: max-width 0.5s;
+    -moz-transition: max-width 0.5s;
+    transition: max-width 0.5s;*/
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+
+}
+
+.cl-effect-11 a:hover::before,
+.cl-effect-11 a:focus::before {
+    max-width: 100%;
+}
+
+/*Dropdown left menu css*/
+
+/*.tabs ul{
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+    height: 100px;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+.tabs ul li {
+    position: relative;
+
+}*/
+
+
+/*offerzone*/
+/*.offer-zone{
+    margin-top: 5%;
+    z-index: 100;
+    position: absolute;
+}*/
+
+ #content {
+    position: relative;
+    margin-top: 6%;
+    z-index: 10;
+   /* margin-bottom: 70px;*/
+}
+
+.no-marginleft{
+    margin-left: -15px;
+}
+
+.no-marginleft1{
+    margin-left: -30px;
+}
+.offerzone-sale{
+    position: absolute;
+    /*left: 100%;
+    top: 0px;
+    bottom: 0px;
+    width: 390px;
+    padding-top: 14%;*/
+    background: rgb(161, 146, 107);
+    height: 100%;
+}
+
+
+
+.row .no-gutters {
+   margin-right: 0;
+   margin-left: 0;
+}
+.row .no-gutters > [class^="col-"],
+.row .no-gutters > [class*=" col-"] {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+#cont-offerzone [class^="col"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#cont-offerzone{
+    width: 90%;
+}
+.offer-zone-row{
+}
+
+/*Recent product hover effects*/
+.recent-imageffect{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+
+.recent-imageffect .overlay{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.recent-imageffect:hover .overlay{
+    background-color: rgba(180, 163, 118, 0.52);
+}
+
+.recent-imageffect img{
+    position: relative;
+}
+
+.recent-imageffect h1{
+
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 56px;
+    line-height: 65px;
+    margin:5px;
+    font-family: ubuntu;
+    text-align: center;
+}
+
+.recent-imageffect a.info{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-weight: normal;
+  font-family: ubuntu;
+}
+
+.recent-imageffect:hover a.info {
+  padding-top: 132%;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-bottom: 52%;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.recent-imageffect a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.recent-imageffect a.info span{
+    font-size: 14px;
+    background-color: transparent;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    margin-top: 134%;
+    padding: 8px 29px 11px;
+    margin-left: -3%;
+}
+
+.recent-imageffect a.info span{
+    font-size: 14px;
+     border-color: rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    padding: 8px 29px 11px;   
+}
+
+.recent-imageffect a.info span:hover{
+    color: rgb(51, 51, 51);
+    background: rgb(255, 255, 255);
+}
+
+/*Quality Image overlay*/
+
+/*.quality-imageffect{
+    position: relative;
+    cursor: default;
+    overflow: hidden;
+}*/
+
+/*.quality-imageffect .overlay{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    overflow: hidden;
+    cursor: default;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}*/
+
+/*.quality-imageffect:hover .overlay{
+    background-color: rgba(180, 163, 118, 0.52);
+}*/
+.quality-imageffect img{
+    transition: all 0.4s ease-in-out;
+}
+
+.quality-imageffect {
+    background-color: rgb(180, 163, 118);
+}
+
+.quality-imageffect:hover img{
+    /*filter:sepia(100%);    
+    -webkit-filter: sepia(100%);*/
+    opacity: 0.5;
+}
+
+/*.reasonable-text img:hover{
+    filter:sepia(100%);    
+    -webkit-filter: sepia(100%);
+}*/
+/*new arrivals effect*/
+
+.newarrival-imgtext{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.newarrival-imgtext .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.newarrival-imgtext:hover .overlay{
+    background-color: rgba(180, 163, 118, 0.52);
+} 
+
+.newarrival-imgtext img{
+    cursor: pointer;
+    position: relative;
+}
+
+.newarrival-imgtext h1{
+
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 56px;
+    line-height: 65px;
+    margin:5px;
+    font-family: ubuntu;
+    text-align: center;
+}
+
+.newarrival-imgtext a.info {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-weight: normal;
+  font-family: ubuntu;
+   
+}
+
+.newarrival-imgtext:hover a.info {
+    padding-top: 132%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 52%;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+newarrival-imgtext:hover h1{
+    top: 30%;
+}
+
+.newarrival-imgtext a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.newarrival-imgtext a.info span{
+    font-size: 14px;
+    background-color: transparent;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    margin-top: 134%;
+    padding: 8px 29px 11px;
+    margin-left: -3%;
+}
+
+.newarrival-imgtext a.info span{
+    font-size: 14px;
+     border-color: rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    padding: 8px 29px 11px;   
+}
+
+.newarrival-imgtext a.info span:hover{
+    color: rgb(51, 51, 51);
+    background: rgb(255, 255, 255);
+}
+
+.sales-imgtext img{
+    cursor: pointer;
+    position: relative;
+}
+
+.sales-imgtext h1{
+    position: absolute;
+    top: 22%;
+    font-size: 86px;
+    line-height: 77px;
+    text-align: center;
+    margin-left: 23%;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-family: ubuntu;
+}
+
+.sales-imgtext h1 span{
+    font-size: 16px;
+    line-height: 36px;
+    display: block;
+    margin-top: 12px;
+
+}
+
+.sales-imgtext h1 em{
+   font-size: 36px;
+line-height: 36px;
+    display: block;
+    font-style: normal;
+    margin-top: 12px;
+}
+
+.quality-imgtext img{
+    position: relative;    
+}
+
+.quality-imgtext .s-desc{
+    position: absolute;
+    left: auto;
+    padding-top: 11%;
+    top: 0px;
+    bottom: 0px;
+}
+
+.quality-imgtext .s-desc h2.mod1 {
+    line-height: 36px;
+}
+
+.quality-imgtext .s-desc h2 {
+    position: relative;
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: ubuntu;
+}
+
+
+.quality-imgtext .s-desc h2::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(255, 255, 255);
+}
+
+.quality-imgtext{
+    text-align: center;
+}
+
+.quality-imgtext .s-desc h2 span{
+    display: block;
+    margin-top: 12px;
+}
+
+.quality-imgtext .s-desc p {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.quality-imgtext .s-desc p + .button {
+    margin-top: 25px;
+}
+
+.quality-imgtext .s-desc .button {
+    font-size: 14px;
+    border-color: rgb(255, 255, 255);
+    padding: 8px 29px 11px;
+}
+
+a.button, .button {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 38px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(180, 163, 118);
+    transition: all 0.5s ease;
+}
+
+.quality-imgtext .s-desc .button:hover {
+    color: rgb(51, 51, 51);
+    background: rgb(255, 255, 255);
+}
+
+/*sales image text hover effect*/
+
+.hovereffect{
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.hovereffect:hover .overlay {
+  background-color: rgb(180, 163, 118);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+}
+
+.hovereffect a.info {
+  /*display: inline-block;*/
+  text-decoration: none;
+ /* padding: 7px 14px;*/
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-weight: normal;
+  /*padding: 31%;
+  padding-bottom: 45%;*/
+  font-family: ubuntu;
+  /*margin: 9%*/
+   
+}
+
+.hovereffect:hover a.info {
+   padding-top: 70%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 12%;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect a.info span{
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    margin-top: 74%;
+    padding: 8px 29px 11px;
+    margin-left: -3%;
+}
+
+/*resonable price css*/
+
+.reasonable-text img{
+    position: relative;
+}
+
+.reasonable-text .s-desc{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 5px;
+    padding-top: 8%;
+    width: 390px;
+    text-align: center;
+}
+
+.reasonable-text .s-desc h2.mod1{
+    line-height: 36px;
+}
+
+.reasonable-text .s-desc h2{
+    position: relative;
+    color: white;
+    font-family: ubuntu;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.reasonable-text .s-desc h2 span{
+    display: block;
+    margin-top: 10px;
+}
+
+.reasonable-text .s-desc h2:after{
+    content: " ";
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(255, 255, 255);
+}
+
+.reasonable-text .s-desc p{
+    color: #fff;
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 18px;
+    width: 225px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reasonable-text .s-desc p + .button {
+    margin-top: 25px;
+}
+
+.reasonable-text .s-desc .button {
+    font-size: 14px;
+    border-color: rgb(255, 255, 255);
+    padding: 8px 29px 11px;
+}
+
+.reasonable-text .s-desc .button:hover {
+    color: rgb(51, 51, 51);
+    background: rgb(255, 255, 255);
+}
+
+/*.reasonable-text a{
+    transition: all 0.4s ease-in-out;
+    max-width: 100%;
+    display: block;
+    position: relative;
+    color: inherit;
+}
+
+.reasonable-text:hover a{
+    color: rgb(180, 163, 118);
+    text-decoration: none;
+    display: block;
+}*/
+
+.reasonable-text {
+    background-color: rgb(180, 163, 118);;
+    transition: all 0.4s ease-in-out;   
+}
+
+.reasonable-text img{
+    transition: all 0.4s ease-in-out;
+}
+
+.reasonable-text:hover img{
+    opacity: 0.5;
+}
+
+/*.reasonable-text a:active {
+    background-color: transparent;
+}
+
+.reasonable-text a:focus {
+    outline-offset: -2px;
+    outline: -webkit-focus-ring-color auto 5px;
+}*/
+/*Footer Css*/
+    #ab{
+        font-size: 25px;
+    }
+    .no-padding{
+        padding: 0px 0px !important;
+    }
+
+    footer{
+     margin-top: 70px;
+     margin-bottom: 0px;
+     background-color: #303030;
+     border-top: 1px solid #ddd;
+     color: #e2e2e2;
+     padding-top: 30px;
+    }
+
+    .nav>li>a:focus, .nav>li>a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+
+    footer hr {
+        border-top: none;
+        border-bottom: 1px solid #666;
+    }
+    footer a {
+        color: #ccc;
+    }
+    footer a:hover {
+        color: #fff;
+    }
+    footer h5 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .footer_links{
+    
+    font-size: 15px;
+    }
+    .footer_links:hover{
+        font: bolder;
+        font-size:17px;
+    }
+    
+    .footer_box h3:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+   /*Testemonials css*/
+
+    #quote-carousel {
+      padding: 0 10px 30px 10px;
+      margin-top: 30px;
+      text-align:center;
+    }
+/* indicator position */
+    #quote-carousel .carousel-indicators {
+      right: 50%;
+      top: auto;
+      bottom: -10px;
+      margin-right: -19px;
+    }
+    /* indicator color */
+    #quote-carousel .carousel-indicators li {
+      background: #c0c0c0;
+    }
+    /* active indicator */
+    #quote-carousel .carousel-indicators .active {
+      background: #333333;
+      height:10px;
+      width:10px;
+      margin-bottom:1px;
+    }
+    /* typography */
+    h1 {
+      text-align:center;
+      margin-bottom:-20px !important;
+    }
+
+
+    .ptest {
+      font-style:bold;
+      font-size: 20px;
+      font-weight: bolder;
+
+    }
+
+
+
+    .testimg{
+        border-radius: 3
+         q0px;
+    }
