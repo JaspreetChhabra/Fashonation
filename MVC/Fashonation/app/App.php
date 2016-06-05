@@ -18,10 +18,11 @@ class App {
     }
 
     function init() {
+
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL) ;
         $url = explode('/', $url);
-
+        // print_r($url);
         //print_r($url);
 
 //        if (empty($url[0])) {
