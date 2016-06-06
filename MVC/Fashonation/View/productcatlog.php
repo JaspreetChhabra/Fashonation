@@ -89,6 +89,30 @@
     background-color: #000;
     }
 
+ 
+    #price1,#price2
+    {
+        border:1px solid black;
+    }
+    @media(min-width:768px)
+    {
+        #price1,#price2
+        {
+            width:100%;
+        }
+    }
+    
+    @media(max-width:768px)
+    {
+        #price1,#price2
+        {
+            margin-top: 25px;
+            margin-left: 10px;
+            width:95%;
+        }
+    }
+
+
     </style>
     <link rel="stylesheet" href="<?php echo css?>/font-awesome.min.css">
 	
@@ -213,11 +237,20 @@
 
 
 
-                        <div class="brands_products"><!--brands_products-->
+                        <div class="brands_products" style="margin-bottom: 20px;padding-top: 25px;"><!--brands_products-->
                             <h2 data-toggle="collapse" data-parent="#accordian" href="#pricerange" class="collapsed">Price Range <span class="glyphicon glyphicon-menu-down"></span></h2>
                             <div id="pricerange" class="brands-name panel-collapse collapse">
-                                   <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b>
-
+                                <div class="col-lg-5">
+                                   <input type="text" placeholder="Rs." style="padding: 5px 5px;" id="price1" />
+                                </div>
+                                <div class="col-lg-2" style="padding: 5px 5px;">
+                                    <b>TO</b>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input type="text" style="padding: 5px 5px;" placeholder="Rs." id="price2" />
+                                </div>
+                                <br/><br/>
+                                
                             </div>
                         </div><!--/brands_products-->
                         
@@ -377,21 +410,6 @@
     </div>
     <!-- /.container -->
 
-    <div class="container">
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
 
     <!-- jQuery -->
     <script src="<?php echo js?>/jquery.js"></script>
