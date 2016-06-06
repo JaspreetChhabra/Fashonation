@@ -57,12 +57,16 @@ html, body, .slider-container{
 	position: absolute;
 	display: block;
 	height: 200%;
+	/*following line added to make the image responsive*/
+	max-width: 200%;
 }
 
 @media screen and (min-aspect-ratio: 1280/850) {
 	.bg-img img {
 		width: 200%;
-		height: auto;
+		/*following line added to make the image responsive*/
+		/*height: auto;*/
+		height: 200%;
 	}
 }
 

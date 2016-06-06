@@ -25,149 +25,6 @@
             transition: all 0.3s ease;
         }
 
-        @media (max-width :767px){
-            #infosec
-            {display:none;}
-            #fullnmlogo
-            {display: none;}
-            .nav-items{
-                margin-bottom: 20px;
-                background-color: white;
-            }
-            .namebar img {
-                margin-left: 26% !important;
-                height: 70%;
-                width: 50%;
-            }
-
-            .navbar_items{
-                margin-left: 0px !important;
-            }
-
-        }
-
-        @media (max-width :767px){
-            .searchbox{
-                height: 64px;
-            }
-            #fullnmlogo
-            {display: none;}
-            /*.cart{
-                display: none;
-            }*/
-            header
-            { 
-            margin-top: -47px;
-            }
-            #logolink
-            {display: block; color: black; font-size: 2em;padding: 10px 10px;}
-
-            .nav-items{
-                margin-bottom: 20px;
-                background-color: white;
-            }
-            .email{
-                margin-bottom: 35px;
-            }
-
-            /*dropdown effect*/
-            .navbar-nav>li>.dropdown-menu{
-                /*width: 90%;
-                margin-left: 4%;
-                margin-top: 0.5%;   
-                opacity: 1;*/
-                position: absolute;
-                z-index: 1000;
-                /*top: 100%;
-                height: 352px*/;
-                box-sizing: border-box;
-                box-shadow: rgba(51, 51, 51, 0.14902) 1px 1px 14px;
-                /*background: url("C:/xampp/htdocs/git/Fashonation/FashoNation/images/featured/image1.jpg") 100% 0% no-repeat rgb(255, 255, 255);*/
-                /*background-repeat: no-repeat;*/
-                background-position: 100% 0%;
-            }
-
-            .dropdown-image>img{
-                display: none;
-            }
-        }
-
-        @media (min-width:768px) and (max-width:990px) { 
-            .navbar_items{
-                margin-left: 12% !important;
-            }
-            .namebar img{
-                width: 40%;
-                height: 70%;
-            }
-            .email{
-                margin-bottom: 30px;
-            }    
-        }
-
-         @media (min-width: 767px) {
-            /*#searchbx
-            {width: 100px;}*/
-            .nav-items{
-                margin-bottom: 10px;
-                background-color: white;
-                /*box-shadow: rgb(239, 239, 239) 0px 0px 35px 2px;*/
-                /*box-shadow: 0 8px 20px 0px rgb(239, 239, 239);*/
-            }
-            /*.email{
-                margin-bottom: 30px;
-            }*/
-            .namebar img{
-                width: 35%;
-                height: 80%;
-            }
-
-            header{
-                padding-bottom: 0px;
-            }
-
-            .searchbox{
-                height: 64px;
-            }
-        }       
-        
-        @media (min-width: 767px) {
-
-            #logolink
-            {
-                display: none;
-            }
-            .nav>li {
-            position: relative;
-            display: block;
-            padding: 5px 5px;
-            }
-
-        /*    #searchbx {
-            width:350px; 
-            }
-        */  .yamm .nav,
-            .yamm .collapse,
-            .yamm .dropup,
-            .yamm .dropdown {
-              position: static;
-            }
-            .yamm .container {
-              position: relative;
-            }
-            
-             .yamm-content {
-              padding: 20px 30px;
-            }
-            .dropdown-menu {
-              left: 0;
-              right: 0;
-            }
-            .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
-                    display: block;
-                }
-
-        }
         /*.navbar-inverse .navbar-nav>li:hover
         {
             background-color: black;
@@ -545,9 +402,10 @@ border-radius:0px;
     transition: all 0.6s ease;
 }
 
-.nav-items i:hover{
+.nav-items:hover i{
 
-    background: rgb(51,51,51);
+    background-color: rgb(180, 163, 118);
+    color: white;
     transition: all 0.6s ease;
 }
 
@@ -1419,6 +1277,485 @@ a.button, .button {
 
 
     .testimg{
-        border-radius: 3
-         q0px;
+        border-radius: 30px;
     }
+
+
+    /*navbar dropdown tab css*/
+
+    /*.tabs-hovereffect{
+        padding-left: 0px;
+    }
+
+    .tabs-hovereffect ul{
+        margin:0px;
+        padding:0px;
+        list-style-type:none;
+        -webkit-backface-visibility: hidden; 
+        backface-visibility: hidden; 
+    }
+
+    .var_nav
+    {
+        position:relative !important;
+        background:#ccc; 
+        height:70px;
+        margin-bottom:5px;
+        padding: 0px !important;
+    }
+
+    .link_bg
+    {
+     width:70px;
+     height:70px;
+     position:absolute;
+     background:rgb(180, 163, 118);
+     color:#fff;
+     z-index:2;
+     padding: 0px !important;
+    }
+
+    .link_bg i
+    {  
+     position:relative;
+    }
+
+    .link_title
+    {
+    position:absolute;
+    width:100%;
+    z-index:3;
+    color:#fff;
+    }
+
+    .link_title:hover .icon
+{
+-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+transform:rotate(360deg);  
+}
+.var_nav:hover .link_bg
+{
+width:100%;
+background:rgb(180, 163, 118);
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;  
+}
+.var_nav:hover a
+{
+font-weight:bold;
+-webkit-transition:all .5s ease-in-out;
+-moz-transition:all .5s ease-in-out; 
+-o-transition:all .5s ease-in-out; 
+-ms-transition:all .5s ease-in-out;
+ transition:all .5s ease-in-out;  
+}
+.icon
+{
+position:relative;
+width:70px;
+height:70px;
+text-align:center;
+color:#fff;
+-webkit-transition:all .5s ease-in-out;
+-moz-transition:all .5s ease-in-out; 
+-o-transition:all .5s ease-in-out; 
+-ms-transition:all .5s ease-in-out;   
+float:left;
+transition:all .5s ease-in-out;   
+float:left;  
+}
+.icon i{
+    top:22px;position:relative;
+}
+.link_title a{
+display:block;
+position:absolute;
+float:left;
+font-family:arial;
+color:#fff;
+text-decoration:none;
+width:100%;
+height:70px;
+text-align:center;
+}
+span
+{
+margin-top:25px;
+display:block;
+}*/
+
+    /*Responsive text of offer zone*/
+
+    .sales-imgtext h1{
+
+    }
+
+    @media (max-width: @screen-xs) {
+        body{font-size: 10px;}
+    }
+
+    @media (max-width: @screen-sm) {
+        body{font-size: 14px;}
+    }
+
+    @media (max-width: @screen-md) {
+        .reasonable-text .s-desc{
+            padding-top: 0% !important;
+        }
+    }
+
+
+
+
+
+/*Media Queries */
+
+@media (max-width: 1350px) {
+            .reasonable-text .s-desc{
+                padding-top: 0% !important;
+            }   
+
+            .sales-imgtext h1{
+                font-size: 68px ;
+                margin-left: 25% ;
+                top: 15% ;
+            }
+            .hovereffect a.info span{
+                margin-top: 80% !important;
+            }
+
+            .hovereffect:hover a.info{
+                padding-bottom: 4% ;
+                padding-top: 77%;
+            }
+
+            /*.quality-imgtext .s-desc p + .button{
+                margin-top: 0px !important;
+            }*/
+        }
+
+        @media (max-width: 1200px) {
+
+            .quality-imgtext .s-desc{
+                width: 100%;
+                margin-left: 0px;
+                padding-top: 1% !important;
+            }
+
+            .reasonable-text .s-desc{
+                width: 300px ;
+                margin-left: 140px ;
+            }
+
+            .hovereffect:hover a.info{
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+            
+        }
+        @media (max-width: 1024px) {
+
+            .quality-imgtext .s-desc{
+                /*width: 316px !important;*/
+            }
+            .sales-imgtext h1{
+                margin-left: 23%;
+            }
+
+            /*.quality-imgtext .s-desc p{
+                display: none !important;
+            }*/
+        }
+
+
+        @media (max-width :990px){
+            
+            .quality-imgtext .s-desc{
+                padding-top: 6% !important; 
+            }
+            
+            .quality-imgtext .s-desc p{
+                display: none !important;
+            }
+
+            .quality-imgtext .s-desc h2{
+                font-size: 28px !important;
+                line-height: 22px !important;
+            }
+
+            .reasonable-text .s-desc{
+                padding-top: 8% ;
+                width: 205px ;   
+            }
+
+            .reasonable-text .s-desc p{
+                display: none !important;
+            }
+
+            .reasonable-text .s-desc h2{
+                font-size: 28px !important;
+                line-height: 22px !important;
+            }
+            /*.quality-imgtext .s-desc h2{
+                font-size: 30px !important;
+            }*/
+
+            .sales-imgtext h1{
+                margin-left: 20%;
+                line-height: 25px;
+                font-size: 60px;
+            }
+
+            .sales-imgtext h1 em{
+                line-height: 20px;
+            }
+
+            .hovereffect:hover a.info{
+                padding-right: 10%;
+                padding-left: 10%
+                padding-bottom: 2%;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:990px) { 
+            .navbar_items{
+                margin-left: 12% !important;
+            }
+            .namebar img{
+                width: 40%;
+                height: 70%;
+            }
+            .email{
+                margin-bottom: 30px;
+            } 
+            
+            .recent-imageffect:hover a.info{
+                padding-top: 132% !important;
+                padding-left: 15% !important;
+                padding-right: 15% !important;
+                padding-bottom: 43% !important;
+            } 
+
+            .recent-imageffect h1{
+                font-size: 37px !important;
+            }
+
+            .newarrival-imgtext h1{
+                font-size: 37px !important;
+            }
+
+            .newarrival-imgtext:hover a.info{
+                padding-top: 132% !important;
+                padding-left: 15% !important;
+                padding-right: 15% !important;
+                padding-bottom: 43% !important;
+            }
+
+            #cont-offerzone{
+                width: 90% !important;
+            }
+
+        }
+
+        @media (max-width :767px){
+            .searchbox{
+                height: 64px;
+            }
+            #fullnmlogo
+            {display: none;}
+            /*.cart{
+                display: none;
+            }*/
+            header
+            { 
+            margin-top: -47px;
+            }
+            #logolink
+            {display: block; color: black; font-size: 2em;padding: 10px 10px;}
+
+            .nav-items{
+                margin-bottom: 20px;
+                background-color: white;
+            }
+            .email{
+                margin-bottom: 35px;
+            }
+
+            /*dropdown effect*/
+            .navbar-nav>li>.dropdown-menu{
+                /*width: 90%;
+                margin-left: 4%;
+                margin-top: 0.5%;   
+                opacity: 1;*/
+                position: absolute;
+                z-index: 1000;
+                /*top: 100%;
+                height: 352px*/;
+                box-sizing: border-box;
+                box-shadow: rgba(51, 51, 51, 0.14902) 1px 1px 14px;
+                /*background: url("C:/xampp/htdocs/git/Fashonation/FashoNation/images/featured/image1.jpg") 100% 0% no-repeat rgb(255, 255, 255);*/
+                /*background-repeat: no-repeat;*/
+                background-position: 100% 0%;
+            }
+
+            .dropdown-image>img{
+                display: none;
+            }
+
+            .sales-imgtext{
+                display: none !important;
+            }
+
+                        #infosec
+            {display:none;}
+            #fullnmlogo
+            {display: none;}
+            .nav-items{
+                margin-bottom: 20px;
+                background-color: white;
+            }
+            .namebar img {
+                margin-left: 26% !important;
+                height: 70%;
+                width: 50%;
+            }
+
+            .navbar_items{
+                margin-left: 0px !important;
+            }
+
+            .reasonable-text .s-desc h2.mod1{
+                line-height: 15px !important;
+            }
+
+            .reasonable-text .s-desc h2{
+                font-size: 22px !important;
+            }
+
+            .reasonable-text .s-desc p + .button{
+                margin-top: 0px !important;
+            }
+
+            .reasonable-text .s-desc{
+                width: 170px ;
+            }
+
+            .reasonable-text .s-desc p{
+                display: none;
+            }
+
+            .reasonable-text{
+                margin-bottom: 20px;
+            }
+
+            #cont-offerzone{
+                /*width: 70% !important;*/
+            }
+
+            .newarrival-imgtext h1{
+                font-size: 43px;
+            }
+
+            .recent-imageffect h1{
+                font-size: 43px;
+            }
+
+            .quality-imgtext .s-desc{
+                right: auto;
+                left: auto;
+                bottom: auto;
+                width: 100%;
+                padding-top: 20px;
+                padding-bottom: 10px;
+                /*background: rgb(180, 163, 118);*/
+                margin: 0px !important;
+            }
+
+            .quality-imgtext{
+                height: 50%;
+                margin-bottom: 20px;
+            }
+
+            .quality-imgtext img{
+                height: 100%;
+            }
+
+            .recent-imageffect:hover a.info{
+                padding-left: 30%;
+                padding-right: 30%;
+            }
+
+            .recent-imageffect{
+                margin-bottom: 20px;
+            }
+
+
+            
+        }
+
+         @media (min-width: 767px) {
+            /*#searchbx
+            {width: 100px;}*/
+            .nav-items{
+                margin-bottom: 10px;
+                background-color: white;
+                /*box-shadow: rgb(239, 239, 239) 0px 0px 35px 2px;*/
+                /*box-shadow: 0 8px 20px 0px rgb(239, 239, 239);*/
+            }
+            /*.email{
+                margin-bottom: 30px;
+            }*/
+            .namebar img{
+                width: 35%;
+                height: 80%;
+            }
+
+            header{
+                padding-bottom: 0px;
+            }
+
+            .searchbox{
+                height: 64px;
+            }
+
+                        #logolink
+            {
+                display: none;
+            }
+            .nav>li {
+            position: relative;
+            display: block;
+            padding: 5px 5px;
+            }
+
+        /*    #searchbx {
+            width:350px; 
+            }
+        */  .yamm .nav,
+            .yamm .collapse,
+            .yamm .dropup,
+            .yamm .dropdown {
+              position: static;
+            }
+            .yamm .container {
+              position: relative;
+            }
+            
+             .yamm-content {
+              padding: 20px 30px;
+            }
+            .dropdown-menu {
+              left: 0;
+              right: 0;
+            }
+            .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+                    display: block;
+                }
+
+        } 

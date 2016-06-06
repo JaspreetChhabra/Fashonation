@@ -141,8 +141,17 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLOTHES</a>
               <div class="dropdown-menu col-lg-12" role="menu">
-                <div class="col-xs-3 tabs tabs-style-circlefill"> 
-                  <ul class="nav nav-tabs tabs-left">
+                <div class="col-xs-3 tabs tabs-hovereffect"> 
+                  <ul class="nav nav-tabs tabs-left ">
+                    <li class="var_nav active">
+                          <!-- <div class="link_bg"></div>
+                          <div class="link_title">
+                            <div class=icon> 
+                            <i class="fa fa-female fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <a href="#home" data-toggle="tab"><span>Men's Wear</span></a>
+                          </div> -->
+                    </li>
                     <li class="active"><a href="#home" data-toggle="tab">Men's Wear</a></li>
                     <li><a href="#profile" data-toggle="tab">Womens's Wear</a></li>
                   </ul> 

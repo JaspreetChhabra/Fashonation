@@ -5,10 +5,10 @@
     <div class="container slider-container">
 
         <div id="boxgallery" class="boxgallery" data-effect="effect-2" style="position: relative !important;">
-            <div class="panel"><img src="<?php echo images;?>/slider/3.jpg" alt="Image 3"/></div>
-            <div class="panel"><img src="<?php echo images;?>/slider/4.jpg" alt="Image 4"/></div>
-            <div class="panel"><img src="<?php echo images;?>/slider/1.jpg" alt="Image 1"/></div>
-            <div class="panel"><img src="<?php echo images;?>/slider/2.jpg" alt="Image 2"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/3.jpg" class="img-responsive" alt="Image 3"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/4.jpg" class="img-responsive" alt="Image 4"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/1.jpg" class="img-responsive" alt="Image 1"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/2.jpg" class="img-responsive" alt="Image 2"/></div>
         </div>
     </div>
 
@@ -17,7 +17,7 @@
 
     <!--Offer Zone -->
 
-     <!-- <div class="container offer-zone">
+     <!-- <div class="container offer-zone"> 
         <div class="row">
            <div class="col-lg-8" style="width: 57.6%;">
                <div class="col-lg-4" style="width:49.7%">
@@ -35,10 +35,10 @@
     <div class="container" id="cont-offerzone">
         <div class="row no-gutters offer-zone-row">
             <div id="content">
-            <div class="col-lg-8 col-sm-12 col-md-8 col-xs-12">
+            <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
                 
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                    <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12 recent-imageffect">
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 recent-imageffect">
                         <a href="">
                                 <img class="img-responsive" src="<?php echo images;?>/offerzone/1.jpg" width="100%" />
                                 <div class="overlay">
@@ -50,7 +50,7 @@
                                 </div>
                             </a>
                     </div>
-                    <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                             
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 quality-imageffect">
                                 
@@ -90,7 +90,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 col-md-4 col-xs-12 pull-right">
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 pull-right">
 
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 sales-imgtext hovereffect">
                     
@@ -201,7 +201,7 @@
                     <ul id="homefeatured" class="tab-pane active">
                         <!-- <li class="border-line ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered"></li> -->
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -242,7 +242,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -283,7 +283,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -324,7 +324,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -366,7 +366,7 @@
                     </ul>
 
                     <ul id="blocknewproducts" class="tab-pane">
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -407,7 +407,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -448,7 +448,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -489,7 +489,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -532,7 +532,7 @@
 
                     <ul id="blockbestsellers" class="tab-pane">
                     
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -573,7 +573,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -614,7 +614,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -655,7 +655,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -698,7 +698,7 @@
 
 
                     <ul id="blockspecials" class="tab-pane">
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -739,7 +739,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -780,7 +780,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
@@ -821,7 +821,7 @@
                         </div>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-4">
+                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
                             <div class="thumbnail">
                        
                                 <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
