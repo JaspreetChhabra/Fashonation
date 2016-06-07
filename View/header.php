@@ -212,14 +212,14 @@
                   </ul> 
                 </div>
 
-                <div class="col-xs-8 tab-bg-image">
+                <div class="col-xs-8 tab-bg-image mob-view">
                   <!-- Tab panes -->
 
                   <div class="tab-content ">
                     <div class="tab-pane active" id="home">
                         <div class="col-xs-6 col-lg-6">
 
-                            <div class="col-xs-3 col-lg-3">
+                            <div class="col-xs-2 col-lg-3">
                                <section class="color-4">
                                 <div class="cl-effect-11 nav-hover">
                                     <a href="#" data-hover="Desultory">Desultory</a>
@@ -245,15 +245,46 @@
 
                             
                         </div>
-                        <div class="col-xs-2 col-lg-3 dropdown-image">
+                        <div class="col-xs-3 col-lg-3 dropdown-image">
                             <img class="img-responsive" src="<?php echo images;?>/featured/image1.jpg" alt="">
                         </div>
                     </div>
-                    <div class="tab-pane" id="profile">Profile Tab.</div>
+                    <div class="tab-pane" id="profile">
+                        <div class="col-xs-6 col-lg-6">
+
+                            <div class="col-xs-2 col-lg-3">
+                               <section class="color-4">
+                                <div class="cl-effect-11 nav-hover">
+                                    <a href="#" data-hover="Desultory">Desultory</a>
+                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
+                                    <a href="#" data-hover="Scintilla">Scintilla</a>
+                                    <a href="#" data-hover="Propinquity">Propinquity</a>
+                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                </div>
+                            </section> 
+                            </div>
+
+                            <div class="col-xs-2 col-lg-3 tab-content-align">
+                           <section class="color-4">
+                                <div class="cl-effect-11 nav-hover">
+                                    <a href="#" data-hover="Desultory">Desultory</a>
+                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
+                                    <a href="#" data-hover="Scintilla">Scintilla</a>
+                                    <a href="#" data-hover="Propinquity">Propinquity</a>
+                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                </div>
+                            </section> 
+                                </div>    
+
+                            
+                        </div>
+                        <div class="col-xs-3 col-lg-3 dropdown-image">
+                            <img class="img-responsive" src="<?php echo images;?>/featured/image6.jpg" alt="">
+                        </div>
+                    </div>
                   </div>    
                 
-              </div> 
->
+              </div>
               <!-- <section>
                 <div class="tabs tabs-style-circlefill">
                     <nav>
