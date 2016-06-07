@@ -1271,7 +1271,9 @@ a.button, .button {
       font-style:bold;
       font-size: 20px;
       font-weight: bolder;
-
+      color: white;
+      margin: 10px;
+      margin-left: 30px; 
     }
 
 
@@ -1798,3 +1800,96 @@ transition:all .5s ease-in-out;
                 }
 
         } 
+
+
+        /*Parallax css*/
+        .pslide {
+          position: relative;
+          padding: 25vh 10%;
+          min-height: 100%;
+          width: 100%;
+          box-sizing: border-box;
+          box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+          transform-style: inherit;
+        }
+
+        #ptitle {
+          background-image: url("../imgs/parallax.jpg");
+           background-attachment: fixed; 
+           width: 1349px;
+            margin-left: -675px;
+            left: 50%;
+            background-position: 50% 65.7016%; 
+        }
+
+/*.pslide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+}
+
+.parallax > div{
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    max-width: 1600px;
+    padding: 20.5% 0px 22.5%;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}*/
+
+
+/*.parallax {
+    line-height:27px;
+    font-size:15px;
+    color:#fff;
+    margin-top: 70px;
+}
+.parallax>div.link {
+    cursor:pointer
+}
+.parallax>div {
+    position:relative;
+    padding: 20.5% 0 22.5%;
+    color:#fff;
+    background-position:top;
+    background-repeat:no-repeat;
+    background-size:cover;
+    max-width: 1600px !important;
+}
+@media (min-width: 1600px) {
+    .parallax>div {
+        margin-left: -800px !important;
+    }
+}
+.parallax p {
+    position:relative;
+    display:block;
+    line-height: 13px;
+    margin-top: 3px;
+    margin-bottom: 58px;
+}
+.parallax {
+    text-align: right;
+}
+.parallax h1.mod1 {
+    text-align: right;
+}
+.parallax h1.mod1:before {
+    position: absolute;
+    right: 15px;
+    top: -36px;
+}
+.parallax .separator {
+    display: inline-block;
+    width: 130px;
+}*/
+
+
+#center_column{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

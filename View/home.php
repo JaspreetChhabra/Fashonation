@@ -871,7 +871,13 @@
     <!-- Other tabs -->
 
 
-    <!--Testemonial-->  
+    
+
+    <!--parallax-->
+    
+    <div id="ptitle" class="pslide pheader">
+      
+        <!--Testemonial-->  
 
     <div class="container-fluid">
         <div class="row">
@@ -892,7 +898,7 @@
             <div class="item active">
               <div class="row">
                 <div class="col-sm-2">
-                    <img src="<?php echo images;?>/slide3.jpg" height="100px" width="100px">
+                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="200px" width="200px">
                 </div>
                 <div class="col-sm-10">
                   <p class="ptest">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.”</p>
@@ -905,7 +911,7 @@
             <div class="item">
               <div class="row">
                 <div class="col-sm-2">
-                    <img src="<?php echo images;?>/slide3.jpg" height="100px" width="100px">
+                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="200px" width="200px">
                 </div>
                 <div class="col-sm-10">
                   <p class="ptest">“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.”</p>
@@ -918,7 +924,7 @@
             <div class="item">
               <div class="row">
                 <div class="col-sm-2">
-                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="100px" width="100px">
+                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="200px" width="200px">
                 </div>
                 <div class="col-sm-10">
                   <p class="ptest">“Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum.”</p>
@@ -933,8 +939,26 @@
 </div>
 
     <!-- Testemonials-->
-
+    </div>   
    
+
+
+    <!-- <div id="parallax_0" class="parallax">
+<div data-source-url="http://livedemo00.template-help.com/opencart_57682/image/cache/catalog/parallax-1-1600x1228.jpg" class="parallax-1 " style="width: 1349px; margin-left: -675px; left: 50%; background-image: url(&quot;http://livedemo00.template-help.com/opencart_57682/image/cache/catalog/parallax-1-1600x1228.jpg&quot;); background-attachment: fixed; background-position: 50% 58.6219%;">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<h1 class="mod1">Find all kinds of ladies' handbags
+<span>suitable for any occasion</span>
+</h1>
+<div class="separator"></div>
+<p>A great number of different grateful clients is the best prove<br><br> of the previous statement.</p>
+<a class="button" href="index.php?route=product/product&amp;product_id=28">Shop now!</a> </div>
+</div>
+</div>
+</div>
+</div> -->
+    <!--parallax-->
 
     <!--Home Page Body-->
 
