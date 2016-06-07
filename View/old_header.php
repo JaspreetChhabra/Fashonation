@@ -15,15 +15,13 @@
     <link href="<?php echo css?>/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-   
     <link href="<?php echo css?>/modern-business.css" rel="stylesheet">
     <link href="<?php echo css?>/shop-homepage.css" rel="stylesheet">
 
     <link href="<?php echo css?>/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo css?>/bootstrap-social.css" rel="stylesheet">
     <link href="<?php echo css?>/nav.css" rel="stylesheet">
-     <link href="<?php echo css?>/style.css" rel="stylesheet">
-    <link href="<?php echo css?>/reset.css" rel="stylesheet">
+
     <!-- Dropdown Menu --> 
     <link rel="stylesheet" href="<?php echo css?>/bootstrap.vertical-tabs.css">
 
@@ -31,11 +29,14 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/tabstyles.css" /> -->
     
+    <!-- Login modal popup css -->
+    <link href="<?php echo css?>/style.css" rel="stylesheet">
+    <script src="<?php echo js?>/modernizr.js"></script>
+
     <!-- Slider css -->
     <link rel="stylesheet" type="text/css" href="<?php echo css?>/component.css" />
     <script src="<?php echo js?>/modernizr.custom.js"></script>
-    <script src="<?php echo js?>/modernizr.js"></script>
-   
+    
 
     <!-- Products tab slider -->
     <link href="<?php echo css?>/homepage-productSlider.css" rel="stylesheet">
@@ -56,7 +57,6 @@
         ol, ul {
     list-style: none;
 }
-
     </style>
     
 </head>
@@ -212,14 +212,14 @@
                   </ul> 
                 </div>
 
-                <div class="col-xs-8 tab-bg-image">
+                <div class="col-xs-8 tab-bg-image mob-view">
                   <!-- Tab panes -->
 
                   <div class="tab-content ">
                     <div class="tab-pane active" id="home">
                         <div class="col-xs-6 col-lg-6">
 
-                            <div class="col-xs-3 col-lg-3">
+                            <div class="col-xs-2 col-lg-3">
                                <section class="color-4">
                                 <div class="cl-effect-11 nav-hover">
                                     <a href="#" data-hover="Desultory">Desultory</a>
@@ -245,45 +245,49 @@
 
                             
                         </div>
-                        <div class="col-xs-2 col-lg-3 dropdown-image">
+                        <div class="col-xs-3 col-lg-3 dropdown-image">
                             <img class="img-responsive" src="<?php echo images;?>/featured/image1.jpg" alt="">
                         </div>
                     </div>
-                    <div class="tab-pane" id="profile">Profile Tab.</div>
+                    <div class="tab-pane" id="profile">
+                        <div class="col-xs-6 col-lg-6">
+
+                            <div class="col-xs-2 col-lg-3">
+                               <section class="color-4">
+                                <div class="cl-effect-11 nav-hover">
+                                    <a href="#" data-hover="Desultory">Desultory</a>
+                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
+                                    <a href="#" data-hover="Scintilla">Scintilla</a>
+                                    <a href="#" data-hover="Propinquity">Propinquity</a>
+                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                </div>
+                            </section> 
+                            </div>
+
+                            <div class="col-xs-2 col-lg-3 tab-content-align">
+                           <section class="color-4">
+                                <div class="cl-effect-11 nav-hover">
+                                    <a href="#" data-hover="Desultory">Desultory</a>
+                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
+                                    <a href="#" data-hover="Scintilla">Scintilla</a>
+                                    <a href="#" data-hover="Propinquity">Propinquity</a>
+                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                </div>
+                            </section> 
+                                </div>    
+
+                            
+                        </div>
+                        <div class="col-xs-3 col-lg-3 dropdown-image">
+                            <img class="img-responsive" src="<?php echo images;?>/featured/image6.jpg" alt="">
+                        </div>
+                    </div>
                   </div>    
                 
               </div> 
->
-              <!-- <section>
-                <div class="tabs tabs-style-circlefill">
-                    <nav>
-                        <ul>
-                            <li><a href="#section-circlefill-1" class="icon icon-plug"><span>Connect</span></a></li>
-                            <li><a href="#section-circlefill-2" class="icon icon-gift"><span>Gifts</span></a></li>
-                            <li><a href="#section-circlefill-3" class="icon icon-box"><span>Boxes</span></a></li>
-                            <li><a href="#section-circlefill-4" class="icon icon-date"><span>Prints</span></a></li>
-                            <li><a href="#section-circlefill-5" class="icon icon-plane"><span>Fun</span></a></li>
-                        </ul>
-                    </nav>
-                    <div class="content-wrap">
-                        <section id="section-circlefill-1"><p>1</p></section>
-                        <section id="section-circlefill-2"><p>2</p></section>
-                        <section id="section-circlefill-3"><p>3</p></section>
-                        <section id="section-circlefill-4"><p>4</p></section>
-                        <section id="section-circlefill-5"><p>5</p></section>
-                    </div>
-                </div>
-            </section> -->
-            </li>
-        
-            <li><a href="#">ACCESSORIES</a></li>
-            <li><a href="#">BLOG</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
 
-<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+
+              <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
         <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
             <ul class="cd-switcher">
                 <li><a href="#0">Sign in</a></li>
@@ -373,15 +377,36 @@
             <a href="#0" class="cd-close-form">Close</a>
         </div> <!-- cd-user-modal-container -->
     </div> <!-- cd-user-modal -->
-<script src="<?php echo js?>/jquery.min.js"></script>
-<script src="<?php echo js?>/main.js"></script>
+
+              <!-- <section>
+                <div class="tabs tabs-style-circlefill">
+                    <nav>
+                        <ul>
+                            <li><a href="#section-circlefill-1" class="icon icon-plug"><span>Connect</span></a></li>
+                            <li><a href="#section-circlefill-2" class="icon icon-gift"><span>Gifts</span></a></li>
+                            <li><a href="#section-circlefill-3" class="icon icon-box"><span>Boxes</span></a></li>
+                            <li><a href="#section-circlefill-4" class="icon icon-date"><span>Prints</span></a></li>
+                            <li><a href="#section-circlefill-5" class="icon icon-plane"><span>Fun</span></a></li>
+                        </ul>
+                    </nav>
+                    <div class="content-wrap">
+                        <section id="section-circlefill-1"><p>1</p></section>
+                        <section id="section-circlefill-2"><p>2</p></section>
+                        <section id="section-circlefill-3"><p>3</p></section>
+                        <section id="section-circlefill-4"><p>4</p></section>
+                        <section id="section-circlefill-5"><p>5</p></section>
+                    </div>
+                </div>
+            </section> -->
+            </li>
         
-        
-        
+            <li><a href="#">ACCESSORIES</a></li>
+            <li><a href="#">BLOG</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
     <!--Navbar -->
-    <!-- MODAL POPUP -->
-
-
-
-
+    <script src="<?php echo js?>/jquery.min.js"></script>
+<script src="<?php echo js?>/main.js"></script>

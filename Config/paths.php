@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-define("css","http://localhost/git/Fashonation/MVC/Fashonation/public/css");
-define("js","http://localhost/git/Fashonation//MVC/Fashonation/public/js");
-define("images","http://localhost/git/Fashonation/MVC/Fashonation/public/imgs");
-define("font","http://localhost/git/Fashonation//MVC/Fashonation/public/fonts");
+define("css","http://localhost/Fashonation/public/css");
+define("js","http://localhost/Fashonation/public/js");
+define("images","http://localhost/Fashonation/public/imgs");
+define("font","http://localhost/Fashonation/public/fonts");
