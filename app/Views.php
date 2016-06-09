@@ -11,16 +11,15 @@ class View {
     function __construct() {
     }
     
-    public function render($name, $noInclude = false)
+    public function render($name, $param1 = false)
 	{
-		if ($noInclude == true) {
-			require 'View/' . $name . '.php';	
-		}
-		else {
+		
+        
 			require 'View/header.php';
 			require 'View/' . $name . '.php';
+//                        call_user_method($name, $param1);
 			require 'View/footer.php';	
-		}
+		
 	}
 
 }

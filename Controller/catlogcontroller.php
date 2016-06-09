@@ -14,6 +14,27 @@ class catlog extends Controller{
 
      function index()
     {
-        $this->view->render("productcatlog");
+        $this->view->getProductInfo = $this->model->getProductInfo();
+//        if(!strrchr($result, "Error"))
+//        {
+              $this->view->render("productcatlog");
+//        }
+//        else
+//        {
+//            echo "Some error has occured";
+//        }
+        
+      
     }
+//
+//    function getProductInfo()
+//    {
+//        $this->model->run();
+//    }
+    
+//    function run()
+//    {
+//    	$this->model->run();
+//    }
+
 }

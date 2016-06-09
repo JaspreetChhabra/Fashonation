@@ -34,7 +34,6 @@ class App {
             $file = 'Controller/' . $url[0] . 'controller.php';
             if (file_exists($file)) {
                 $this->controller = $url[0];
-                unset($url[0]);
             }
             elseif(!empty($url[0]))
             {
@@ -42,7 +41,10 @@ class App {
             }
             require_once 'Controller/' . $this->controller . 'controller.php';
             $this->controller = new $this->controller;
-        
+            $this->controller->loadModel($url[0]);        
+            unset($url[0]);
+            
+
         
         if (isset($url[1])) {
             if (method_exists($this->controller, $url[1])) {

@@ -18,6 +18,11 @@ class Home extends Controller{
         $this->view->render("home");
     }
     
+    function run()
+    {
+        $this->model->run();
+    }
+    
     
 
 }
