@@ -32,6 +32,11 @@ $result = $this->getProductInfo;
         overflow: hidden;
     }
 
+    .caption
+    {
+        height: 77px!important;
+    }
+
     .items {
     float: right;
     /*margin-right: -88px;*/
@@ -289,8 +294,9 @@ $result = $this->getProductInfo;
                        <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
                         <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
                          -->
-                        <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
+                         
+                        <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100">
+                         
 
                         <div class="caption">
                                 <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -300,7 +306,7 @@ $result = $this->getProductInfo;
                                 
                             </div>
                             <div class="ratings">
-                                <p class="pull-right items" style="display: none;">
+                                <p class="pull-right items">
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
@@ -342,12 +348,34 @@ $result = $this->getProductInfo;
     <!-- /.container -->
 
 
+
     <!-- jQuery -->
     <script src="<?php echo js?>/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo js?>/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+
+
+
+
+    var url = "<?php echo images;?>";
+
+    $(document).ready(function(){
+
+        $(".thumbnail").hover(function () {
+            $(this).find("img").attr("src", url+"/2.jpg");
+        },
+
+        function () {
+            $(this).find("img").attr("src", url+"/1.jpg");
+        });
+    });
+
+
+
+
 
         $(document).ready(function(){
             $('.brands_products h2').click(function(){
@@ -362,31 +390,26 @@ $result = $this->getProductInfo;
         });
 
         $(document).ready(function(){
-            $('.prod .thumbnail').hover(function(){
-                
-                //$('.prod .thumbnail .ratings .items').fadeToggle(500);
+
+            viewwidth = $(window).width();
+            if(viewwidth > 769)
+            {
+                $('.prod .thumbnail').hover(function(){
                 $(this).find('.items').fadeToggle(500);
-                // $(this).find('.disp').hide();
-                // $(this).find('.nodisp').show();
-                
                 
             },function(){
                 
-                //$('.prod .thumbnail .ratings .items').fadeToggle(500);
                 $(this).find('.items').fadeToggle(500);
-                // $(this).find('.disp').show();
-                // $(this).find('.nodisp').hide();
                 
             } );
+
+            }    
+            else
+            {
+                $(this).find('.items').show();
+            }
+            
         } );
-
-        //brands_products
-
-
-
     </script>
-
-
-
 
 </body></html>
