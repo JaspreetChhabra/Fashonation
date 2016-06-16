@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2016 at 02:17 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.6.15
+-- Generation Time: Jun 16, 2016 at 05:18 PM
+-- Server version: 5.5.36
+-- PHP Version: 5.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `fashonat_main`
@@ -26,13 +26,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `fasho_user`
 --
 
-CREATE TABLE `fasho_user` (
-  `user_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `fasho_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(40) NOT NULL,
   `email` varchar(80) NOT NULL,
   `password` varchar(80) NOT NULL,
-  `role` varchar(12) NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `role` varchar(12) NOT NULL DEFAULT 'user',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=107 ;
 
 --
 -- Dumping data for table `fasho_user`
@@ -143,11 +144,24 @@ INSERT INTO `fasho_user` (`user_id`, `username`, `email`, `password`, `role`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE IF NOT EXISTS `invoice` (
+  `invoice_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  PRIMARY KEY (`invoice_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nx9_users`
 --
 
-CREATE TABLE `nx9_users` (
-  `user_id` int(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS `nx9_users` (
+  `user_id` int(50) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) DEFAULT NULL,
   `email_id` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -162,8 +176,11 @@ CREATE TABLE `nx9_users` (
   `contact_no` varchar(255) DEFAULT NULL,
   `have_designs` int(1) DEFAULT NULL,
   `have_orders` int(1) DEFAULT NULL,
-  `p_role` varchar(25) NOT NULL DEFAULT 'user'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `p_role` varchar(25) NOT NULL DEFAULT 'user',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email_id` (`email_id`),
+  FULLTEXT KEY `p_role` (`p_role`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=101 ;
 
 --
 -- Dumping data for table `nx9_users`
@@ -274,13 +291,46 @@ INSERT INTO `nx9_users` (`user_id`, `user_name`, `email_id`, `password`, `displa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `order`
+--
+
+CREATE TABLE IF NOT EXISTS `order` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(50) NOT NULL,
+  `product_id` blob NOT NULL,
+  `order_date` date NOT NULL,
+  `order_status` varchar(20) NOT NULL,
+  `delivery_charges` int(3) NOT NULL,
+  `tax_amount` int(3) NOT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_details`
+--
+
+CREATE TABLE IF NOT EXISTS `order_details` (
+  `order_details_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_qty` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  PRIMARY KEY (`order_details_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_audience`
 --
 
-CREATE TABLE `product_audience` (
-  `audience_id` int(11) NOT NULL,
-  `audience_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `product_audience` (
+  `audience_id` int(11) NOT NULL AUTO_INCREMENT,
+  `audience_name` text NOT NULL,
+  PRIMARY KEY (`audience_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `product_audience`
@@ -297,9 +347,11 @@ INSERT INTO `product_audience` (`audience_id`, `audience_name`) VALUES
 -- Table structure for table `product_by_seller`
 --
 
-CREATE TABLE `product_by_seller` (
+CREATE TABLE IF NOT EXISTS `product_by_seller` (
   `seller_id` int(11) NOT NULL,
-  `product_id` bigint(20) NOT NULL
+  `product_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`seller_id`,`product_id`),
+  KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -315,10 +367,13 @@ INSERT INTO `product_by_seller` (`seller_id`, `product_id`) VALUES
 -- Table structure for table `product_categories_list`
 --
 
-CREATE TABLE `product_categories_list` (
-  `category_id` int(20) NOT NULL,
-  `categories` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `product_categories_list` (
+  `category_id` int(20) NOT NULL AUTO_INCREMENT,
+  `categories` varchar(200) NOT NULL,
+  PRIMARY KEY (`category_id`),
+  UNIQUE KEY `categories` (`categories`),
+  KEY `categories_2` (`categories`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `product_categories_list`
@@ -332,18 +387,35 @@ INSERT INTO `product_categories_list` (`category_id`, `categories`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_images`
+--
+
+CREATE TABLE IF NOT EXISTS `product_images` (
+  `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) NOT NULL,
+  `product_img_1` varchar(50) NOT NULL,
+  PRIMARY KEY (`product_image_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_list`
 --
 
-CREATE TABLE `product_list` (
-  `product_id` bigint(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product_list` (
+  `product_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `product_desc` text NOT NULL,
   `product_name` text NOT NULL,
   `product_cost` int(11) NOT NULL,
   `audience_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `product_fabric` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `product_fabric` text NOT NULL,
+`featured` int NOT NULL,
+  PRIMARY KEY (`product_id`),
+  KEY `category_id` (`category_id`),
+  KEY `audience_id` (`audience_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
 
 --
 -- Dumping data for table `product_list`
@@ -399,11 +471,14 @@ INSERT INTO `product_list` (`product_id`, `product_desc`, `product_name`, `produ
 -- Table structure for table `product_patterns`
 --
 
-CREATE TABLE `product_patterns` (
-  `pattern_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product_patterns` (
+  `pattern_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(11) NOT NULL,
-  `product_desc` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `product_desc` text NOT NULL,
+  PRIMARY KEY (`pattern_id`),
+  KEY `product_id` (`product_id`),
+  KEY `pattern_id` (`pattern_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `product_patterns`
@@ -457,13 +532,15 @@ INSERT INTO `product_patterns` (`pattern_id`, `product_id`, `product_desc`) VALU
 -- Table structure for table `product_pattern_images`
 --
 
-CREATE TABLE `product_pattern_images` (
-  `image_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product_pattern_images` (
+  `image_id` int(11) NOT NULL AUTO_INCREMENT,
   `pattern_id` int(11) NOT NULL,
   `image1_url` text NOT NULL,
   `image2_url` text NOT NULL,
-  `image3_url` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `image3_url` text NOT NULL,
+  PRIMARY KEY (`image_id`),
+  KEY `pattern_id` (`pattern_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `product_pattern_images`
@@ -507,11 +584,13 @@ INSERT INTO `product_pattern_images` (`image_id`, `pattern_id`, `image1_url`, `i
 -- Table structure for table `product_pattern_measurements`
 --
 
-CREATE TABLE `product_pattern_measurements` (
-  `measure_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product_pattern_measurements` (
+  `measure_id` int(11) NOT NULL AUTO_INCREMENT,
   `pattern_id` int(11) NOT NULL,
-  `measure_1` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `measure_1` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`measure_id`),
+  KEY `pattern_id` (`pattern_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -519,11 +598,13 @@ CREATE TABLE `product_pattern_measurements` (
 -- Table structure for table `product_pattern_quantity`
 --
 
-CREATE TABLE `product_pattern_quantity` (
-  `quantity_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product_pattern_quantity` (
+  `quantity_id` int(11) NOT NULL AUTO_INCREMENT,
   `measure_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`quantity_id`),
+  KEY `measure_id` (`measure_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -531,12 +612,15 @@ CREATE TABLE `product_pattern_quantity` (
 -- Table structure for table `product_tags`
 --
 
-CREATE TABLE `product_tags` (
-  `tag_relation` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `product_tags` (
+  `tag_relation` int(11) NOT NULL AUTO_INCREMENT,
   `tag_id` bigint(20) NOT NULL,
   `product_id` bigint(20) NOT NULL,
-  `design_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `design_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`tag_relation`),
+  KEY `product_id` (`product_id`),
+  KEY `design_id` (`design_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=119 ;
 
 --
 -- Dumping data for table `product_tags`
@@ -576,10 +660,12 @@ INSERT INTO `product_tags` (`tag_relation`, `tag_id`, `product_id`, `design_id`)
 -- Table structure for table `product_tag_list`
 --
 
-CREATE TABLE `product_tag_list` (
-  `tag_id` bigint(20) NOT NULL,
-  `tags` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `product_tag_list` (
+  `tag_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `tags` varchar(200) NOT NULL,
+  PRIMARY KEY (`tag_id`),
+  UNIQUE KEY `tags` (`tags`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=87 ;
 
 --
 -- Dumping data for table `product_tag_list`
@@ -613,13 +699,14 @@ INSERT INTO `product_tag_list` (`tag_id`, `tags`) VALUES
 -- Table structure for table `seller`
 --
 
-CREATE TABLE `seller` (
-  `seller_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `seller` (
+  `seller_id` int(11) NOT NULL AUTO_INCREMENT,
   `u_name` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` text NOT NULL,
-  `company_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `company_name` text NOT NULL,
+  PRIMARY KEY (`seller_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `seller`
@@ -634,12 +721,13 @@ INSERT INTO `seller` (`seller_id`, `u_name`, `password`, `email`, `company_name`
 -- Table structure for table `user_cart`
 --
 
-CREATE TABLE `user_cart` (
-  `cart_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user_cart` (
+  `cart_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `pattern_id` int(11) NOT NULL,
-  `purchased` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `purchased` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`cart_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `user_cart`
@@ -656,199 +744,17 @@ INSERT INTO `user_cart` (`cart_id`, `user_id`, `pattern_id`, `purchased`) VALUES
 -- Table structure for table `user_wishlist`
 --
 
-CREATE TABLE `user_wishlist` (
+CREATE TABLE IF NOT EXISTS `user_wishlist` (
   `user_id` int(11) NOT NULL,
   `pattern_id` int(11) NOT NULL,
-  `wishlist_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `wishlist_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`wishlist_id`),
+  KEY `pattern_id` (`pattern_id`),
+  KEY `wishlist_id` (`wishlist_id`),
+  KEY `user_id` (`user_id`),
+  KEY `wishlist_id_2` (`wishlist_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `fasho_user`
---
-ALTER TABLE `fasho_user`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `nx9_users`
---
-ALTER TABLE `nx9_users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email_id` (`email_id`);
-ALTER TABLE `nx9_users` ADD FULLTEXT KEY `p_role` (`p_role`);
-
---
--- Indexes for table `product_audience`
---
-ALTER TABLE `product_audience`
-  ADD PRIMARY KEY (`audience_id`);
-
---
--- Indexes for table `product_by_seller`
---
-ALTER TABLE `product_by_seller`
-  ADD PRIMARY KEY (`seller_id`,`product_id`),
-  ADD KEY `product_id` (`product_id`);
-
---
--- Indexes for table `product_categories_list`
---
-ALTER TABLE `product_categories_list`
-  ADD PRIMARY KEY (`category_id`),
-  ADD UNIQUE KEY `categories` (`categories`),
-  ADD KEY `categories_2` (`categories`);
-
---
--- Indexes for table `product_list`
---
-ALTER TABLE `product_list`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `category_id` (`category_id`),
-  ADD KEY `audience_id` (`audience_id`);
-
---
--- Indexes for table `product_patterns`
---
-ALTER TABLE `product_patterns`
-  ADD PRIMARY KEY (`pattern_id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `pattern_id` (`pattern_id`);
-
---
--- Indexes for table `product_pattern_images`
---
-ALTER TABLE `product_pattern_images`
-  ADD PRIMARY KEY (`image_id`),
-  ADD KEY `pattern_id` (`pattern_id`);
-
---
--- Indexes for table `product_pattern_measurements`
---
-ALTER TABLE `product_pattern_measurements`
-  ADD PRIMARY KEY (`measure_id`),
-  ADD KEY `pattern_id` (`pattern_id`);
-
---
--- Indexes for table `product_pattern_quantity`
---
-ALTER TABLE `product_pattern_quantity`
-  ADD PRIMARY KEY (`quantity_id`),
-  ADD KEY `measure_id` (`measure_id`);
-
---
--- Indexes for table `product_tags`
---
-ALTER TABLE `product_tags`
-  ADD PRIMARY KEY (`tag_relation`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `design_id` (`design_id`);
-
---
--- Indexes for table `product_tag_list`
---
-ALTER TABLE `product_tag_list`
-  ADD PRIMARY KEY (`tag_id`),
-  ADD UNIQUE KEY `tags` (`tags`);
-
---
--- Indexes for table `seller`
---
-ALTER TABLE `seller`
-  ADD PRIMARY KEY (`seller_id`);
-
---
--- Indexes for table `user_cart`
---
-ALTER TABLE `user_cart`
-  ADD PRIMARY KEY (`cart_id`);
-
---
--- Indexes for table `user_wishlist`
---
-ALTER TABLE `user_wishlist`
-  ADD PRIMARY KEY (`wishlist_id`),
-  ADD KEY `pattern_id` (`pattern_id`),
-  ADD KEY `wishlist_id` (`wishlist_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `wishlist_id_2` (`wishlist_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `fasho_user`
---
-ALTER TABLE `fasho_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
---
--- AUTO_INCREMENT for table `nx9_users`
---
-ALTER TABLE `nx9_users`
-  MODIFY `user_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
---
--- AUTO_INCREMENT for table `product_audience`
---
-ALTER TABLE `product_audience`
-  MODIFY `audience_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `product_categories_list`
---
-ALTER TABLE `product_categories_list`
-  MODIFY `category_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `product_list`
---
-ALTER TABLE `product_list`
-  MODIFY `product_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
---
--- AUTO_INCREMENT for table `product_patterns`
---
-ALTER TABLE `product_patterns`
-  MODIFY `pattern_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
---
--- AUTO_INCREMENT for table `product_pattern_images`
---
-ALTER TABLE `product_pattern_images`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT for table `product_pattern_measurements`
---
-ALTER TABLE `product_pattern_measurements`
-  MODIFY `measure_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `product_pattern_quantity`
---
-ALTER TABLE `product_pattern_quantity`
-  MODIFY `quantity_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `product_tags`
---
-ALTER TABLE `product_tags`
-  MODIFY `tag_relation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
---
--- AUTO_INCREMENT for table `product_tag_list`
---
-ALTER TABLE `product_tag_list`
-  MODIFY `tag_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
---
--- AUTO_INCREMENT for table `seller`
---
-ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `user_cart`
---
-ALTER TABLE `user_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `user_wishlist`
---
-ALTER TABLE `user_wishlist`
-  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
