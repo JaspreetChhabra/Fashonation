@@ -10,7 +10,7 @@ class catlog_model extends Model
         
 	public function getProductInfo()
 	{
-		$stmt = $this->db->prepare("select * from products");
+		$stmt = $this->db->prepare("select product_name,product_id,product_mrp,product_selling_price from products");
                 //$stmt->execute();
                 if (!$stmt->execute()) {
 				    print_r($stmt->errorInfo());

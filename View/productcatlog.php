@@ -121,11 +121,7 @@ $result = $this->getProductInfo;
     }
 
 
-    .caption h4
-    {
-        white-space: normal;
-    }
-
+    
     </style>
     <link rel="stylesheet" href="<?php echo css?>/font-awesome.min.css">
     
@@ -305,8 +301,8 @@ $result = $this->getProductInfo;
 
                         <div class="caption">
                                 <div style="padding-left: 0px;" class="pull-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
-                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4>   
+                                    <h4 style="whitespace:normal;" class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
+                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4> <br/>  
                                 </div>
                                 
                             </div>
