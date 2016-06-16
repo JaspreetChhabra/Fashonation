@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2016 at 02:17 PM
+-- Generation Time: Jun 16, 2016 at 04:38 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -143,6 +143,18 @@ INSERT INTO `fasho_user` (`user_id`, `username`, `email`, `password`, `role`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `invoice_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nx9_users`
 --
 
@@ -274,6 +286,101 @@ INSERT INTO `nx9_users` (`user_id`, `user_name`, `email_id`, `password`, `displa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(50) NOT NULL,
+  `product_id` blob NOT NULL,
+  `order_date` date NOT NULL,
+  `order_status` varchar(20) NOT NULL,
+  `delivery_charges` int(3) NOT NULL,
+  `tax_amount` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_details`
+--
+
+CREATE TABLE `order_details` (
+  `order_details_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_qty` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `product_id` int(11) NOT NULL,
+  `SKUID` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
+  `product_desc` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
+  `product_name` varchar(43) CHARACTER SET utf8 DEFAULT NULL,
+  `product_mrp` int(11) DEFAULT NULL,
+  `product_selling_price` int(11) DEFAULT NULL,
+  `audience_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `featured` int(11) DEFAULT NULL,
+  `body_colour` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `collor` varchar(18) CHARACTER SET utf8 DEFAULT NULL,
+  `sleeve` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `product_fabric` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `size` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `SKUID`, `product_desc`, `product_name`, `product_mrp`, `product_selling_price`, `audience_id`, `category_id`, `featured`, `body_colour`, `collor`, `sleeve`, `product_fabric`, `size`) VALUES
+(1, 'OCSLNFSH3001', 'Look all cool in Pure linen shirt. Go Simple, Look clean. This has a nechband contrast, cuff contrast. Regular Collar', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'LT. Pink', 'REGULAR', 'full sleeve', '100% Linen', 39404244),
+(2, 'OCSLNFSH3002', 'Look all cool in Pure linen shirt. Go Simple, Look clean. This has a nechband contrast, cuff contrast. Regular Collar', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'Wheat', 'REGULAR', 'full sleeve', '100% Linen', 39404244),
+(3, 'OCSLNFSH3003', 'Look all cool in Pure linen shirt. Go Simple, Look clean. This has a nechband contrast, cuff contrast. Regular Collar', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'Baige', 'REGULAR', 'full sleeve', '100% Linen', 39404244),
+(4, 'OCSLNFSH3004', 'Look all cool in Pure linen shirt. Go Simple, Look clean. This has a nechband contrast, cuff contrast. Regular Collar', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'Khaki', 'REGULAR', 'full sleeve', '100% Linen', 39404244),
+(5, 'OCSLNFSH3006', 'What''s classier than an Oxford Button-down Shirt. A contrast piping detail on neckband. Got the Perfect shirt For Office today', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Lt blue', 'Button-down', 'full sleeve', 'PPO', 39404244),
+(6, 'OCSLNFSH3009', 'What''s classier than an Oxford Button-down Shirt. A contrast piping detail on neckband. Got the Perfect shirt For Office today', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Orange', 'Button-down', 'full sleeve', 'PPO', 39404244),
+(7, 'OCSLNFSH3010', 'What''s classier than an Oxford Button-down Shirt. A contrast piping detail on neckband. Got the Perfect shirt For Office today', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Dark Blue', 'Button-down', 'full sleeve', 'PPO', 39404244),
+(8, 'OCSLNFSH3011', 'Go Print This season again. Wear this Premiun shirt and look Sassy at Work. Contrast detail on neckband and inner cuffs. Button-down Collar.', 'Oxford Club Men''s Printed Casual Shirt', 1599, 899, 2, 1, 0, 'Orange', 'Button-down', 'full sleeve', '100% Cotton', 39404244),
+(9, 'OCSLNFSH3012', 'Go Print This season again. Wear this Premiun shirt and look Sassy at Work. Contrast detail on neckband and inner cuffs. Button-down Collar.', 'Oxford Club Men''s Printed Casual Shirt', 1599, 899, 2, 1, 0, 'Blue', 'Button-down', 'full sleeve', '100% Cotton', 39404244),
+(10, 'OCSLNFSH3013', 'Go Print This season again. Wear this Premiun shirt and look Sassy at Work. Contrast detail on neckband and inner cuffs. Button-down Collar.', 'Oxford Club Men''s Printed Casual Shirt', 1599, 899, 2, 1, 0, 'Charcoal', 'Button-down', 'full sleeve', '100% Cotton', 39404244),
+(11, 'OCSLNFSH3018', 'Cool for the Summer. Premium and Stylized Linen with Mandarin collar. Contrast on Inner cuffs and inner neckband. ', 'Oxford Club Men''s Solid Casual Shirt', 1699, 999, 2, 1, 0, 'Dark Blue', 'Mandarin', 'full sleeve', 'Linen Blend', 39404244),
+(12, 'OCSLNFSH3019', 'Cool for the Summer. Premium and Stylized Linen with Mandarin collar. Contrast on Inner cuffs and inner neckband. ', 'Oxford Club Men''s Solid Casual Shirt', 1699, 999, 2, 1, 0, 'orange', 'Mandarin', 'full sleeve', 'Linen Blend', 39404244),
+(13, 'OCFS1505', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Printed Casual Shirt', 1599, 899, 2, 1, 0, 'Light Blue', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(14, 'OCFS1502', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Printed Casual Shirt', 1599, 899, 2, 1, 0, 'Purple', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(15, 'OSFS1501', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Printed Casual Shirt', 1599, 899, 2, 1, 0, 'Green', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(16, 'OCFS475AX', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Checks Casual Shirt', 1599, 899, 2, 1, 0, 'Multi', 'Regular', 'full sleeve', 'Cotton', 394042),
+(17, 'OCFS475BX', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Checks Casual Shirt', 1599, 899, 2, 1, 0, 'Multi', 'Regular', 'full sleeve', 'Cotton', 394042),
+(18, 'OCFS400AX', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Checks Casual Shirt', 1599, 899, 2, 1, 0, 'Multi', 'Regular', 'full sleeve', 'Cotton', 394042),
+(19, 'OCFS405AX', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Checks Casual Shirt', 1599, 899, 2, 1, 0, 'Multi', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(20, 'OCFS639AX', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Checks Casual Shirt', 1599, 899, 2, 1, 0, 'Red', 'Regular', 'full sleeve', 'Cotton', 394042),
+(21, 'OCFS400BX', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Checks Casual Shirt', 1599, 899, 2, 1, 0, 'Multi', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(22, 'OCFS44121', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Pink', 'Regular', 'full sleeve', 'Cotton', 394042),
+(23, 'OCFS44119', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Blue', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(24, 'OCFS44115', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Light Green', 'Regular', 'full sleeve', 'Cotton', 394042),
+(25, 'OCFS44114', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Beige', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(26, 'OCFSBLCH', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Blue', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(27, 'OCFSYLCH', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Yellow', 'Button Down Collar', 'full sleeve', 'Cotton', 394042),
+(28, 'OCFSRDCH', 'A 100% Premium Cotton Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1499, 799, 2, 1, 0, 'Red', 'Cut-Away Collar', 'full sleeve', 'Cotton', 394042),
+(29, 'OCFSOF0624009-3', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Printed Casual Shirt', 2199, 1199, 2, 1, 0, 'Brown', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(30, 'OCFSOF0222567-2', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Striped Casual Shirt', 2099, 1149, 2, 1, 0, 'Multi', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(31, 'OCFSOF0721597-1', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Printed Casual Shirt', 2199, 1199, 2, 1, 0, 'White', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(32, 'OCFSOF0622899-3', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Houndsstooth Casual Shirt', 1999, 1099, 2, 1, 0, 'Purple', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(33, 'OCFSOF0622899-4', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Houndsstooth Casual Shirt', 1999, 1099, 2, 1, 0, 'Blue', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(34, 'OCFSOF085003-70', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'Red', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(35, 'OCFSOF085003-19', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'Orange', 'Classic collar', 'full sleeve', 'Linen', 394042),
+(36, 'OCFSOF085003-2', 'A 100% Premium Linen Shirt incorporated with handsomely selected aesthetic elements. Pair with Crisp Chinos and Loafers to get the premium sport look', 'Oxford Club Men''s Solid Casual Shirt', 1999, 1099, 2, 1, 0, 'Pink', 'Classic collar', 'full sleeve', 'Linen', 394042);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_audience`
 --
 
@@ -302,13 +409,6 @@ CREATE TABLE `product_by_seller` (
   `product_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `product_by_seller`
---
-
-INSERT INTO `product_by_seller` (`seller_id`, `product_id`) VALUES
-(2, 15);
-
 -- --------------------------------------------------------
 
 --
@@ -332,6 +432,18 @@ INSERT INTO `product_categories_list` (`category_id`, `categories`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_images`
+--
+
+CREATE TABLE `product_images` (
+  `product_image_id` int(11) NOT NULL,
+  `product_id` bigint(20) NOT NULL,
+  `product_img_1` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_list`
 --
 
@@ -342,56 +454,9 @@ CREATE TABLE `product_list` (
   `product_cost` int(11) NOT NULL,
   `audience_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `product_fabric` text NOT NULL
+  `product_fabric` text NOT NULL,
+  `featured` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `product_list`
---
-
-INSERT INTO `product_list` (`product_id`, `product_desc`, `product_name`, `product_cost`, `audience_id`, `category_id`, `product_fabric`) VALUES
-(15, 'des', 'prod1', 232, 1, 2, 'asdsad'),
-(21, 'asdsads', 'killer', 250, 1, 3, 'Silk Cotton'),
-(39, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(40, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(41, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(42, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(43, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(44, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(45, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(46, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(47, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(48, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(49, 'sadasdashdiashdi', 'prod3434', 3434, 1, 3, 'asdasdoasdo'),
-(50, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(51, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(52, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(53, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(54, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(55, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(56, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(57, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(58, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(59, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(60, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(61, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(62, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(63, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(64, 'this is the descripton of the product', 'the product', 890, 2, 4, 'Silk,cotton,blend,swade'),
-(65, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(66, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(67, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(68, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(69, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(70, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(71, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(72, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(73, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(74, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(75, 'this is the descripton of the product', 'the product', 890, 2, 4, 'silk,cotton,blend,swade'),
-(76, 'dproduct1', 'product1', 234, 2, 4, 'silk cotton'),
-(77, 'product2_description', 'product2', 241, 1, 4, 'wool,cotton,prada'),
-(78, 'description for product 34', 'product34', 980, 2, 2, 'blend,prada,wool');
 
 -- --------------------------------------------------------
 
@@ -404,52 +469,6 @@ CREATE TABLE `product_patterns` (
   `product_id` bigint(11) NOT NULL,
   `product_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `product_patterns`
---
-
-INSERT INTO `product_patterns` (`pattern_id`, `product_id`, `product_desc`) VALUES
-(12, 39, 'sdasdasdsa'),
-(13, 40, 'sdasdasdsa'),
-(14, 41, 'sdasdasdsa'),
-(15, 42, 'sdasdasdsa'),
-(16, 43, 'sdasdasdsa'),
-(17, 44, 'sdasdasdsa'),
-(18, 45, 'sdasdasdsa'),
-(19, 46, 'sdasdasdsa'),
-(20, 47, 'sdasdasdsa'),
-(21, 48, 'sdasdasdsa'),
-(22, 49, 'sdasdasdsa'),
-(23, 50, 'Pattern'),
-(24, 51, 'Pattern'),
-(25, 52, 'Pattern'),
-(26, 53, 'Pattern'),
-(27, 54, 'Pattern'),
-(28, 55, 'Pattern'),
-(29, 56, 'Pattern'),
-(30, 57, 'Pattern'),
-(31, 58, 'Pattern'),
-(32, 59, 'Pattern'),
-(33, 60, 'Pattern'),
-(34, 61, 'Pattern'),
-(35, 62, 'Pattern'),
-(36, 63, 'Pattern'),
-(37, 64, 'Pattern'),
-(38, 65, 'Pattern'),
-(39, 66, 'Pattern'),
-(40, 67, 'Pattern'),
-(41, 68, 'Pattern'),
-(42, 69, 'Pattern'),
-(43, 70, 'Pattern'),
-(44, 71, 'Pattern'),
-(45, 72, 'Pattern'),
-(46, 73, 'Pattern'),
-(47, 74, 'Pattern'),
-(48, 75, 'Pattern'),
-(49, 76, 'pattern_product_1'),
-(50, 77, 'pattern_product_2'),
-(51, 78, 'The pattern in red with black stripss');
 
 -- --------------------------------------------------------
 
@@ -464,42 +483,6 @@ CREATE TABLE `product_pattern_images` (
   `image2_url` text NOT NULL,
   `image3_url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `product_pattern_images`
---
-
-INSERT INTO `product_pattern_images` (`image_id`, `pattern_id`, `image1_url`, `image2_url`, `image3_url`) VALUES
-(3, 19, 'images/46-19database.png', 'images/46-19console.png', 'images/46-19fee1.jpg'),
-(4, 20, 'images/47-20database.png', 'images/47-20console.png', 'images/47-20fee1.jpg'),
-(5, 21, 'images/48-21database.png', 'images/48-21console.png', 'images/48-21fee1.jpg'),
-(6, 22, 'images/49-22database.png', 'images/49-22console.png', 'images/49-22fee1.jpg'),
-(7, 23, 'images/50-23console.png', 'images/50-23database.png', 'images/50-23database_shell.png'),
-(8, 24, 'images/51-24console.png', 'images/51-24database.png', 'images/51-24database_shell.png'),
-(9, 25, 'images/52-25console.png', 'images/52-25database.png', 'images/52-25database_shell.png'),
-(10, 26, 'images/53-26console.png', 'images/53-26database.png', 'images/53-26database_shell.png'),
-(11, 27, 'images/54-27console.png', 'images/54-27database.png', 'images/54-27database_shell.png'),
-(12, 28, 'images/55-28console.png', 'images/55-28database.png', 'images/55-28database_shell.png'),
-(13, 29, 'images/56-29console.png', 'images/56-29database.png', 'images/56-29database_shell.png'),
-(14, 30, 'images/57-30console.png', 'images/57-30database.png', 'images/57-30database_shell.png'),
-(15, 31, 'images/58-31console.png', 'images/58-31database.png', 'images/58-31database_shell.png'),
-(16, 32, 'images/59-32console.png', 'images/59-32database.png', 'images/59-32database_shell.png'),
-(17, 33, 'images/60-33console.png', 'images/60-33database.png', 'images/60-33database_shell.png'),
-(18, 34, 'images/61-34console.png', 'images/61-34database.png', 'images/61-34database_shell.png'),
-(19, 35, 'images/62-35console.png', 'images/62-35database.png', 'images/62-35database_shell.png'),
-(20, 36, 'images/63-36console.png', 'images/63-36database.png', 'images/63-36database_shell.png'),
-(21, 37, 'images/64-37console.png', 'images/64-37database.png', 'images/64-37database_shell.png'),
-(22, 38, 'images/65-38console.png', 'images/65-38database.png', 'images/65-38database_shell.png'),
-(23, 39, 'images/66-39console.png', 'images/66-39database.png', 'images/66-39database_shell.png'),
-(24, 40, 'images/67-40console.png', 'images/67-40database.png', 'images/67-40database_shell.png'),
-(25, 41, 'images/68-41console.png', 'images/68-41database.png', 'images/68-41database_shell.png'),
-(26, 42, 'images/69-42console.png', 'images/69-42database.png', 'images/69-42database_shell.png'),
-(27, 43, 'images/70-43console.png', 'images/70-43database.png', 'images/70-43database_shell.png'),
-(28, 44, 'images/71-44console.png', 'images/71-44database.png', 'images/71-44database_shell.png'),
-(29, 48, 'images/75-48console.png', 'images/75-48database.png', 'images/75-48database_shell.png'),
-(30, 49, 'images/76-49console.png', 'images/76-49console.png', 'images/76-49console.png'),
-(31, 50, 'images/77-50database.png', 'images/77-50database.png', 'images/77-50database.png'),
-(32, 51, 'images/78-51wiki.jpeg', 'images/78-51table1.png', 'images/78-51table2.png');
 
 -- --------------------------------------------------------
 
@@ -673,12 +656,36 @@ ALTER TABLE `fasho_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`invoice_id`);
+
+--
 -- Indexes for table `nx9_users`
 --
 ALTER TABLE `nx9_users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `email_id` (`email_id`);
 ALTER TABLE `nx9_users` ADD FULLTEXT KEY `p_role` (`p_role`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `order_details`
+--
+ALTER TABLE `order_details`
+  ADD PRIMARY KEY (`order_details_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `product_audience`
@@ -700,6 +707,12 @@ ALTER TABLE `product_categories_list`
   ADD PRIMARY KEY (`category_id`),
   ADD UNIQUE KEY `categories` (`categories`),
   ADD KEY `categories_2` (`categories`);
+
+--
+-- Indexes for table `product_images`
+--
+ALTER TABLE `product_images`
+  ADD PRIMARY KEY (`product_image_id`);
 
 --
 -- Indexes for table `product_list`
@@ -785,10 +798,25 @@ ALTER TABLE `user_wishlist`
 ALTER TABLE `fasho_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 --
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `nx9_users`
 --
 ALTER TABLE `nx9_users`
   MODIFY `user_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `order_details`
+--
+ALTER TABLE `order_details`
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `product_audience`
 --
@@ -799,6 +827,11 @@ ALTER TABLE `product_audience`
 --
 ALTER TABLE `product_categories_list`
   MODIFY `category_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `product_images`
+--
+ALTER TABLE `product_images`
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `product_list`
 --

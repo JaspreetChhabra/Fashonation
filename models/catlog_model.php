@@ -10,17 +10,26 @@ class catlog_model extends Model
         
 	public function getProductInfo()
 	{
-		$stmt = $this->db->prepare("select * from product_list");
-                $stmt->execute();
-                if($stmt->rowCount() > 0)
-                {
-                    return $stmt->fetchAll();
+		$stmt = $this->db->prepare("select * from products");
+                //$stmt->execute();
+                if (!$stmt->execute()) {
+				    print_r($stmt->errorInfo());
+				}
+				else
+				{
+					if($stmt->rowCount() > 0)
+	                {
+	                	echo "Success!!!";
+	                    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                }
-                else
-                {
-                    return "Error!";
-                }
+	                }
+	                else
+	                {
+	                	echo "Fail!!";
+	                    return "Error!";
+	                }	
+				}
+                
 	}
 
         
