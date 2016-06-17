@@ -1,5 +1,8 @@
 <?php
 $result = $this->getProductInfo;
+
+$brnd = $this->getBrands;
+
 ?>
 <html lang="en"><head>
 
@@ -120,6 +123,16 @@ $result = $this->getProductInfo;
         }
     }
 
+    .caption h4
+    {
+        white-space: normal;
+    }
+
+    .caption
+    {
+            height: 102px!important;
+    }
+
 
     
     </style>
@@ -164,11 +177,13 @@ $result = $this->getProductInfo;
                             <h2 data-toggle="collapse" data-parent="#accordian" href="#designer" class="collapsed">Designers <span class="glyphicon glyphicon-menu-down"></span></h2>
                             <div id="designer" class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#"> <span class="pull-right">(50)</span>Manish Malhotra</a></li>
-                                    <li><a href="#"> <span class="pull-right">(56)</span>Neeta Patel</a></li>
-                                    <li><a href="#"> <span class="pull-right">(27)</span>Anusha Bhatt</a></li>
-                                    <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-                                    <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                                <?php  foreach ($brnd as $rw) {?>
+
+
+                                    <li><a style="cursor:pointer;" onclick="getProduct(<?php echo $rw["brand_id"];?>)"  > <span class="pull-right"> (<?php echo $rw["totalproducts"];?>) </span><?php echo $rw["brandname"];?></a></li>
+                                   
+                                <?php } ?>
+
                                 </ul>
                             </div>
                         </div><!--/brands_products-->
@@ -280,7 +295,7 @@ $result = $this->getProductInfo;
             <div class="col-md-9">
 
                
-                <div class="row">
+                <div id="content" class="row">
 
                     <?php
                     foreach ($result as $row) {
@@ -374,6 +389,22 @@ $result = $this->getProductInfo;
         });
     });
 
+
+    function getProduct(pid)
+    {
+        alert(pid);
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+//            alert(xhttp.responseText);
+
+                document.getElementById("content").innerHTML = xhttp.responseText;
+
+            }
+           };
+           xhttp.open("POST", "<?php echo url;?>/catlog/getProductFromBrand/"+pid, true);
+          xhttp.send();
+    }
 
 
 
