@@ -42,6 +42,22 @@ class catlog extends Controller{
     	$this->view->render("getProductBrand",true);
     }
 
+     function viewDesigners($id = null){
+        
+
+        if($id == null)
+        {
+            $this->view->getDesignerInfo = null;
+             $this->view->render("404");
+        }
+        else
+        {
+        $this->view->getDesignerInfo = $this->model->getDesignerInfo($id);    
+        $this->view->render("shopbydesigner");
+        }
+        
+    }
+
 
 //
 //    function getProductInfo()

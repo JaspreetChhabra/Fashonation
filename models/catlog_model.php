@@ -74,6 +74,29 @@ class catlog_model extends Model
     	
    	}
 
+    public function getDesignerInfo($id){
+        
+        $stmt = $this->db->prepare("SELECT brand_id,brandimg,brandname from product_designer_brand where brand_id=".$id);
+        if($stmt->execute())
+        {
+            if($stmt->rowCount() > 0)
+            {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        else
+        {
+            return "Error"; 
+        }
+
+
+
+    }
+
 
 
 }

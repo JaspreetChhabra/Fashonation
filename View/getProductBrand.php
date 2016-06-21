@@ -30,18 +30,18 @@ echo "
                                 
                             </div>
                             <div class= 'ratings' >
-                                <p class= 'pull-right items' >
-                                    <a href= #  data-toggle= 'tooltip'  data-placement= 'top'  title=  ' 'data-original-title= Add to cart >
-                                    <span class= 'glyphicon glyphicon-shopping-cart' ></span> 
+                                <p class='pull-right items'>
+                                    <a href='#' data-toggle='tooltip' data-placement='top' title='' data-original-title='Add to cart'>
+                                    <span class='glyphicon glyphicon-shopping-cart'></span> 
                                     </a>
-                                    <a href= #  data-toggle= tooltip  data-placement= top  title= ' ' data-original-title= 'Add to wishlist' >
-                                    <span class= 'glyphicon glyphicon glyphicon-heart' ></span> 
+                                    <a href='#' data-toggle='tooltip' data-placement='top' title='' data-original-title='Add to wishlist'>
+                                    <span class='glyphicon glyphicon glyphicon-heart'></span> 
                                     </a>
-                                    <a href= #  data-toggle= tooltip  data-placement= top  title= ' ' data-original-title= 'Share product' >
-                                    <span class= 'glyphicon glyphicon-share' ></span> 
+                                    <a href='#' data-toggle='tooltip' data-placement='top' title='' data-original-title='Share product'>
+                                    <span class='glyphicon glyphicon-share'></span> 
                                     </a>
-                                    <a href= #  data-toggle= tooltip  data-placement= top  title= ' ' data-original-title= 'Product Overview' >
-                                    <span class= 'glyphicon glyphicon-eye-open' ></span> 
+                                    <a href='#' data-toggle='tooltip' data-placement='top' title='' data-original-title='Product Overview'>
+                                    <span class='glyphicon glyphicon-eye-open'></span> 
                                     </a>
                                 </p>
                                 <p>

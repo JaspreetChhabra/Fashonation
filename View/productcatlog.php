@@ -15,130 +15,11 @@ $brnd = $this->getBrands;
     <title>Product Catalogue | Fashonation</title>
 
 
-    <style type="text/css">
-    .prod .thumbnail
-    {
-        border-radius: 0px;
-        text-decoration:none;
-        cursor: pointer;
-        box-shadow: 0px 0px 0px transparent;
-
-    }
-    .prod .thumbnail:hover
-    {
-        box-shadow: 0px 0px 6px rgba(51, 51, 51, 0.7);
-    }
-
-    .prod .thumbnail a
-    {
-        text-decoration:none;
-        overflow: hidden;
-    }
-
-    .caption
-    {
-        height: 77px!important;
-    }
-
-    .items {
-    float: right;
-    /*margin-right: -88px;*/
-    display: none;
-    }
-
-    /*.prod .thumbnail:hover {
-    float: right;
-    margin-right: 0px;
-    transition: all 0.3s ease-in-out;
-    }*/
-
-    .items .glyphicon {
-        color: grey;
-        padding: 5px 5px;
-        border: 0px;
-    }
-    .items .glyphicon:hover {
-        color: black;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .left-sidebar h2, .brands_products h2 {
-    color: #000;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 3;
-    }
-
-    .brands-name .nav-stacked li a {
-    background-color: #FFFFFF;
-    color: #000;
-    font-size: 14px;
-    padding: 5px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    }
-
-    .brands_products
-    {border-bottom: 1px solid black;}
-    .brands_products h2:hover
-    {
-        cursor: pointer;
-    }
-
-    input[type=checkbox]
-    {
-        background-color: transparent;
-    }
-
-    .rounded {
-    border-radius: 57px;
-    margin: 0px 30px;
-    width: 20px;
-    background-color: #000;
-    }
-
- 
-    #price1,#price2
-    {
-        border:1px solid black;
-    }
-    @media(min-width:768px)
-    {
-        #price1,#price2
-        {
-            width:100%;
-        }
-    }
     
-    @media(max-width:768px)
-    {
-        #price1,#price2
-        {
-            margin-top: 25px;
-            margin-left: 10px;
-            width:95%;
-        }
-    }
-
-    .caption h4
-    {
-        white-space: normal;
-    }
-
-    .caption
-    {
-            height: 102px!important;
-    }
-
-
-    
-    </style>
     <link rel="stylesheet" href="<?php echo css?>/font-awesome.min.css">
     
     <link rel="stylesheet" href="<?php echo css?>/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="<?php echo css?>/shopcustom.css">
     
 </head>
 
@@ -392,7 +273,7 @@ $brnd = $this->getBrands;
 
     function getProduct(pid)
     {
-        alert(pid);
+        
         var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -421,27 +302,27 @@ $brnd = $this->getBrands;
         $('[data-toggle="tooltip"]').tooltip(); 
         });
 
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
-            viewwidth = $(window).width();
-            if(viewwidth > 769)
-            {
-                $('.prod .thumbnail').hover(function(){
-                $(this).find('.items').fadeToggle(500);
+        //     viewwidth = $(window).width();
+        //     if(viewwidth > 769)
+        //     {
+        //         $('.prod .thumbnail').hover(function(){
+        //         $(this).find('.items').fadeToggle(500);
                 
-            },function(){
+        //     },function(){
                 
-                $(this).find('.items').fadeToggle(500);
+        //         $(this).find('.items').fadeToggle(500);
                 
-            } );
+        //     } );
 
-            }    
-            else
-            {
-                $(this).find('.items').show();
-            }
+        //     }    
+        //     else
+        //     {
+        //         $(this).find('.items').show();
+        //     }
             
-        } );
+        // } );
     </script>
 
 </body></html>
