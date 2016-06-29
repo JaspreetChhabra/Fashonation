@@ -1,7 +1,9 @@
-  
+  <?php
+$result = $this->gethomeData;
+?>
   <!--Home Page Body-->
   <!--Slider-->
-
+  <?php //echo $_SESSION['session_id']; ?>
     <div class="container slider-container">
 
         <div id="boxgallery" class="boxgallery" data-effect="effect-2" style="position: relative !important;">
@@ -874,12 +876,13 @@
     
 
     <!--parallax-->
-    
+    <div class="container" id="parallax_cont">
+    <div class="row">
     <div id="ptitle" class="pslide pheader">
       
         <!--Testemonial-->  
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="testemonial_cont">
         <div class="row">
             <div class="col-md-12">
                 <div class="carousel slide" data-ride="carousel" id="quote-carousel">
@@ -897,10 +900,10 @@
             <!-- Quote 1 -->
             <div class="item active">
               <div class="row">
-                <div class="col-sm-2">
-                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="200px" width="200px">
+                <div class="col-sm-2 col-xs-12 col-md-2 col-lg-2">
+                    <img class="testimg img-responsive" src="<?php echo images;?>/slide3.jpg">
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-10 col-xs-12 col-md-10 col-lg-10">
                   <p class="ptest">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.”</p>
                   <small><strong>Vulputate M., Dolor</strong></small>
                 </div>
@@ -910,10 +913,10 @@
             <!-- Quote 2 -->
             <div class="item">
               <div class="row">
-                <div class="col-sm-2">
-                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="200px" width="200px">
+                <div class="col-sm-2 col-xs-12 col-md-2 col-lg-2">
+                    <img class="testimg img-responsive" src="<?php echo images;?>/slide3.jpg">
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-10 col-xs-12 col-md-10 col-lg-10">
                   <p class="ptest">“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.”</p>
                   <small><strong>Fringilla A., Vulputate Sit</strong></small>
                 </div>
@@ -923,10 +926,10 @@
             <!-- Quote 3 -->
             <div class="item">
               <div class="row">
-                <div class="col-sm-2">
-                    <img class="testimg" src="<?php echo images;?>/slide3.jpg" height="200px" width="200px">
+                <div class="col-sm-2 col-xs-12 col-md-2 col-lg-2">
+                    <img class="testimg img-responsive" src="<?php echo images;?>/slide3.jpg"\>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-10 col-xs-12 col-md-10 col-lg-10">
                   <p class="ptest">“Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum.”</p>
                   <small><strong>Aenean A., Justo Cras</strong></small>
                 </div>
@@ -939,8 +942,9 @@
 </div>
 
     <!-- Testemonials-->
+    </div>
     </div>   
-   
+   </div>
 
 
     <!-- <div id="parallax_0" class="parallax">
@@ -998,6 +1002,8 @@
             interval: 5000 //changes the speed
         });
 
+
+         
 
     $('#nav').affix({
         offset: {
@@ -1060,24 +1066,7 @@
             $('[data-toggle="tooltip"]').tooltip(); 
             });
 
-            $(document).ready(function(){
-                $('.prod .thumbnail').hover(function(){
-                    
-                    //$('.prod .thumbnail .ratings .items').fadeToggle(500);
-                    $(this).find('.items').fadeToggle(500);
-                    //$(this).find('.disp').hide();
-                    //$(this).find('.nodisp').show();
-                    
-                    
-                },function(){
-                    
-                    //$('.prod .thumbnail .ratings .items').fadeToggle(500);
-                    $(this).find('.items').fadeToggle(500);
-                    // $(this).find('.disp').show();
-                     $(this).find('.nodisp').hide();
-                    
-                } );
-            } );
+            
     </script>
 </body>
 

@@ -17,8 +17,8 @@ class login_model extends Model
             
             $statement = $this->db->prepare("select * from fasho_user where email= :email AND password = :pass");
             $statement->execute(array(
-                ':email'=>"ornare.placerat.orci@tristiquealiquet.co.uk",
-                ':pass'=>"adipiscingelit."
+                ':email'=>"jaspreetchhabra@gmail.com",
+                ':pass'=>"abc"
             ));
             
             $count = $statement->rowCount();

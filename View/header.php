@@ -40,6 +40,8 @@
     <!-- Products tab slider -->
     <link href="<?php echo css?>/homepage-productSlider.css" rel="stylesheet">
 
+    <!-- cart Component -->
+    <link rel="stylesheet" type="text/css" href="<?php echo css?>/cart_component.css" />
     <!-- Font Roboto -->
 <!--     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:600' rel='stylesheet' type='text/css'>
  -->    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -59,6 +61,57 @@
 
     </style>
     
+
+    <!--Login Signup functions -->
+
+    <script type="text/javascript">
+
+    function abc(a,b){
+        if(a && b)
+            document.getElementById("cd-form").submit();
+    }
+
+    function def(a,b,c){
+        if(a && b && c)
+            document.getElementById("cd-reg-form").submit();
+    }
+
+    function reset_pass(mail){
+        if(mail)
+            document.getElementById("reset_pass_form").submit();
+        else
+            alert("blank");
+    }
+    function logincheck(id,pwd){
+        if(id && pwd){
+            document.getElementById("login_button").disabled=false;
+            alert("Aa gayi Values");
+        }
+        else
+            document.getElementById("login_button").disabled=true;
+    }
+    function signupcheck(id,mail,pwd,confirm_pass){
+        alert("checking_values");
+        if(id && pwd && mail && confirm_pass){
+            if(pwd == confirm_pass){
+                 document.getElementById("signup_button").disabled=false;
+                 alert("Aa gayi Values");
+             }
+             else
+             {
+                document.getElementById("signup-confirm_error").innerHTML = "ERROR";
+             }
+        }
+        else{
+            document.getElementById("signup_button").disabled=true;
+            alert("BLANK FIELDS");
+        }
+            
+    }
+
+    </script>
+
+    <!--Login Signup functions --> 
 </head>
 
 <body>
@@ -68,7 +121,9 @@
     <header class="masthead">
         <div class="container-fluid boxShadow" style="padding: 0px; margin-bottom: 30px;">
         <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12 nav-items email">
-            <b><i class="fa fa-envelope" aria-hidden="true"></i> Fashonation@gmail.com</b>
+            
+                <b><i class="fa fa-envelope" aria-hidden="true"></i> Fashonation@gmail.com</b>
+            
         </div>
 
         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 nav-items searchbox">
@@ -84,12 +139,110 @@
             <a href="#0" class="cd-signup"><i class="fa fa-user" aria-hidden="true"></i>    Login</a>
         </div>
         
-        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 nav-items cart">
-            <a data-toggle="modal" data-target="#myModal"><i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:0</a>
+        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 nav-items cart dropdown1"> <!-- id="cart-drop" -->
+            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:0</a>
+            
+              <div class="dropdown-menu cart_dropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+
+              <ul role="menu" class="dropdown-menu cart_dropdown" aria-labelledby="drop1">
+                <li role="presentation"><a href="#" role="menuitem">Nature</a></li>
+                <li role="presentation"><a href="#" role="menuitem">Cell</a></li>
+                <li role="presentation"><a href="#" role="menuitem">Science</a></li>
+              </ul> -->
+
+              <a href="#" role="button" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:0</a>
+                  <div class="dropdown-menu row pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                    
+                           <table class="table cart-dropdown-table">
+                               <tr>
+                                   <td>
+                                       <img src="<?php echo images;?>/cart/1.jpg" class="cart_dropdown_image">
+                                   </td>
+                                   <td style="width:138px;">
+                                       <p>Brooklyn Blues Men's Checkered Casual Shirt</p>
+                                       <div class="cart_dropdown_icon"><i class="fa fa-balance-scale"></i>  <p style="margin-left: 36px;">1</p> </div>
+                                      
+
+                                   </td>
+                                   <td class="cart-dropdown-removeIcon">
+                                       <a href="#"> <span class="fa fa-trash fa-2x"></span></a>
+                                   </td>
+                               </tr>
+
+                               <tr>
+                                   <td>
+                                       <img src="<?php echo images;?>/cart/1.jpg" class="cart_dropdown_image">
+                                   </td>
+                                   <td style="width:138px;">
+                                       <p>Brooklyn Blues Men's Checkered Casual Shirt</p>
+                                       <div class="cart_dropdown_icon"><i class="fa fa-balance-scale"></i>  <p style="margin-left: 36px;">1</p> </div>
+                                      
+
+                                   </td>
+                                   <td class="cart-dropdown-removeIcon">
+                                       <a href="#"> <span class="fa fa-trash fa-2x"></span></a>
+                                   </td>
+                               </tr>
+                           </table> 
+                       
+                            <table class="table cart-dropdown-table1">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">
+                                            Sub-total
+                                        </td>
+                                        <td class="text-left">
+                                            Rs 1,000
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left no-td-border">
+                                            Discount
+                                        </td>
+                                        <td class="text-left no-td-border">
+                                            Rs 200
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left no-td-border">
+                                            Tax
+                                        </td>
+                                        <td class="text-left no-td-border">
+                                            Rs 100
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">
+                                            <b>TOTAL</b>
+                                        </td>
+                                        <td class="text-left">
+                                            <b>Rs 900</b>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="no-td-border cart-dropdown-button">
+                                            <span class="button"><span class="fa fa-eye"> View Cart</span>
+                                        </td>
+                                        <td class="no-td-border cart-dropdown-button">
+                                            <span class="button"><span class="fa fa-share"> Checkout</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                  </div>
         </div>
         </div>
         <div class="container namebar">
-        <a href="#"><img class="img-responsive" src="<?php echo images;?>/logo/namelogo(blackdark).png" height="33%" width="33%"> <!-- FASHONATION --></a>
+        <a href="#"><img class="img-responsive" src="<?php echo images;?>/logo/namelogo4.png" height="33%" width="33%"> <!-- FASHONATION --></a>
     </div>
     </header>
 
@@ -182,31 +335,34 @@
                           </div>
                     </li>
 
-                    <!-- <li class="var_nav active">
+                    <li class="var_nav active">
                           <div class="link_bg"></div>
                           <div class="link_title">
                             <div class=icon> 
-                            
+                            <i class="fa fa-child fa-3x" aria-hidden="true"></i>
                             
                             </div>
-                            <a href="#nothing" data-toggle="tab"><span>
-                            <p></p>
+                            <a href="#occasion" data-toggle="tab"><span>Shop by Occassion
+                            <p>Add beautiful Indian wear and some natty outfits to your wardrobe</p>
                             </span>
                             </a>
                           </div>
-                    </li> -->
+                    </li>
 
-                    <!-- <li class="var_nav">
+                    <li class="var_nav active">
                           <div class="link_bg"></div>
                           <div class="link_title">
                             <div class=icon> 
-                            <i class="fa fa-famale fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-heart fa-3x" aria-hidden="true"></i>
+                            
                             </div>
-                            <li><a href="#profile" data-toggle="tab"><span>Womens's Wear
-                                <p>Add beautiful Indian wear and some natty outfits to your wardrobe</p>
-                            </span></a></li>
+                            <a href="#designer" data-toggle="tab"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop by Designer & Brand
+                            <p>Add beautiful Indian wear and some natty outfits to your wardrobe</p>
+                            </span>
+                            </a>
                           </div>
-                    </li> -->
+                    </li>
+                    
                     <!-- <li class="active"><a href="#home" data-toggle="tab">Men's Wear</a></li> -->
                     <!-- <li><a href="#profile" data-toggle="tab">Womens's Wear</a></li> -->
                   </ul> 
@@ -314,6 +470,9 @@
       </div><!-- /.container-fluid -->
     </nav>
 
+<!-- Login modal popup -->
+
+
 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
         <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
             <ul class="cd-switcher">
@@ -322,18 +481,18 @@
             </ul>
 
             <div id="cd-login"> <!-- log in form -->
-                <form class="cd-form">
+                <form class="cd-form" id="cd-form" action="login/run" method="POST">
                     <p class="fieldset">
-                        <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
-                        <span class="cd-error-message">Error message here!</span>
+                        <label class="image-replace cd-email" name="mail" for="signin-email">E-mail</label>
+                        <input class="full-width has-padding has-border" onchange="logincheck(document.getElementById('signin-email').value,document.getElementById('signin-password').value)" id="signin-email" name='mail' type="text" placeholder="E-mail">
+<!--                        <span class="cd-error-message">Error message here!</span>-->
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signin-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+                        <input class="full-width has-padding has-border" id="signin-password" name="password" type="text"  placeholder="Password" onchange="logincheck(document.getElementById('signin-email').value,document.getElementById('signin-password').value)">
                         <a href="#0" class="hide-password">Hide</a>
-                        <span class="cd-error-message">Error message here!</span>
+<!--                        <span class="cd-error-message">Error message here!</span>-->
                     </p>
 
                     <p class="fieldset">
@@ -342,7 +501,7 @@
                     </p>
 
                     <p class="fieldset">
-                        <input class="full-width" type="submit" value="Login">
+                        <input type="button" class="btn-default" id="login_button" value="Login" onclick="abc(document.getElementById('signin-email').value,document.getElementById('signin-password').value)">
                     </p>
                 </form>
                 
@@ -351,33 +510,67 @@
             </div> <!-- cd-login -->
 
             <div id="cd-signup"> <!-- sign up form -->
-                <form class="cd-form">
+                <form class="cd-form" id="cd-reg-form" action="registration/run" method="POST">
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">Username</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-                        <span class="cd-error-message">Error message here!</span>
+                        <input class="full-width has-padding has-border" id="signup-username" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" name="username" type="text" placeholder="Username">
+                        <span class="cd-error-message" id="signup-username_error">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-                        <span class="cd-error-message">Error message here!</span>
+                        <input class="full-width has-padding has-border" id="signup-email" name="email" type="text" placeholder="E-mail" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
+                        <span class="cd-error-message" id="signup-email_error">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+                        <input class="full-width has-padding has-border" id="signup-password" name="pass" type="text"  placeholder="Password" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">Confirm Password</label>
+                        <input class="full-width has-padding has-border" id="confirm" name="confirm" type="text"  placeholder="Confirm Password" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
+                        <a href="#0" class="hide-password">Hide</a>
+                        <p class="cd-error-message" id="signup-confirm_error">Error message here!</p>
+                    </p>                    
+
+                    <!-- <p class="fieldset">
                         <input type="checkbox" id="accept-terms">
                         <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                    </p> -->
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding btn-default" type="button" id="signup_button" value="Create account"  onclick="def(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value)">
                     </p>
 
                     <p class="fieldset">
-                        <input class="full-width has-padding" type="submit" value="Create account">
+                        <p class="full-width has-padding has-border" style="border-radius:100px;"><center>OR</center></p>
+                    </p>
+
+
+                    <p class="fieldset">
+                        <p class="full-width has-padding has-border">
+                            <div class="container">
+                                <div class="col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                                <div class="col-sm-2 col-xs-3 col-lg-2">
+                                        <img class="img-responsive" src="<?php echo images;?>/facebook-button.png" height="75%" width="75%">
+                                </div>
+                                <div class="col-sm-2 col-xs-3">
+                                        <img class="img-responsive" src="<?php echo images;?>/googleplus-button.png" height="75%" width="75%">
+                                </div>
+                                <div class="col-sm-2 col-xs-3">
+                                        <img class="img-responsive" src="<?php echo images;?>/twitter-button.png" height="75%" width="75%">
+                                </div>
+                                 <div class="col-sm-2 col-xs-3">
+                                        <img class="img-responsive" src="<?php echo images;?>/linkedin-button.png" height="75%" width="75%">
+                                </div>
+                            </div>
+                            </div>
+
+                            
                     </p>
                 </form>
 
@@ -387,15 +580,15 @@
             <div id="cd-reset-password"> <!-- reset password form -->
                 <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
 
-                <form class="cd-form">
+                <form class="cd-form" id="reset_pass_form" method=POST>
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="reset-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <input class="full-width has-padding has-border" id="reset_email" type="email" placeholder="E-mail">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <input class="full-width has-padding" type="submit" value="Reset password">
+                        <input class="full-width has-padding" type="button" onclick="reset_pass(document.getElementById('reset_email').value)" value="Reset password">
                     </p>
                 </form>
 
@@ -404,15 +597,88 @@
             <a href="#0" class="cd-close-form">Close</a>
         </div> <!-- cd-user-modal-container -->
     </div> <!-- cd-user-modal -->
+
+    
+<!-- Login modal popup -->
+
+
+    <!--Cart modal popup -->
+
+    <div class="md-modal md-effect-7" id="modal-7">
+            <div class="md-content">
+                <h3>Shopping Cart</h3>
+                <div>
+                    <table class=table>
+                      <th> ABC </th>
+                      <th> DEF </th>
+                      <th> ABC </th>
+                      <th> DEF </th>
+
+                      <tr>
+                        <td>1</td>
+                        </tr>
+                        <tr>
+                        <td>1</td>
+                        </tr><tr>
+                        <td>1</td>
+                        </tr><tr>
+                        <td>1</td>
+                        </tr><tr>
+                        <td>1</td>
+                        </tr><tr>
+                        <td>1</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="md-overlay"></div><!-- the overlay element -->
 <script src="<?php echo js?>/jquery.min.js"></script>
 <script src="<?php echo js?>/main.js"></script>
         
-        
-        
-
+    
     <!--Navbar -->
-    <!-- MODAL POPUP -->
+    
+    <!-- cart JS -->
 
+      <!--  <script src="<?php echo js?>/classie.js"></script>
+       <script src="<?php echo js?>/cart_modalEffects.js"></script>
+       <script>
+            // this is important for IEs
+            var polyfilter_scriptpath = '/js/';
+        </script>
+        <script src="<?php echo js?>/cart_cssParser.js"></script>
+        <script src="<?php echo js?>/cart_css-filters-polyfill.js"></script>  -->
+
+
+        <script type="text/javascript">
+            // $(document).ready(function(){
+            //     $("#cart-drop").click(function(){
+            //        $('.dropdown-menu', this).stop(true, true).slideUp(0).slideDown('slow');
+            //        $(this).addClass('open');
+            //       }, function() {
+            //         $('.dropdown-menu', this).stop(true, true).fadeOut('fast');
+            //         $(this).removeClass('open');
+                    
+            //     });       
+            // });
+
+            // $(document).ready(function() {    
+            //     $('#cart-drop').click(function() {
+            //         $('.dropdown-menu', this).stop(true, true).slideUp(0).slideDown('slow');
+            //             $(this).addClass('open');
+            //     });
+
+            //     $("#cart-drop").click(function(event) {
+            //        if ($(".dropdown-menu").hasClass('open'))
+            //        {  $(".dropdown-menu").slideUp();  }
+            //     });
+            // });
+        </script>
+    <!-- cart JS -->
 
 
 
