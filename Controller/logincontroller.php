@@ -11,7 +11,13 @@ class login extends Controller {
     {
         $this->model->run();
     }
+
+    function run()
+    {
+        $this->model->run();
+    }
     
+
 
 }
 

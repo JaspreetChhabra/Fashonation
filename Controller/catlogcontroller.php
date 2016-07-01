@@ -36,7 +36,7 @@ class catlog extends Controller{
     	}
     	else
     	{
-    	$this->view->getProductFromBand = $this->model->getProductFromBand($id);	
+    	   $this->view->getProductFromBand = $this->model->getProductFromBand($id);	
     	}
     	
     	$this->view->render("getProductBrand",true);
