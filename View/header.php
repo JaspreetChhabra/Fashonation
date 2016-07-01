@@ -40,8 +40,9 @@
     <!-- Products tab slider -->
     <link href="<?php echo css?>/homepage-productSlider.css" rel="stylesheet">
 
-    <!-- cart Component -->
-    <link rel="stylesheet" type="text/css" href="<?php echo css?>/cart_component.css" />
+    <!-- Product Display -->
+    <link href="<?php echo css?>/shopcustom.css" rel="stylesheet">
+
     <!-- Font Roboto -->
 <!--     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:600' rel='stylesheet' type='text/css'>
  -->    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -109,7 +110,31 @@
             
     }
 
+
+    function addToCart(productId,name,qty,image,price,discount){
+        
+        alert("called");
+        alert('<?php //echo url;?>/cart/addToCart/'+productId);
+          var cart_url = '<?php //echo url?>'+'/cart/addToCart'+productId+'/'+1; 
+                
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                if(xhttp.responseText){
+                  alert("Product added to cart successfully");
+                }
+                else{
+                  alert("Sorry!! Try again");
+                }
+            }
+           };
+           xhttp.open("POST", "<?php //echo url;?>/cart/addToCart/"+productId+"/"+name+"/"+qty+"/"+image+"/"+price+"/"+discount, true);
+          xhttp.send();
+    }
+
     </script>
+
+
 
     <!--Login Signup functions --> 
 </head>
@@ -139,30 +164,14 @@
             <a href="#0" class="cd-signup"><i class="fa fa-user" aria-hidden="true"></i>    Login</a>
         </div>
         
-        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 nav-items cart dropdown1"> <!-- id="cart-drop" -->
-            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:0</a>
-            
-              <div class="dropdown-menu cart_dropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-
-              <ul role="menu" class="dropdown-menu cart_dropdown" aria-labelledby="drop1">
-                <li role="presentation"><a href="#" role="menuitem">Nature</a></li>
-                <li role="presentation"><a href="#" role="menuitem">Cell</a></li>
-                <li role="presentation"><a href="#" role="menuitem">Science</a></li>
-              </ul> -->
-
+        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 nav-items cart dropdown1"> 
               <a href="#" role="button" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:0</a>
-                  <div class="dropdown-menu row pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                  <div class="dropdown-menu row pull-right" role="menu" aria-labelledby="dropdownMenu1" id="showCart">
                     
-                           <table class="table cart-dropdown-table">
+                           <!-- <table class="table cart-dropdown-table">
                                <tr>
                                    <td>
-                                       <img src="<?php echo images;?>/cart/1.jpg" class="cart_dropdown_image">
+                                       <img src="<?php //echo images;?>/cart/1.jpg" class="cart_dropdown_image">
                                    </td>
                                    <td style="width:138px;">
                                        <p>Brooklyn Blues Men's Checkered Casual Shirt</p>
@@ -235,7 +244,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table> -->
 
 
                   </div>
@@ -601,59 +610,21 @@
     
 <!-- Login modal popup -->
 
-
-    <!--Cart modal popup -->
-
-    <div class="md-modal md-effect-7" id="modal-7">
-            <div class="md-content">
-                <h3>Shopping Cart</h3>
-                <div>
-                    <table class=table>
-                      <th> ABC </th>
-                      <th> DEF </th>
-                      <th> ABC </th>
-                      <th> DEF </th>
-
-                      <tr>
-                        <td>1</td>
-                        </tr>
-                        <tr>
-                        <td>1</td>
-                        </tr><tr>
-                        <td>1</td>
-                        </tr><tr>
-                        <td>1</td>
-                        </tr><tr>
-                        <td>1</td>
-                        </tr><tr>
-                        <td>1</td>
-                        </tr>
-
-                    </table>
-                </div>
-            </div>
-        </div>
-
-
         <div class="md-overlay"></div><!-- the overlay element -->
+
+
+<!-- jQuery -->
+    <script src="<?php echo js?>/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="<?php echo js?>/bootstrap.min.js"></script>
 <script src="<?php echo js?>/jquery.min.js"></script>
 <script src="<?php echo js?>/main.js"></script>
-        
+
+
     
     <!--Navbar -->
     
-    <!-- cart JS -->
-
-      <!--  <script src="<?php echo js?>/classie.js"></script>
-       <script src="<?php echo js?>/cart_modalEffects.js"></script>
-       <script>
-            // this is important for IEs
-            var polyfilter_scriptpath = '/js/';
-        </script>
-        <script src="<?php echo js?>/cart_cssParser.js"></script>
-        <script src="<?php echo js?>/cart_css-filters-polyfill.js"></script>  -->
-
-
         <script type="text/javascript">
             // $(document).ready(function(){
             //     $("#cart-drop").click(function(){
@@ -677,8 +648,120 @@
             //        {  $(".dropdown-menu").slideUp();  }
             //     });
             // });
+
+             $(document).ready(function() {    
+                $('.navbar-inverse .navbar-nav > li.dropdown').hover(function() {
+                  $('.dropdown-menu', this).stop(true, true).slideUp(0).slideDown('slow');
+                  $(this).addClass('open');
+                        }, function() {
+                  $('.dropdown-menu', this).stop(true, true).fadeOut('fast');
+                  $(this).removeClass('open');
+                  
+                  });
+                });
+
+               $('.carousel').carousel({
+                  interval: 5000 //changes the speed
+              });
+
+
+               
+
+          $('#nav').affix({
+              offset: {
+                  top: $('header').height()
+              }
+          });
+
+          $('.nav-tabs > li').mouseover( function(){
+              $(this).find('a').tab('show');
+              });
+              $('.nav-tabs > li').mouseout( function(){
+                $(this).find('a').tab('hide');
+          });
+
         </script>
     <!-- cart JS -->
 
+        <script>
+          
 
+          $(document).ready(function(){
+            $('.cartBtn').click(function(){
+                //alert($(this).data('product'));
+                var data = $(this).data('product');
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if (xhttp.readyState == 4 && xhttp.status == 200) {
+                      //alert(xhttp.responseText);                      
+                      if(xhttp.responseText == 0){
+                        alert("Product added to cart successfully");
+                      }
+                      else if(xhttp.responseText == 1){
+                        alert("Product already existing!!");
+                      }
+                      else{
+                        alert("Sorry!! Try again");
+                      }
+                  }
+                 };
+
+                 //alert('<?php echo url;?>/cart/addToCart/'+data);
+                 xhttp.open("POST", "<?php echo url;?>/cart/addToCart/"+data, true);
+                xhttp.send();
+            });
+
+            $('#dropdownMenu1').click(function(){
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  
+                  if (xhttp.readyState == 4 && xhttp.status == 200) {
+                      
+                      //alert(xhttp.responseText);                      
+                      
+                      document.getElementById('showCart').innerHTML = xhttp.responseText;
+                  }
+                 };
+                 //alert("called khtm");
+                 xhttp.open("POST", "<?php echo url;?>/cart/returnCartSession", true);
+                xhttp.send();
+
+            });
+
+            $(document).on('click', '.dropdown1 .dropdown-menu', function (e) {
+              e.stopPropagation();
+            });
+
+            $(document).on('click', '.cart-dropdown-removeIcon', function() { 
+              //alert("removeClass");
+
+              var id = $(this).attr('id');
+              //alert(id);
+
+              $.ajax({
+              type: "post",
+              url: "<?php echo url;?>/cart/deleteCartItem/"+id,
+              // data: id,
+              success: function(data){
+                //alert(data);
+                  
+                  $.ajax({                    
+                      type: "post",
+                      url: "<?php echo url;?>/cart/returnCartSession",
+                      success: function(data){
+                        //alert(data);
+                        document.getElementById('showCart').innerHTML = data;
+                  }
+                });
+              }
+              });
+
+            });
+         });
+
+          
+
+        </script>
 

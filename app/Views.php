@@ -13,12 +13,18 @@ class View {
     
     public function render($name, $param1 = false)
 	{
-		
-        
+		if($param1 == false)
+		{
 			require 'View/header.php';
 			require 'View/' . $name . '.php';
-//                        call_user_method($name, $param1);
-			require 'View/footer.php';	
+    		require 'View/footer.php';	
+		
+		}
+        else
+        {
+        		require 'View/' . $name . '.php';
+    	
+        }
 		
 	}
 

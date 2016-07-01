@@ -1,9 +1,20 @@
   <?php
 $result = $this->gethomeData;
+$popularProducts = $this->getPopularProducts;
+$newArrivals = $this->getNewArrivals;
+$specials = $this->getSpecials;
+$bestSellers = $this->getBestSellers;
 ?>
   <!--Home Page Body-->
   <!--Slider-->
-  <?php //echo $_SESSION['session_id']; ?>
+  <?php //echo $_SESSION['session_id'].'<br>'; 
+
+       foreach ($_SESSION['cart'] as $value) {
+           ///echo $value.'<br>';
+           //print_r (explode(",",$value));
+       }
+
+  ?>
     <div class="container slider-container">
 
         <div id="boxgallery" class="boxgallery" data-effect="effect-2" style="position: relative !important;">
@@ -203,665 +214,225 @@ $result = $this->gethomeData;
                     <ul id="homefeatured" class="tab-pane active">
                         <!-- <li class="border-line ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered"></li> -->
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
+                <?php foreach ($popularProducts as $row) {
+                        
+                        $data = array(
+                            'id' => $row["product_id"],
+                            'name' => $row["product_name"],
+                            'image' => '1.jpg',
+                            'price' => $row["product_selling_price"],
+                            'discount' => '0',
+                            'qty' => '1'
+                            );
+                    ?>
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3" id='<?php echo $row["product_id"];?>'>
+                        <div class="thumbnail">
+                       <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
+                        <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
+                         -->
+                         
+                        <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100">
+                         
 
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
+                        <div class="caption">
+                                <div style="padding-left: 0px;" class="pull-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h4 style="whitespace:normal;" class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
+                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4> <br/>  
+                                </div>
+                                
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right items">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                                    <span class="glyphicon glyphicon glyphicon-heart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
+                                    <span class="glyphicon glyphicon-share"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
+                                    <span class="glyphicon glyphicon-eye-open"></span> 
+                                    </a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
                             </div>
                         </div>
+                    </div>
 
+                    <?php 
+                        }
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
+                        ?>
 
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
                     </ul>
 
                     <ul id="blocknewproducts" class="tab-pane">
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
+                        <?php foreach ($popularProducts as $row) {
+                    
+                    ?>
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                       <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
+                        <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
+                         -->
+                         
+                        <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100">
+                         
 
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
+                        <div class="caption">
+                                <div style="padding-left: 0px;" class="pull-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h4 style="whitespace:normal;" class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
+                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4> <br/>  
+                                </div>
+                                
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right items">
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                                    <span class="glyphicon glyphicon glyphicon-heart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
+                                    <span class="glyphicon glyphicon-share"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
+                                    <span class="glyphicon glyphicon-eye-open"></span> 
+                                    </a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
                             </div>
                         </div>
+                    </div>
+
+                    <?php 
+                        }
+
+                        ?>
 
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
+                        
                     </ul>
 
                     <ul id="blockbestsellers" class="tab-pane">
                     
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
+                        <?php foreach ($popularProducts as $row) {
+                    
+                    ?>
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                       <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
+                        <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
+                         -->
+                         
+                        <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100">
+                         
 
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
+                        <div class="caption">
+                                <div style="padding-left: 0px;" class="pull-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h4 style="whitespace:normal;" class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
+                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4> <br/>  
+                                </div>
+                                
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right items">
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                                    <span class="glyphicon glyphicon glyphicon-heart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
+                                    <span class="glyphicon glyphicon-share"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
+                                    <span class="glyphicon glyphicon-eye-open"></span> 
+                                    </a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
                             </div>
                         </div>
+                    </div>
 
+                    <?php 
+                        }
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
+                        ?>
                     </ul>
 
 
                     <ul id="blockspecials" class="tab-pane">
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
+                        <?php foreach ($popularProducts as $row) {
+                    
+                    ?>
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
+                        <div class="thumbnail">
+                       <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
+                        <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
+                         -->
+                         
+                        <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100">
+                         
 
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
+                        <div class="caption">
+                                <div style="padding-left: 0px;" class="pull-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h4 style="whitespace:normal;" class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
+                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4> <br/>  
+                                </div>
+                                
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right items">
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                                    <span class="glyphicon glyphicon glyphicon-heart"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
+                                    <span class="glyphicon glyphicon-share"></span> 
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
+                                    <span class="glyphicon glyphicon-eye-open"></span> 
+                                    </a>
+                                </p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
                             </div>
                         </div>
+                    </div>
 
+                    <?php 
+                        }
 
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                        <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
-                            <div class="thumbnail">
-                       
-                                <img src="<?php echo images;?>/1.jpg" class="img-responsive" height="100" onmouseover="this.src='<?php echo images;?>/2.jpg'" style="transition: all 0.3s ease-in-out;" onmouseout="this.src='<?php echo images;?>/1.jpg'" alt="">
-
-
-                                    <div class="caption">
-                                            <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                                <h4><a href="#">Product One</a></h4>
-                                                <h4>Rs 1200. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
-                                            </div>
-                                            
-                                    </div>
-                            
-                                    <div class="ratings">
-                                        <p class="pull-right items" style="display: none;">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
-                                            <span class="glyphicon glyphicon-shopping-cart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
-                                            <span class="glyphicon glyphicon glyphicon-heart"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share product">
-                                            <span class="glyphicon glyphicon-share"></span> 
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Product Overview">
-                                            <span class="glyphicon glyphicon-eye-open"></span> 
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
+                        ?>
                     </ul>
               </div>
             </div>
@@ -966,11 +537,7 @@ $result = $this->gethomeData;
 
     <!--Home Page Body-->
 
-    <!-- jQuery -->
-    <script src="<?php echo js?>/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo js?>/bootstrap.min.js"></script>
+    
 
 
     <!-- <script src="js/bootstrap-dropdown-on-hover.js"></script> -->
@@ -983,6 +550,10 @@ $result = $this->gethomeData;
         new BoxesFx( document.getElementById( 'boxgallery' ) );
     </script>
 
+    <script>
+        
+
+    </script>
     <script>
         // $("#demo").bootstrapDropdownOnHover();
 
@@ -1042,29 +613,25 @@ $result = $this->gethomeData;
     // });
 
     </script>
-        <script src="js/cbpFWTabs.js"></script>
-            <script>
-                (function() {
-
-                    [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
-                        new CBPFWTabs( el );
-                    });
-
-                })();
-    </script>
-
+        
     <script>
-     $(document).ready(function(){
-                $('.brands_products h2').click(function(){
-                    $(this).find('span').toggleClass("glyphicon-menu-down").toggleClass("glyphicon-menu-up");
-                },function(){
-                    $(this).find('span').toggleClass("glyphicon-menu-up").toggleClass("glyphicon-menu-down");   
-                });
-            });
+      var url = "<?php echo images;?>";
 
-            $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip(); 
-            });
+    $(document).ready(function(){
+
+        $(".thumbnail").hover(function () {
+            $(this).find("img").attr("src", url+"/2.jpg");
+        },
+
+        function () {
+            $(this).find("img").attr("src", url+"/1.jpg");
+        });
+    });
+
+
+    // Add To cart Functionality
+
+    
 
             
     </script>

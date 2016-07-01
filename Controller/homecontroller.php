@@ -16,6 +16,10 @@ class Home extends Controller{
     function index()
     {
         $this->view->gethomeData = $this->model->gethomeData();
+        $this->view->getPopularProducts = $this->model->getPopularProducts();
+        $this->view->getNewArrivals = $this->model->getNewArrivals();
+        $this->view->getSpecials = $this->model->getSpecials();
+        $this->view->getBestSellers = $this->model->getBestSellers();
         $this->view->render("home");
     }
     

@@ -1,5 +1,8 @@
 <?php
 $result = $this->getProductInfo;
+
+$brnd = $this->getBrands;
+
 ?>
 <html lang="en"><head>
 
@@ -9,122 +12,14 @@ $result = $this->getProductInfo;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Product Catalogue | Fashonation</title>
 
 
-    <style type="text/css">
-    .prod .thumbnail
-    {
-        border-radius: 0px;
-        text-decoration:none;
-        cursor: pointer;
-        box-shadow: 0px 0px 0px transparent;
-
-    }
-    .prod .thumbnail:hover
-    {
-        box-shadow: 0px 0px 6px rgba(51, 51, 51, 0.7);
-    }
-
-    .prod .thumbnail a
-    {
-        text-decoration:none;
-        overflow: hidden;
-    }
-
-    .caption
-    {
-        height: 77px!important;
-    }
-
-    .items {
-    float: right;
-    /*margin-right: -88px;*/
-    display: none;
-    }
-
-    /*.prod .thumbnail:hover {
-    float: right;
-    margin-right: 0px;
-    transition: all 0.3s ease-in-out;
-    }*/
-
-    .items .glyphicon {
-        color: grey;
-        padding: 5px 5px;
-        border: 0px;
-    }
-    .items .glyphicon:hover {
-        color: black;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .left-sidebar h2, .brands_products h2 {
-    color: #000;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 3;
-    }
-
-    .brands-name .nav-stacked li a {
-    background-color: #FFFFFF;
-    color: #000;
-    font-size: 14px;
-    padding: 5px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    }
-
-    .brands_products
-    {border-bottom: 1px solid black;}
-    .brands_products h2:hover
-    {
-        cursor: pointer;
-    }
-
-    input[type=checkbox]
-    {
-        background-color: transparent;
-    }
-
-    .rounded {
-    border-radius: 57px;
-    margin: 0px 30px;
-    width: 20px;
-    background-color: #000;
-    }
-
- 
-    #price1,#price2
-    {
-        border:1px solid black;
-    }
-    @media(min-width:768px)
-    {
-        #price1,#price2
-        {
-            width:100%;
-        }
-    }
     
-    @media(max-width:768px)
-    {
-        #price1,#price2
-        {
-            margin-top: 25px;
-            margin-left: 10px;
-            width:95%;
-        }
-    }
-
-
-    </style>
     <link rel="stylesheet" href="<?php echo css?>/font-awesome.min.css">
     
     <link rel="stylesheet" href="<?php echo css?>/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="<?php echo css?>/shopcustom.css">
     
 </head>
 
@@ -163,11 +58,13 @@ $result = $this->getProductInfo;
                             <h2 data-toggle="collapse" data-parent="#accordian" href="#designer" class="collapsed">Designers <span class="glyphicon glyphicon-menu-down"></span></h2>
                             <div id="designer" class="brands-name">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#"> <span class="pull-right">(50)</span>Manish Malhotra</a></li>
-                                    <li><a href="#"> <span class="pull-right">(56)</span>Neeta Patel</a></li>
-                                    <li><a href="#"> <span class="pull-right">(27)</span>Anusha Bhatt</a></li>
-                                    <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-                                    <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                                <?php  foreach ($brnd as $rw) {?>
+
+
+                                    <li><a style="cursor:pointer;" onclick="getProduct(<?php echo $rw["brand_id"];?>)"  > <span class="pull-right"> (<?php echo $rw["totalproducts"];?>) </span><?php echo $rw["brandname"];?></a></li>
+                                   
+                                <?php } ?>
+
                                 </ul>
                             </div>
                         </div><!--/brands_products-->
@@ -279,7 +176,7 @@ $result = $this->getProductInfo;
             <div class="col-md-9">
 
                
-                <div class="row">
+                <div id="content" class="row">
 
                     <?php
                     foreach ($result as $row) {
@@ -299,9 +196,9 @@ $result = $this->getProductInfo;
                          
 
                         <div class="caption">
-                                <div style="padding-left: 0px;" class="pull-left col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                                    <h4><a href="#"><?php echo $row["product_name"];?></a></h4>
-                                    <h4>Rs <?php echo $row["product_cost"];?>. &nbsp;&nbsp;<s>Rs 2500.</s></h4>   
+                                <div style="padding-left: 0px;" class="pull-left col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h4 style="whitespace:normal;" class="col-lg-12 col-md-12 col-sm-10 col-xs-10" ><a href="#"><?php echo $row["product_name"];?></a></h4>
+                                    <h4 class="col-lg-12 col-md-12 col-sm-10 col-xs-10">Rs <?php echo $row["product_selling_price"];?>. &nbsp;&nbsp;<s>Rs <?php echo $row["product_mrp"];?>.</s></h4> <br/>  
                                 </div>
                                 
                             </div>
@@ -347,13 +244,6 @@ $result = $this->getProductInfo;
     </div>
     <!-- /.container -->
 
-
-
-    <!-- jQuery -->
-    <script src="<?php echo js?>/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo js?>/bootstrap.min.js"></script>
     <script type="text/javascript">
 
 
@@ -374,6 +264,22 @@ $result = $this->getProductInfo;
     });
 
 
+    function getProduct(pid)
+    {
+        
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+//            alert(xhttp.responseText);
+
+                document.getElementById("content").innerHTML = xhttp.responseText;
+
+            }
+           };
+           xhttp.open("POST", "<?php echo url;?>/catlog/getProductFromBrand/"+pid, true);
+          xhttp.send();
+    }
+
 
 
 
@@ -389,27 +295,27 @@ $result = $this->getProductInfo;
         $('[data-toggle="tooltip"]').tooltip(); 
         });
 
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
-            viewwidth = $(window).width();
-            if(viewwidth > 769)
-            {
-                $('.prod .thumbnail').hover(function(){
-                $(this).find('.items').fadeToggle(500);
+        //     viewwidth = $(window).width();
+        //     if(viewwidth > 769)
+        //     {
+        //         $('.prod .thumbnail').hover(function(){
+        //         $(this).find('.items').fadeToggle(500);
                 
-            },function(){
+        //     },function(){
                 
-                $(this).find('.items').fadeToggle(500);
+        //         $(this).find('.items').fadeToggle(500);
                 
-            } );
+        //     } );
 
-            }    
-            else
-            {
-                $(this).find('.items').show();
-            }
+        //     }    
+        //     else
+        //     {
+        //         $(this).find('.items').show();
+        //     }
             
-        } );
+        // } );
     </script>
 
 </body></html>

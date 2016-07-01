@@ -15,6 +15,7 @@ class catlog extends Controller{
      function index()
     {
         $this->view->getProductInfo = $this->model->getProductInfo();
+        $this->view->getBrands = $this->model->getBrands();
 //        if(!strrchr($result, "Error"))
 //        {
               $this->view->render("productcatlog");
@@ -26,6 +27,38 @@ class catlog extends Controller{
         
       
     }
+
+    function getProductFromBrand($id = null)
+    {
+    	if($id == null)
+    	{
+    		$this->view->getProductFromBand = null;
+    	}
+    	else
+    	{
+    	   $this->view->getProductFromBand = $this->model->getProductFromBand($id);	
+    	}
+    	
+    	$this->view->render("getProductBrand",true);
+    }
+
+     function viewDesigners($id = null){
+        
+
+        if($id == null)
+        {
+            $this->view->getDesignerInfo = null;
+             $this->view->render("404");
+        }
+        else
+        {
+        $this->view->getDesignerInfo = $this->model->getDesignerInfo($id);    
+        $this->view->render("shopbydesigner");
+        }
+        
+    }
+
+
 //
 //    function getProductInfo()
 //    {

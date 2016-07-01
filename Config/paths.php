@@ -10,3 +10,4 @@ define("css","http://localhost/Fashonation/public/css");
 define("js","http://localhost/Fashonation/public/js");
 define("images","http://localhost/Fashonation/public/imgs");
 define("font","http://localhost/Fashonation/public/fonts");
+define("url","http://localhost/Fashonation");
