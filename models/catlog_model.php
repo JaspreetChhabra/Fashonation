@@ -18,13 +18,11 @@ class catlog_model extends Model
 				{
 					if($stmt->rowCount() > 0)
 	                {
-	                	echo "Success!!!";
 	                    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	                }
 	                else
 	                {
-	                	echo "Fail!!";
 	                    return "Error!";
 	                }	
 				}

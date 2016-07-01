@@ -33,11 +33,11 @@ foreach ($result as $row) {
     
     .designimg
     {
-    	height:232px;
-    	width: 232px;
-    	border-radius: 122px;
+    	height:260px;
+    	width: 262px;
+    	border-radius: 75%;
     	border:9px solid white;
-    	margin-left: 45px;
+    	margin-left: 145px;
     }
 
     .ls
@@ -68,6 +68,7 @@ foreach ($result as $row) {
     	.designlbl
     	{
     		margin-top: -70px;
+    	
     	}
     	.ls
     	{
@@ -87,6 +88,7 @@ foreach ($result as $row) {
     	letter-spacing: 1.2px;
     	font-weight: lighter;
     	text-align: center;
+    	margin-left: 100px;
     }
 
     .row
@@ -185,6 +187,9 @@ foreach ($result as $row) {
     <script src="<?php echo js?>/bootstrap.min.js"></script>
     <script type="text/javascript">
 
+    	$('[data-toggle="tooltip"]').tooltip(); 
+
+
     			var url = "<?php echo images;?>";
 
 		    $(document).ready(function(){
@@ -201,12 +206,6 @@ foreach ($result as $row) {
 
 
  setTimeout(getProduct,3000,<?php echo $desid;?>);
-
-
-
-
-
-   
 
 
     function getProduct(pid)
