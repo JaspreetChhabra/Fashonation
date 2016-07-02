@@ -36,11 +36,11 @@ foreach ($result as $row) {
     }
     .designimg
     {
-    	height:232px;
-    	width: 232px;
-    	border-radius: 122px;
+    	height:260px;
+    	width: 262px;
+    	border-radius: 75%;
     	border:9px solid white;
-    	margin-left: 45px;
+    	margin-left: 145px;
     }
 
     .ls
@@ -71,6 +71,7 @@ foreach ($result as $row) {
     	.designlbl
     	{
     		margin-top: -70px;
+    	
     	}
     	.ls
     	{
@@ -90,6 +91,7 @@ foreach ($result as $row) {
     	letter-spacing: 1.2px;
     	font-weight: lighter;
     	text-align: center;
+    	margin-left: 100px;
     }
 
     .row
@@ -188,6 +190,7 @@ foreach ($result as $row) {
     <script src="<?php echo js?>/bootstrap.min.js"></script>
     <script type="text/javascript">
 
+
                 $(document).ready(function() {    
                 $('.navbar-inverse .navbar-nav > li.dropdown').hover(function() {
                   $('.dropdown-menu', this).stop(true, true).slideUp(0).slideDown('slow');
@@ -218,6 +221,8 @@ foreach ($result as $row) {
               $('.nav-tabs > li').mouseout( function(){
                 $(this).find('a').tab('hide');
           });
+    	$('[data-toggle="tooltip"]').tooltip(); 
+
 
     			var url = "<?php echo images;?>";
 
@@ -235,12 +240,6 @@ foreach ($result as $row) {
 
 
  setTimeout(getProduct,3000,<?php echo $desid;?>);
-
-
-
-
-
-   
 
 
     function getProduct(pid)
