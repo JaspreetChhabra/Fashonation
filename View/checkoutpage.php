@@ -180,8 +180,8 @@
             </div>
             <div class="checkout_div2">
             	<label class="control label"> <h2>Step 2: Cart Information </h2>	</label>
-            	
-            	<table class="table-responsive" id='list'>
+            	<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+            	<table class="table table-responsive" id='list'>
 
                 <tr class=top>
                     <th> Product Image</th>
@@ -240,7 +240,7 @@
                 </tr>
                  
             </table>
-
+            </div>
 
             </div>
 
