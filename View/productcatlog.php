@@ -246,7 +246,36 @@ $brnd = $this->getBrands;
 
     <script type="text/javascript">
 
+        $(document).ready(function() {    
+                $('.navbar-inverse .navbar-nav > li.dropdown').hover(function() {
+                  $('.dropdown-menu', this).stop(true, true).slideUp(0).slideDown('slow');
+                  $(this).addClass('open');
+                        }, function() {
+                  $('.dropdown-menu', this).stop(true, true).fadeOut('fast');
+                  $(this).removeClass('open');
+                  
+                  });
+                });
 
+               $('.carousel').carousel({
+                  interval: 5000 //changes the speed
+              });
+
+
+               
+
+          $('#nav').affix({
+              offset: {
+                  top: $('header').height()
+              }
+          });
+
+          $('.nav-tabs > li').mouseover( function(){
+              $(this).find('a').tab('show');
+              });
+              $('.nav-tabs > li').mouseout( function(){
+                $(this).find('a').tab('hide');
+          });
 
 
 

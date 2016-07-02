@@ -16,7 +16,7 @@ class home_model extends Model
 		
 		if(! isset($_SESSION['session_id'])){
 			$_SESSION['session_id'] = date("Y-m-d H:i:s",time());
-
+			$_SESSION['cartCount'] = 0;
 			$_SESSION['cart']=array();
 		}
 	}

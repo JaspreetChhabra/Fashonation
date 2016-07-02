@@ -34,7 +34,8 @@ class cart_model extends Model
 
         if(!$_SESSION['cart']){
             array_push($_SESSION['cart'],base64_decode($data));
-            return 0;
+            $_SESSION['cartCount']++;
+            return $_SESSION['cartCount'];
         }
         else{
 
@@ -52,7 +53,8 @@ class cart_model extends Model
 
             if($flag == 0){
                 array_push($_SESSION['cart'],base64_decode($data));
-                return 0;
+                $_SESSION['cartCount']++;
+                return $_SESSION['cartCount'];
             }
 
         
@@ -64,14 +66,19 @@ class cart_model extends Model
         return 1;
     }
 
+    public function returnCartCount(){
+        return $_SESSION['cartCount'];
+    }
+
     public function deleteCartItem($id){
 
         if (($key = array_search(intval($id), $_SESSION['cart'])) !== false) {
             unset($_SESSION['cart'][$key]);
-            return intval($id);
+            $_SESSION['cartCount']--;
+            return $_SESSION['cartCount'];
         }
         else{
-            return 0;
+            return -1;
         }
     }
 }

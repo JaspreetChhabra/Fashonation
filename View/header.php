@@ -165,7 +165,7 @@
         </div>
         
         <div class="col-lg-1 col-md-2 col-sm-3 col-xs-3 nav-items cart dropdown1"> 
-              <a href="#" role="button" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:0</a>
+              <a href="#" role="button" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><i class="fa fa-shopping-cart" aria-hidden="true"></i>    Cart:<span id="cartCount"></span></a>
                   <div class="dropdown-menu row pull-right" role="menu" aria-labelledby="dropdownMenu1" id="showCart">
                     
                            <!-- <table class="table cart-dropdown-table">
@@ -687,22 +687,30 @@
           
 
           $(document).ready(function(){
+
+            $.ajax({                    
+                type: "post",
+                url: "<?php echo url;?>/cart/returnCartCount",
+                success: function(data){
+                  document.getElementById('cartCount').innerHTML = data;
+            }
+          });
+
+
+            var count = 1;
             $('.cartBtn').click(function(){
                 //alert($(this).data('product'));
                 var data = $(this).data('product');
                 
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
-                  if (xhttp.readyState == 4 && xhttp.status == 200) {
-                      //alert(xhttp.responseText);                      
-                      if(xhttp.responseText == 0){
+                  if (xhttp.readyState == 4 && xhttp.status == 200) {                     
+                      if(xhttp.responseText > 0){
                         alert("Product added to cart successfully");
+                        document.getElementById('cartCount').innerHTML = xhttp.responseText;
                       }
                       else if(xhttp.responseText == 1){
                         alert("Product already existing!!");
-                      }
-                      else{
-                        alert("Sorry!! Try again");
                       }
                   }
                  };
@@ -746,7 +754,10 @@
               // data: id,
               success: function(data){
                 //alert(data);
-                  
+                  if(data >= 0){
+                    document.getElementById('cartCount').innerHTML = data;
+                  }
+
                   $.ajax({                    
                       type: "post",
                       url: "<?php echo url;?>/cart/returnCartSession",

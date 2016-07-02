@@ -52,6 +52,13 @@ class cart extends Controller {
 
         
         $this->view->render("ajaxDeleteCart",true);
-    }    
+    }   
+
+    function returnCartCount(){
+        
+        $this->view->cartCount = $this->model->returnCartCount();
+
+        $this->view->render('ajaxCartCount',true);
+    } 
 }
 ?>
