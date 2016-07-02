@@ -1,6 +1,6 @@
 <?php 
 
-	if($this->itemId == null)
+	if($this->itemId == -1)
 	{
 		echo "Sorry";
 	}
