@@ -621,7 +621,7 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo js?>/bootstrap.min.js"></script>
-<script src="<?php echo js?>/jquery.min.js"></script>
+<!-- <script src="<?php //echo js?>/jquery.min.js"></script> -->
 <script src="<?php echo js?>/main.js"></script>
 
 
@@ -701,8 +701,9 @@
 
 
             var count = 1;
-            $('.cartBtn').click(function(){
-                //alert($(this).data('product'));
+            // $('.cartBtn').click(function(){
+              $(document).on('click', '.cartBtn', function() {
+                alert($(this).data('product'));
                 var data = $(this).data('product');
                 
                 var xhttp = new XMLHttpRequest();
@@ -711,6 +712,8 @@
                       alert(xhttp.responseText);                     
                       if(xhttp.responseText > 0){
                         
+                        document.getElementById('cartCount').innerHTML = xhttp.responseText;
+
                         swal({
                           title: 'Successful !!',
                           text: "Product added to cart successfully",
@@ -718,17 +721,16 @@
                           confirmButtonText: 'Ok'
                         });
 
-                        document.getElementById('cartCount').innerHTML = xhttp.responseText;
                       }
                       else if(xhttp.responseText == -1){
-                        //alert("Product already existing!!");
-
+                        
                         swal({
                           title: 'WARNING !!',
                           text: "App ka dala huya prodoct pehle se cart mojud hai :) Krupiya cart mae se delete kar k vapas prayaas karen :P ",
                           type: 'warning',
                           confirmButtonText: 'Samaj Gaye'
                         });
+
                       }
                   }
                  };
@@ -790,8 +792,8 @@
             });
          });
 
-          
 
         </script>
 
+        <!--Sweet alert Js -->
         <script src="<?php echo js ?>/sweetalert2.min.js"></script>

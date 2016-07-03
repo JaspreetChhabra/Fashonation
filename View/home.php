@@ -276,9 +276,17 @@ $bestSellers = $this->getBestSellers;
 
                     <ul id="blocknewproducts" class="tab-pane">
                         <?php foreach ($popularProducts as $row) {
-                    
+                        
+                        $data = array(
+                            'id' => $row["product_id"],
+                            'name' => $row["product_name"],
+                            'image' => '1.jpg',
+                            'price' => $row["product_selling_price"],
+                            'discount' => '0',
+                            'qty' => '1'
+                            );
                     ?>
-                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3" id='<?php echo $row["product_id"];?>'>
                         <div class="thumbnail">
                        <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
                         <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
@@ -296,7 +304,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
@@ -325,16 +333,23 @@ $bestSellers = $this->getBestSellers;
 
                         ?>
 
-
                         
                     </ul>
 
                     <ul id="blockbestsellers" class="tab-pane">
                     
                         <?php foreach ($popularProducts as $row) {
-                    
+                        
+                        $data = array(
+                            'id' => $row["product_id"],
+                            'name' => $row["product_name"],
+                            'image' => '1.jpg',
+                            'price' => $row["product_selling_price"],
+                            'discount' => '0',
+                            'qty' => '1'
+                            );
                     ?>
-                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3" id='<?php echo $row["product_id"];?>'>
                         <div class="thumbnail">
                        <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
                         <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
@@ -352,7 +367,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
@@ -385,9 +400,17 @@ $bestSellers = $this->getBestSellers;
 
                     <ul id="blockspecials" class="tab-pane">
                         <?php foreach ($popularProducts as $row) {
-                    
+                        
+                        $data = array(
+                            'id' => $row["product_id"],
+                            'name' => $row["product_name"],
+                            'image' => '1.jpg',
+                            'price' => $row["product_selling_price"],
+                            'discount' => '0',
+                            'qty' => '1'
+                            );
                     ?>
-                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3">
+                    <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3" id='<?php echo $row["product_id"];?>'>
                         <div class="thumbnail">
                        <!--  <img class="group list-group-image" class="img-responsive disp" height="100" src="./imgs/1.jpg" alt="" />
                         <img class="group list-group-image"  style="display: none;" class="img-responsive nodisp" height="100" src="./imgs/2.jpg" alt="" />
@@ -405,7 +428,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">

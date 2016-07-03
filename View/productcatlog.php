@@ -180,6 +180,16 @@ $brnd = $this->getBrands;
 
                     <?php
                     foreach ($result as $row) {
+
+
+                        $data = array(
+                            'id' => $row["product_id"],
+                            'name' => $row["product_name"],
+                            'image' => '1.jpg',
+                            'price' => $row["product_selling_price"],
+                            'discount' => '0',
+                            'qty' => '1'
+                            );
                     ?> 
                         
                         
@@ -204,7 +214,7 @@ $brnd = $this->getBrands;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">

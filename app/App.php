@@ -11,6 +11,7 @@ class App {
     private $controller = "home";
     private $method = "index";
     private $params = [];
+    private $model = "home";
     
     function __construct() {
         //echo "Welcome to this page your url is :".$_GET['url'];
@@ -41,7 +42,14 @@ class App {
             }
             require_once 'Controller/' . $this->controller . 'controller.php';
             $this->controller = new $this->controller;
-            $this->controller->loadModel($url[0]);        
+
+            if(empty($url[0])){
+                $this->controller->loadModel('home');
+            }
+            else{
+                $this->controller->loadModel($url[0]);  
+            }
+                    
             unset($url[0]);
             
 
