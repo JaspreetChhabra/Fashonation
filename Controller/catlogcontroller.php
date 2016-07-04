@@ -59,6 +59,23 @@ class catlog extends Controller{
     }
 
 
+    function productDetails($id = null){
+        
+
+        if($id == null)
+        {
+            $this->view->fetchProductDetails = null;
+             $this->view->render("404");
+        }
+        else
+        {
+        $this->view->fetchProductDetails = $this->model->fetchProductDetails($id);    
+        $this->view->render("productDeatils");
+        }
+        
+    }
+
+
 //
 //    function getProductInfo()
 //    {

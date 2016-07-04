@@ -92,9 +92,27 @@ class catlog_model extends Model
         {
             return "Error"; 
         }
+    }
 
 
-
+    public function fetchProductDetails($id){
+        
+        $stmt = $this->db->prepare("SELECT * from products where product_id=".$id);
+        if($stmt->execute())
+        {
+            if($stmt->rowCount() > 0)
+            {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        else
+        {
+            return "Error"; 
+        }
     }
 
 
