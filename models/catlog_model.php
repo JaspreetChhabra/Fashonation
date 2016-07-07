@@ -76,7 +76,7 @@ class catlog_model extends Model
 
     public function getDesignerInfo($id){
         
-        $stmt = $this->db->prepare("SELECT brand_id,brandimg,brandname from product_designer_brand where brand_id=".$id);
+        $stmt = $this->db->prepare("SELECT brand_id,brandimg,brandname,designer_about,brand_weburl  from product_designer_brand where brand_id=".$id);
         if($stmt->execute())
         {
             if($stmt->rowCount() > 0)
