@@ -26,19 +26,19 @@
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
 				<div class="col-lg-10 col-md-10 col-sm-7 col-xs-2 small-thumbnail">
-					<img src="<?php echo images;?>/products/1.jpg" class="img-responsive sampleImage small-image-border"  id="1">
+					<img src="<?php echo images;?>/products/1.jpg" class="img-responsive sampleImage small-image-border"  id="11">
 				</div>
 				<div class="col-lg-10 col-md-10 col-sm-7 col-xs-2 small-thumbnail ">
-					<img src="<?php echo images;?>/products/2.jpg" class="img-responsive sampleImage whiteBorder" id="2">
+					<img src="<?php echo images;?>/products/2.jpg" class="img-responsive sampleImage whiteBorder" id="21">
 				</div>
 				<div class="col-lg-10 col-md-10 col-sm-7 col-xs-2 small-thumbnail">
-					<img src="<?php echo images;?>/products/3.jpg" class="img-responsive sampleImage whiteBorder"  id="3">
+					<img src="<?php echo images;?>/products/3.jpg" class="img-responsive sampleImage whiteBorder"  id="31">
 				</div>
 				<div class="col-lg-10 col-md-10 col-sm-7 col-xs-2 small-thumbnail">
-					<img src="<?php echo images;?>/products/4.jpg" class="img-responsive sampleImage whiteBorder" id="4">
+					<img src="<?php echo images;?>/products/4.jpg" class="img-responsive sampleImage whiteBorder" id="41">
 				</div>
 				<div class="col-lg-10 col-md-10 col-sm-7 col-xs-2 small-thumbnail">
-					<img src="<?php echo images;?>/products/5.jpg" class="img-responsive sampleImage whiteBorder" id="5">
+					<img src="<?php echo images;?>/products/5.jpg" class="img-responsive sampleImage whiteBorder" id="51">
 				</div>
 			</div>
 			

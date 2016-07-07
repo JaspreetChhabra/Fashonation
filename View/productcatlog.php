@@ -292,14 +292,26 @@ $brnd = $this->getBrands;
     var url = "<?php echo images;?>";
 
     $(document).ready(function(){
+        // $(".thumbnail").hover(function () {
+        //     $(this).find("img").attr("src", url+"/2.jpg");
+        // },
 
-        $(".thumbnail").hover(function () {
-            $(this).find("img").attr("src", url+"/2.jpg");
-        },
+        // function () {
+        //     $(this).find("img").attr("src", url+"/1.jpg");
+        // });
 
-        function () {
-            $(this).find("img").attr("src", url+"/1.jpg");
-        });
+
+
+        $(document).on({
+            mouseenter: function () {
+                $(this).find("img").attr("src", url+"/2.jpg");
+                $('[data-toggle="tooltip"]').tooltip(); 
+            },
+            mouseleave: function () {
+               $(this).find("img").attr("src", url+"/1.jpg");
+            }
+        }, ".thumbnail"); 
+
     });
 
 
@@ -330,9 +342,9 @@ $brnd = $this->getBrands;
             });
         });
 
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip(); 
-        });
+        // $(document).ready(function(){
+        // $('[data-toggle="tooltip"]').tooltip(); 
+        // });
 
         // $(document).ready(function(){
 
