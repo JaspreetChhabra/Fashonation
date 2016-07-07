@@ -37,7 +37,7 @@ $brnd = $this->getBrands;
 
         <div class="row">
 
-            <div class="col-md-3" style="border: 1px solid #cfcfcf;">
+            <div class="col-md-3" style="border: 1px solid #cfcfcf;margin-top:50px;">
                     <div class="left-sidebar">
                         <!-- <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -60,6 +60,17 @@ $brnd = $this->getBrands;
                                     </div>
                                 </div>
                         </div> -->
+                        <div class="brands_products"><!--brands_products-->
+                            <h2 data-toggle="collapse" data-parent="#accordian" href="#colorfilters" class="collapsed">For</span></h2>
+                            <div id="colorfilters" class="text-center brands-name panel-collapse">
+                                   <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#" onclick="getQuery(0)"> All</a></li>
+                                    <li><a href="#" onclick="getQuery(1)"> Men</li>
+                                    <li><a href="#" onclick="getQuery(2)"> Women</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br/><br/>
                             <div class="brands_products"><!--brands_products-->
                             <h2 data-toggle="collapse" data-parent="#accordian" href="#designer" class="collapsed">Designers <span class="glyphicon glyphicon-menu-down"></span></h2>
                             <div id="designer" class="brands-name">
@@ -76,48 +87,14 @@ $brnd = $this->getBrands;
                         </div><!--/brands_products-->
                         <br/><br/>
                         <div class="brands_products"><!--brands_products-->
-                            <h2 data-toggle="collapse" data-parent="#accordian" href="#sportswear" class="collapsed">Category <span class="glyphicon glyphicon-menu-down"></span></h2>
-                            <div id="sportswear" class="brands-name panel-collapse collapse">
+                            <h2 data-toggle="collapse" data-parent="#accordian" href="#menwear" class="collapsed">Men <span class="glyphicon glyphicon-menu-down"></span></h2>
+                            <div id="menwear" class="brands-name panel-collapse collapse">
                                 <form method="get" class="form-horizontal">
                                 <div class="form-group">
-                                <ul class="nav nav-pills nav-stacked">
-                                    
-                                    <li><a href="#"> 
-                                                <div class="checkbox">
-                                                        <input id="checkbox1" type="checkbox">
-                                                        <label for="checkbox1">
-                                                            Default
-                                                        </label>
-                                                        <span class="pull-right">(56)</span>
-                                                </div>
-                                     </a></li>
-                                    <li><a href="#"> 
-                                                <div class="checkbox">
-                                                        <input id="checkbox2" type="checkbox">
-                                                        <label for="checkbox2">
-                                                            Acne
-                                                        </label>
-                                                        <span class="pull-right">(56)</span>
-                                                </div>
-                                     </a></li>
-                                     <li><a href="#"> 
-                                                <div class="checkbox">
-                                                        <input id="checkbox3" type="checkbox">
-                                                        <label for="checkbox3">
-                                                            Albiro
-                                                        </label>
-                                                        <span class="pull-right">(27)</span>
-                                                </div>
-                                     </a></li>
-                                     <li><a href="#"> 
-                                                <div class="checkbox">
-                                                        <input id="checkbox4" type="checkbox">
-                                                        <label for="checkbox4">
-                                                            Ronhill
-                                                        </label>
-                                                        <span class="pull-right">(78)</span>
-                                                </div>
-                                     </a></li>
+                                <ul class="text-center nav nav-pills nav-stacked">
+                                    <li><a href="#" onclick="getQuery(1,2)"> Party</a></li>
+                                    <li><a href="#" onclick="getQuery(1,1)"> Formal</a></li>
+                                    <li><a href="#" onclick="getQuery(1,3)"> Casual</a></li>
                                      
                                 </ul>
                                 </div>
@@ -127,9 +104,28 @@ $brnd = $this->getBrands;
                         </div><!--/brands_products-->
                         <br/><br/>
                         
-
                         <div class="brands_products"><!--brands_products-->
-                            <h2 data-toggle="collapse" data-parent="#accordian" href="#colorfilters" class="collapsed">Color Filters <span class="glyphicon glyphicon-menu-down"></span></h2>
+                            <h2 data-toggle="collapse" data-parent="#accordian" href="#womenwear" class="collapsed">Women <span class="glyphicon glyphicon-menu-down"></span></h2>
+                            <div id="womenwear" class="brands-name panel-collapse collapse">
+                                <form method="get" class="form-horizontal">
+                                <div class="form-group">
+                                <ul class="text-center nav nav-pills nav-stacked">
+                                    <li><a href="#" onclick="getQuery(2,2)"> Party</a></li>
+                                    <li><a href="#" onclick="getQuery(2,1)"> Formal</a></li>
+                                    <li><a href="#" onclick="getQuery(2,3)"> Casual</a></li>
+                                    <li><a href="#" onclick="getQuery(2,4)"> Bridal</a></li>
+                                    <li><a href="#" onclick="getQuery(2,5)"> Ethnic</a></li>
+                                </ul>
+                                </div>
+                                </form>
+                                        
+                            </div>
+                        </div><!--/brands_products-->
+                        <br/><br/>
+
+                        <!-- <div class="brands_products"> -->
+                        <!--brands_products-->
+<!--                             <h2 data-toggle="collapse" data-parent="#accordian" href="#colorfilters" class="collapsed">Color Filters <span class="glyphicon glyphicon-menu-down"></span></h2>
                             <div id="colorfilters" class="brands-name panel-collapse collapse">
                                    <ul class="nav nav-pills nav-stacked">
                                     <li><a href="#"> <span class="pull-left rounded " style="background-color:black;">&nbsp;</span>Black</a></li>
@@ -141,26 +137,53 @@ $brnd = $this->getBrands;
                             </div>
                         </div>
 
-
-
-                        <br/><br/>
+ -->
 
 
 
 
-                        <div class="brands_products" style="margin-bottom: 20px;padding-top: 25px;"><!--brands_products-->
+                        <div class="brands_products" style="margin-bottom: 50px;padding-top:20px;"><!--brands_products-->
                             <h2 data-toggle="collapse" data-parent="#accordian" href="#pricerange" class="collapsed">Price Range <span class="glyphicon glyphicon-menu-down"></span></h2>
                             <div id="pricerange" class="brands-name panel-collapse collapse">
-                                <div class="col-lg-5">
-                                   <input type="text" placeholder="Rs." style="padding: 5px 5px;" id="price1" />
+                                <div class="col-lg-12">
+                                   <!-- <input type="radio" value=">500 and < 1500" /> -->
+                                   <div class="radio">
+                                        <input id="radio1" name="pricerg1" onclick="fetchByPrice(500,1500)" type="radio">
+                                        <label for="radio3">
+                                            >500 and < 1500
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="col-lg-2" style="padding: 5px 5px;">
-                                    <b>TO</b>
+                                <div class="col-lg-12">
+                                   <!-- <input type="radio" value=">500 and < 1500" /> -->
+                                   <div class="radio">
+                                        <input id="radio2" onclick="fetchByPrice(1500,3000)" name="pricerg1" type="radio">
+                                        <label for="radio3">
+                                            >1500 and < 3000
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="col-lg-5">
-                                    <input type="text" style="padding: 5px 5px;" placeholder="Rs." id="price2" />
+                                <div class="col-lg-12">
+                                   <!-- <input type="radio" value=">500 and < 1500" /> -->
+                                   <div class="radio">
+                                        <input id="radio3" onclick="fetchByPrice(3000,10000)" name="pricerg1" type="radio">
+                                        <label for="radio3">
+                                            >3000 and < 10000
+                                        </label>
+                                    </div>
                                 </div>
-                                <br/><br/>
+                                <div class="col-lg-12">
+                                   <!-- <input type="radio" value=">500 and < 1500" /> -->
+                                   <div class="radio">
+                                        <input id="radio4" onclick="fetchByPrice(10000,100000)" name="pricerg1" type="radio">
+                                        <label for="radio4">
+                                            >10000
+                                        </label>
+                                    </div>
+                                </div>
+                                
+
+                                <br/><br/><br/><br/><br/><br/>
                                 
                             </div>
                         </div><!--/brands_products-->
@@ -329,8 +352,8 @@ $brnd = $this->getBrands;
             if (xhttp.readyState == 4 && xhttp.status == 200) {
 //            alert(xhttp.responseText);
 
-                 //document.getElementById("content").innerHTML = "";
-                 $("#content").append(xhttp.responseText);
+                 document.getElementById("content").innerHTML = xhttp.responseText;
+                 
             }
            };
            xhttp.open("POST", "<?php echo url;?>/catlog/getProductFromBrand/"+pid, true);
@@ -338,7 +361,35 @@ $brnd = $this->getBrands;
     }
 
 
+    function getQuery(id,val=null)
+    {
+//        alert(window.location.href+" id: "+id+" "+val);
 
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                 document.getElementById("content").innerHTML = xhttp.responseText;
+            }
+           };
+           xhttp.open("POST", "<?php echo url;?>/catlog/getFilteredProducts/"+id+"/"+val, true);
+          xhttp.send();
+
+    }
+
+    function fetchByPrice(range1 , range2){
+
+        alert(window.location.href+" id: "+range1+" "+range2);
+
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                 document.getElementById("content").innerHTML = xhttp.responseText;
+            }
+           };
+           xhttp.open("POST", "<?php echo url;?>/catlog/getFilteredPriceInfo/"+range1+"/"+range2, true);
+          xhttp.send();
+
+    }
 
         $(document).ready(function(){
             $('.brands_products h2').click(function(){

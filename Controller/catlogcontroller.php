@@ -8,6 +8,7 @@
 
 class catlog extends Controller{
 
+
     function __construct() {
         parent::__construct();
     }
@@ -27,6 +28,31 @@ class catlog extends Controller{
         
       
     }
+
+function getFilteredPrice($range1 , $range2)
+{
+   
+       $this->view->getProductFromBand  =  $this->model->getFilteredPriceInfo($range1,$range2); 
+       print_r($this->view->getProductFromBand);
+       // $this->view->render("getProductBrand",true);
+}
+
+    function getFilteredProducts($id , $value = null)
+    {
+        
+       if($value == null)
+       {
+        $this->view->getProductFromBand  =  $this->model->getFilteredProductInfo($id,0);         
+       }
+       else
+       {
+        $this->view->getProductFromBand  =  $this->model->getFilteredProductInfo($id,$value); 
+       }
+
+      // $this->view->getProductFromBand  =  $this->model->getFilteredProductInfo($id,$value); 
+       $this->view->render("getProductBrand",true);
+    }
+
 
     function getProductFromBrand($id = null)
     {
