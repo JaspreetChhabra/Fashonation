@@ -14,6 +14,7 @@ foreach ($result as $row) {
 	$desid = $row["brand_id"];
 	$brandimg =  $row["brandimg"];
 	$brandnm = $row["brandname"];
+    $branddesc = $row["designer_about"];
 }
 
 ?>
@@ -26,7 +27,7 @@ foreach ($result as $row) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Product Catalogue | Fashonation</title>
+    <title>Shop By Designer | Fashonation</title>
 
 
     <style type="text/css">
@@ -151,9 +152,10 @@ foreach ($result as $row) {
     <div id="home1" class="tab-pane fade in active">
       <h3>About</h3>
       <p>
-	    Manish Malhotra has redefined and modernised costumes in Indian cinema. His repertoire includes designing for Bollywood stars, styling them, a diffusion range, bridal and couture. Manish is best known for his bridal wear, and his styling. His strong sense of colour and occasion have made him the first choice of some of the most striking personalities in the Indian film industry, high profile politicians, industrialists, top global corporates and affluent families across the globe.<br/><br/>
+	    <!-- Manish Malhotra has redefined and modernised costumes in Indian cinema. His repertoire includes designing for Bollywood stars, styling them, a diffusion range, bridal and couture. Manish is best known for his bridal wear, and his styling. His strong sense of colour and occasion have made him the first choice of some of the most striking personalities in the Indian film industry, high profile politicians, industrialists, top global corporates and affluent families across the globe.<br/><br/>
 
-		Manish Malhotra started his career as a model, while studying at the Elphinstone College in Mumbai. He revolutionized costume designing and introduced the concept of styling in Bollywood after his first film as a designer for Juhi Chawla starrer Swarg over two decades ago.
+		Manish Malhotra started his career as a model, while studying at the Elphinstone College in Mumbai. He revolutionized costume designing and introduced the concept of styling in Bollywood after his first film as a designer for Juhi Chawla starrer Swarg over two decades ago. -->
+        <?php echo $branddesc; ?>
 
       </p>
     </div>

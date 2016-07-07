@@ -20,6 +20,12 @@ $brnd = $this->getBrands;
     
     <link rel="stylesheet" href="<?php echo css?>/awesome-bootstrap-checkbox.css">
     <link rel="stylesheet" href="<?php echo css?>/shopcustom.css">
+    <script>
+        
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+        });
+    </script>
     
 </head>
 
@@ -311,8 +317,8 @@ $brnd = $this->getBrands;
             if (xhttp.readyState == 4 && xhttp.status == 200) {
 //            alert(xhttp.responseText);
 
-                document.getElementById("content").innerHTML = xhttp.responseText;
-
+                 //document.getElementById("content").innerHTML = "";
+                 $("#content").append(xhttp.responseText);
             }
            };
            xhttp.open("POST", "<?php echo url;?>/catlog/getProductFromBrand/"+pid, true);
@@ -330,9 +336,6 @@ $brnd = $this->getBrands;
             });
         });
 
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip(); 
-        });
 
         // $(document).ready(function(){
 
