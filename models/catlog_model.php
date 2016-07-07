@@ -6,10 +6,44 @@ class catlog_model extends Model
 		parent::__construct();
 	}
 
-        
+    
+    public function getFilteredProductInfo( $id , $val=null ){
+        $stmt = "";
+
+        if($id == 0)
+        {
+        $stmt = $this->db->prepare("select product_name,product_id,product_mrp,product_selling_price from products LIMIT 9");
+        }
+        elseif($val == 0) 
+        {
+        $stmt = $this->db->prepare("select product_name,product_id,product_mrp,product_selling_price from products where audience_id=".$id);
+        }
+        else
+        {
+         $stmt = $this->db->prepare("SELECT product_name,product_id,product_mrp,product_selling_price from products  WHERE audience_id=".$id." AND category_id=".$val);       
+        }
+       
+        if($stmt->execute())
+        {
+            if($stmt->rowCount() > 0)
+            {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        else
+        {
+            return "Error";
+        }
+
+    }
+
 	public function getProductInfo()
 	{
-		$stmt = $this->db->prepare("select product_name,product_id,product_mrp,product_selling_price from products");
+		$stmt = $this->db->prepare("select product_name,product_id,product_mrp,product_selling_price from products LIMIT 9");
                 //$stmt->execute();
                 if (!$stmt->execute()) {
 				    print_r($stmt->errorInfo());
@@ -54,7 +88,7 @@ class catlog_model extends Model
 
     public function getProductFromBand($id)
    	{
-   		$stmt = $this->db->prepare("SELECT product_id,product_name,product_mrp,product_selling_price FROM products where brand_id = ".$id);
+   		$stmt = $this->db->prepare("SELECT product_id,product_name,product_mrp,product_selling_price FROM products where brand_id = ".$id." LIMIT 6 ");
    		if($stmt->execute())
     	{
     		if($stmt->rowCount() > 0)

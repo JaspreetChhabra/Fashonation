@@ -3,7 +3,7 @@
 $result = $this->getDesignerInfo;
 if($result == null || $result == "Error")
 	{
-		echo "No Such Designer!";
+		echo "<h1 class='text-center'>No Such Designer!</h1>";
 
 	}
 
