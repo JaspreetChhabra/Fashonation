@@ -7,21 +7,21 @@ $bestSellers = $this->getBestSellers;
 ?>
   <!--Home Page Body-->
   <!--Slider-->
-  <?php //echo $_SESSION['session_id'].'<br>'; 
+  <?php echo $_SESSION['session_id'].'<br>'; 
 
-       foreach ($_SESSION['cart'] as $value) {
-           ///echo $value.'<br>';
-           //print_r (explode(",",$value));
+       foreach ($_SESSION['size'] as $value) {
+           //echo $value.'<br>';
+           print_r (explode(",",$value));
        }
 
   ?>
     <div class="container slider-container">
 
         <div id="boxgallery" class="boxgallery" data-effect="effect-2" style="position: relative !important;">
-            <div class="panel"><img src="<?php echo images;?>/slider/3.jpg" class="img-responsive" alt="Image 3"/></div>
-            <div class="panel"><img src="<?php echo images;?>/slider/4.jpg" class="img-responsive" alt="Image 4"/></div>
-            <div class="panel"><img src="<?php echo images;?>/slider/1.jpg" class="img-responsive" alt="Image 1"/></div>
-            <div class="panel"><img src="<?php echo images;?>/slider/2.jpg" class="img-responsive" alt="Image 2"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/3.png" class="img-responsive" alt="Image 3"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/4.png" class="img-responsive" alt="Image 4"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/1.png" class="img-responsive" alt="Image 1"/></div>
+            <div class="panel"><img src="<?php echo images;?>/slider/2.png" class="img-responsive" alt="Image 2"/></div>
         </div>
     </div>
 
@@ -68,7 +68,7 @@ $bestSellers = $this->getBestSellers;
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 quality-imageffect">
                                 
                                 <a href="">
-                                <img class="img-responsive" src="<?php echo images;?>/offerzone/6.jpg" width="100%" />
+                                <img class="img-responsive" src="<?php echo images;?>/offerzone/61.jpg" width="100%" />
                                 </a>
                                 
                         </div>
@@ -243,7 +243,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-size="39" data-id="<?php echo $row['product_id']; ?>" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
@@ -283,7 +283,8 @@ $bestSellers = $this->getBestSellers;
                             'image' => '1.jpg',
                             'price' => $row["product_selling_price"],
                             'discount' => '0',
-                            'qty' => '1'
+                            'qty' => '1',
+                            'size' => '39'
                             );
                     ?>
                     <div class="prod col-sm-12 col-xs-12 col-lg-3 col-md-3" id='<?php echo $row["product_id"];?>'>
@@ -304,7 +305,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-size="39" data-id="<?php echo $row['product_id']; ?>" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
@@ -367,7 +368,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-size="39" data-id="<?php echo $row['product_id']; ?>" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
@@ -428,7 +429,7 @@ $bestSellers = $this->getBestSellers;
                             </div>
                             <div class="ratings">
                                 <p class="pull-right items">
-                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
+                                    <a class="cartBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart" data-size="39" data-id="<?php echo $row['product_id']; ?>" data-product="<?php echo base64_encode($row['product_id'].','.$row['product_name'].','.$row['product_selling_price'].','.'1.jpg'.','.'1'.',0'); ?>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> 
                                     </a>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">

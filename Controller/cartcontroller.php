@@ -13,15 +13,15 @@ class cart extends Controller {
 		 $this->view->render("cart");
     }
 
-    function addToCart($data = null)
+    function addToCart($data = null,$size = null,$id = null)
     {
-    	if($data == null)
+    	if($data == null && $size == null && $id == null)
     	{
     		$this->view->addToCart1 = null;
     	}
     	else
     	{  
-    		$this->view->addToCart1 = $this->model->addToCart1($data);	
+    		$this->view->addToCart1 = $this->model->addToCart1($data,$size,$id);	
     	}
 
     	

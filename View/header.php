@@ -354,7 +354,7 @@
                             <i class="fa fa-child fa-3x" aria-hidden="true"></i>
                             
                             </div>
-                            <a href="#occasion" data-toggle="tab"><span>Shop by Occassion
+                            <a href="#occasion" data-toggle="tab"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop by Occassion
                             <p>Add beautiful Indian wear and some natty outfits to your wardrobe</p>
                             </span>
                             </a>
@@ -368,7 +368,7 @@
                             <i class="fa fa-heart fa-3x" aria-hidden="true"></i>
                             
                             </div>
-                            <a href="#designer" data-toggle="tab"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shop by Designer & Brand
+                            <a href="#designer" data-toggle="tab"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designer & Brand
                             <p>Add beautiful Indian wear and some natty outfits to your wardrobe</p>
                             </span>
                             </a>
@@ -380,99 +380,102 @@
                   </ul> 
                 </div>
 
+
+                <div id="cont-dropdown">
                 <div class="col-xs-8 tab-bg-image mob-view">
+                  <div class="col-lg-12">
                   <!-- Tab panes -->
 
                   <div class="tab-content ">
+
                     <div class="tab-pane active" id="home">
-                        <div class="col-xs-6 col-lg-6">
-
-                            <div class="col-xs-2 col-lg-3">
-                               <section class="color-4">
+                        <div class="col-xs-4 col-lg-4">
+                            <section class="color-4">
                                 <div class="cl-effect-11 nav-hover">
-                                    <a href="#" data-hover="Desultory">Desultory</a>
-                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
-                                    <a href="#" data-hover="Scintilla">Scintilla</a>
-                                    <a href="#" data-hover="Propinquity">Propinquity</a>
-                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                    <a href="#" data-hover="Causal&nbsp;Wear">Causal&nbsp;Wear</a>
+                                    <a href="#" data-hover="Formal&nbsp;Wear">Formal&nbsp;Wear</a>
+                                    <a href="#" data-hover="Party">Party</a>
+                                    
                                 </div>
-                            </section> 
-                            </div>
-
-                            <div class="col-xs-2 col-lg-3 tab-content-align">
-                           <section class="color-4">
-                                <div class="cl-effect-11 nav-hover">
-                                    <a href="#" data-hover="Desultory">Desultory</a>
-                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
-                                    <a href="#" data-hover="Scintilla">Scintilla</a>
-                                    <a href="#" data-hover="Propinquity">Propinquity</a>
-                                    <a href="#" data-hover="Harbinger">Harbinger</a>
-                                </div>
-                            </section> 
-                                </div>    
-
-                            
+                            </section>
                         </div>
-                        <div class="col-xs-3 col-lg-3 dropdown-image">
-                            <img class="img-responsive" src="<?php echo images;?>/featured/image1.jpg" alt="">
+                        <div class="col-xs-8 col-lg-8 dropdown-image1">
+                            <img class="img-responsive" src="<?php echo images;?>/navbar/11.jpg" alt="">
                         </div>
                     </div>
                     <div class="tab-pane" id="profile">
-                        <div class="col-xs-6 col-lg-6">
+                        <div class="col-xs-4 col-lg-4">
+                            <section class="color-4">
+                                <div class="cl-effect-11 nav-hover">
+                                    <a href="#" data-hover="Causal&nbsp;Wear">Causal&nbsp;Wear</a>
+                                    <a href="#" data-hover="Formal&nbsp;Wear">Formal&nbsp;Wear</a>
+                                    <a href="#" data-hover="Party">Party</a>
+                                    
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xs-8 col-lg-8 dropdown-image1">
+                            <img class="img-responsive" src="<?php echo images;?>/navbar/21.png" alt="" width="100%">
+                        </div>
+                    </div>
 
-                            <div class="col-xs-2 col-lg-3">
+                    <div class="tab-pane" id="occasion">
+                        <div class="col-xs-4 col-lg-4">
+                            <section class="color-4">
+                                <div class="cl-effect-11 nav-hover">
+                                    <a href="#" data-hover="Party&nbsp;Wear">Party&nbsp;Wear</a>
+                                    <a href="#" data-hover="Ethnic&nbsp;Wear">Ethnic&nbsp;Wear</a>
+                                
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-xs-8 col-lg-8 dropdown-image1">
+                            <img class="img-responsive" src="<?php echo images;?>/navbar/3.jpg" alt="" width="100%">
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="designer">
+                        <div class="col-xs-7 col-lg-7">
+                            <div class="col-lg-12">
+                              
+                              <div class="col-xs-6 col-lg-6">
                                <section class="color-4">
                                 <div class="cl-effect-11 nav-hover">
-                                    <a href="#" data-hover="Desultory">Desultory</a>
-                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
-                                    <a href="#" data-hover="Scintilla">Scintilla</a>
-                                    <a href="#" data-hover="Propinquity">Propinquity</a>
-                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                    <a href="#" data-hover="Designers"><font color="orange">Designers</font></a>
+                                    <a href="#" data-hover="Ajay&nbsp;Kumar">Ajay&nbsp;Kumar</a>
+                                    <a href="#" data-hover="Sita&nbsp;Mikhil">Sita&nbsp;Mikhil</a>
+                                    <!-- <a href="#" data-hover="Propinquity">Propinquity</a>
+                                    <a href="#" data-hover="Harbinger">Harbinger</a> -->
                                 </div>
                             </section> 
                             </div>
 
-                            <div class="col-xs-2 col-lg-3 tab-content-align">
+                            <div class="col-xs-6 col-lg-6 tab-content-align">
                            <section class="color-4">
                                 <div class="cl-effect-11 nav-hover">
-                                    <a href="#" data-hover="Desultory">Desultory</a>
-                                    <a href="#" data-hover="Sumptuous">Sumptuous</a>
-                                    <a href="#" data-hover="Scintilla">Scintilla</a>
-                                    <a href="#" data-hover="Propinquity">Propinquity</a>
-                                    <a href="#" data-hover="Harbinger">Harbinger</a>
+                                    <a href="#" data-hover="Brands"><font color="darkblue">Brands</font></a>
+                                    <a href="#" data-hover="Oxford&nbsp;Club">Oxford&nbsp;Club</a>
+                                    <a href="#" data-hover="Brooklyn Blues">Brooklyn Blues</a>
+                                    <!-- <a href="#" data-hover="Propinquity">Propinquity</a>
+                                    <a href="#" data-hover="Harbinger">Harbinger</a> -->
                                 </div>
                             </section> 
-                                </div>    
+                                </div>  
+
+                            </div>
+                              
 
                             
                         </div>
-                        <div class="col-xs-3 col-lg-3 dropdown-image">
-                            <img class="img-responsive" src="<?php echo images;?>/featured/image6.jpg" alt="">
+                        <div class="col-xs-3 col-lg-3 dropdown-image1 dropdown-image-noMaxWidth">
+                            <img class="img-responsive" src="<?php echo images;?>/navbar/41.png" alt="">
                         </div>
                     </div>
                   </div>    
-                
-              </div>
-              <!-- <section>
-                <div class="tabs tabs-style-circlefill">
-                    <nav>
-                        <ul>
-                            <li><a href="#section-circlefill-1" class="icon icon-plug"><span>Connect</span></a></li>
-                            <li><a href="#section-circlefill-2" class="icon icon-gift"><span>Gifts</span></a></li>
-                            <li><a href="#section-circlefill-3" class="icon icon-box"><span>Boxes</span></a></li>
-                            <li><a href="#section-circlefill-4" class="icon icon-date"><span>Prints</span></a></li>
-                            <li><a href="#section-circlefill-5" class="icon icon-plane"><span>Fun</span></a></li>
-                        </ul>
-                    </nav>
-                    <div class="content-wrap">
-                        <section id="section-circlefill-1"><p>1</p></section>
-                        <section id="section-circlefill-2"><p>2</p></section>
-                        <section id="section-circlefill-3"><p>3</p></section>
-                        <section id="section-circlefill-4"><p>4</p></section>
-                        <section id="section-circlefill-5"><p>5</p></section>
-                    </div>
                 </div>
-            </section> -->
+              </div>
+             </div>
+           
             </li>
         
             <li><a href="#">ACCESSORIES</a></li>
@@ -703,8 +706,12 @@
             var count = 1;
             // $('.cartBtn').click(function(){
               $(document).on('click', '.cartBtn', function() {
-                alert($(this).data('product'));
+                //alert($(this).data('product'));
                 var data = $(this).data('product');
+                var size = $(this).data('size');
+                var id = $(this).data('id');
+
+                alert("id "+ id +"size "+size+" data "+data);
                 
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
@@ -736,7 +743,7 @@
                  };
 
                  //alert('<?php echo url;?>/cart/addToCart/'+data);
-                 xhttp.open("POST", "<?php echo url;?>/cart/addToCart/"+data, true);
+                 xhttp.open("POST", "<?php echo url;?>/cart/addToCart/"+data+"/"+size+"/"+id, true);
                 xhttp.send();
             });
 

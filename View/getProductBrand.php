@@ -42,7 +42,7 @@ echo "
                             <div class= 'ratings' >
                                 <p class='pull-right items'>
                                     <a href='#' data-toggle='tooltip' data-placement='top' title='' data-original-title='Add to cart'>
-                                    <a class='cartBtn' data-toggle='tooltip' data-placement='top' title='' data-original-title='Add to cart' data-product='".$encodedData."'>
+                                    <a class='cartBtn' data-toggle='tooltip' data-placement='top' title='' data-original-title='Add to cart' data-size='39' data-id='".$row['product_id']."' data-product='".$encodedData."'>
                                     <span class='glyphicon glyphicon-shopping-cart'></span> 
                                     </a>
                                     <a href='#' data-toggle='tooltip' data-placement='top' title='' data-original-title='Add to wishlist'>
