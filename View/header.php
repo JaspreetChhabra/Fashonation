@@ -70,13 +70,13 @@
 
     <script type="text/javascript">
 
-    function abc(a,b){
-        if(a && b)
+    function login(email,password){
+        if(email && password)
             document.getElementById("cd-form").submit();
     }
 
-    function def(a,b,c){
-        if(a && b && c)
+    function signup(email,password,c_pass){
+        if(email && password && c_pass)
             document.getElementById("cd-reg-form").submit();
     }
 
@@ -89,14 +89,14 @@
     function logincheck(id,pwd){
         if(id && pwd){
             document.getElementById("login_button").disabled=false;
-            alert("Aa gayi Values");
         }
         else
             document.getElementById("login_button").disabled=true;
     }
-    function signupcheck(id,mail,pwd,confirm_pass){
+
+    function signupcheck(mail,pwd,confirm_pass){
         alert("checking_values");
-        if(id && pwd && mail && confirm_pass){
+        if(pwd && mail && confirm_pass){
             if(pwd == confirm_pass){
                  document.getElementById("signup_button").disabled=false;
                  alert("Aa gayi Values");
@@ -108,11 +108,10 @@
         }
         else{
             document.getElementById("signup_button").disabled=true;
-            alert("BLANK FIELDS");
+            //alert("BLANK FIELDS");
         }
             
     }
-
 
     function addToCart(productId,name,qty,image,price,discount){
         
@@ -511,12 +510,7 @@
                     </p>
 
                     <p class="fieldset">
-                        <input type="checkbox" id="remember-me" checked>
-                        <label for="remember-me">Remember me</label>
-                    </p>
-
-                    <p class="fieldset">
-                        <input type="button" class="btn-default" id="login_button" value="Login" onclick="abc(document.getElementById('signin-email').value,document.getElementById('signin-password').value)">
+                        <input type="button" class="btn-default" id="login_button" value="Login" onclick="login(document.getElementById('signin-email').value,document.getElementById('signin-password').value)">
                     </p>
                 </form>
                 
@@ -526,28 +520,28 @@
 
             <div id="cd-signup"> <!-- sign up form -->
                 <form class="cd-form" id="cd-reg-form" action="registration/run" method="POST">
-                    <p class="fieldset">
+                    <<!-- p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">Username</label>
                         <input class="full-width has-padding has-border" id="signup-username" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" name="username" type="text" placeholder="Username">
                         <span class="cd-error-message" id="signup-username_error">Error message here!</span>
-                    </p>
+                    </p> -->
 
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signup-email" name="email" type="text" placeholder="E-mail" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
+                        <input class="full-width has-padding has-border" id="signup-email" name="email" type="text" placeholder="E-mail" onchange="signupcheck(document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
                         <span class="cd-error-message" id="signup-email_error">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signup-password" name="pass" type="text"  placeholder="Password" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
+                        <input class="full-width has-padding has-border" id="signup-password" name="pass" type="text"  placeholder="Password" onchange="signupcheck(document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">Confirm Password</label>
-                        <input class="full-width has-padding has-border" id="confirm" name="confirm" type="text"  placeholder="Confirm Password" onchange="signupcheck(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
+                        <input class="full-width has-padding has-border" id="confirm" name="confirm" type="text"  placeholder="Confirm Password" onchange="signupcheck(document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)" >
                         <a href="#0" class="hide-password">Hide</a>
                         <p class="cd-error-message" id="signup-confirm_error">Error message here!</p>
                     </p>                    
@@ -558,7 +552,8 @@
                     </p> -->
 
                     <p class="fieldset">
-                        <input class="full-width has-padding btn-default" type="button" id="signup_button" value="Create account"  onclick="def(document.getElementById('signup-username').value,document.getElementById('signup-email').value,document.getElementById('signup-password').value)">
+                        <input class="full-width has-padding btn-default" type="button" id="signup_button" value="Create account"  onclick="signup(document.getElementById('signup-email').value,document.getElementById('signup-password').value,document.getElementById('confirm').value)">
+
                     </p>
 
                     <p class="fieldset">

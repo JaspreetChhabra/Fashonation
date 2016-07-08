@@ -7,11 +7,11 @@ $bestSellers = $this->getBestSellers;
 ?>
   <!--Home Page Body-->
   <!--Slider-->
-  <?php echo $_SESSION['session_id'].'<br>'; 
+  <?php //echo $_SESSION['session_id'].'<br>'; 
 
        foreach ($_SESSION['size'] as $value) {
            //echo $value.'<br>';
-           print_r (explode(",",$value));
+           //print_r (explode(",",$value));
        }
 
   ?>

@@ -4,9 +4,7 @@
     <head>
      <style type=text/css>
 
-    header{
-        margin-top: -30px !important;
-    }
+
 
     .link{
         color: #000;
@@ -26,6 +24,7 @@
 
     td{
         vertical-align: middle !important;
+        max-width: 40px;
     }
 
     #btn{
@@ -34,24 +33,19 @@
         height: 40px;
         width: 40px;
     }
-    #list{
-        
-        max-width: 930px;
-        width: 70%;
-        margin-left: 200px;
-        margin-top:50px;
-        vertical-align: middle;
-    }
+   
 
     .top{
+
         background-color:rgb(180, 163, 118);
+        color:#fff;
     }
 
 
      </style>   
      <script type="text/javascript">
      function addQty(qty,pid){
-        if(qty<8){
+        if(qty<9){
             qty = Number(qty)+ Number(1);
             grand_total = document.getElementById("total").innerHTML;
             //alert("old GTOTAL"+grand_total);
@@ -64,7 +58,7 @@
             alert("You cannot order more than 8 quantity at once");
         
 
-        document.getElementById('quant'+pid).innerHTML = qty;
+        document.getElementById('quant'+pid).innerHTML = qty+" ";
         document.getElementById('t'+pid).innerHTML = price;
          document.getElementById("total").innerHTML = grand_total;
 
@@ -89,7 +83,7 @@
         }
          else
             alert("Quantity must be greaater than ZERO");
-        document.getElementById('quant'+pid).innerHTML = qty;
+        document.getElementById('quant'+pid).innerHTML = qty+" ";
         document.getElementById('t'+pid).innerHTML = price;
          document.getElementById("total").innerHTML = grand_total;
        
@@ -98,70 +92,88 @@
      </script>
     </head>
         <body>
-
-            <table class=table id='list'>
-
-                <tr class=top>
-                    <th> Product Image</th>
-                    <th> Product name </th>
-                    <th> Product quantity </th>
-                    <th> Product price </th>
-                    <th>total</th>
-                </tr>
-
-                <?php 
-
-                $gtotal = 0;
-                foreach ($_SESSION['cart'] as $value) {
-              
-                   $a = explode(",",$value);
-                   //echo $a[0]."<br>".$a[1]."<br>".$a[2]."<br>".$a[3]."<br><br><Br>";
-                   
-                    $id = $a[0];//$row['cart_id'];
-                    $qid="quant".$a[4];//$row['cart_id'];
-                    $priceid="p".$a[2];//$row['cart_id'];
-                    $totalid="t".$a[0];//$row['cart_id'];
+               
+                <div class="col-lg-12">
                     
-                    ?>
+                        <table class="table" style="margin-top:20px;">       <!--responsive-->
 
-        <tr>
-                    
-                    <input type='hidden' name='pid' id='pid' value=<?php echo $a[0]; ?>>
-                    <td><img src='<?php echo images?>/1.jpg' height=150px width=100px;></td>
-                    <td><a class="link"> <?php echo $a[1] ?></a></td>
-                    <td ><button  class="btn btn-success" id="btn" onclick="subQty(document.getElementById('<?php echo $qid; ?>').innerHTML , <?php echo $id; ?>)">-</button>  <span class='qtyspan' id='<?php echo $qid; ?>'> <?php echo $a[4] ?> </span><button class="btn btn-success"  id="btn" onclick="addQty(document.getElementById('<?php echo $qid; ?>').innerHTML , <?php echo $id; ?>)">+</button></td>
-                    
-                    <td id=<?php echo $priceid; ?> ><?php echo $a[2];?></td>
-                    <td id=<?php echo $totalid; ?> ><?php echo $a[4]*$a[2];?></td>
-                    <?php $gtotal+=$a[4]*$a[2]; ?>
-                </tr>
+                            <tr class=top>
+                                <th> Product Image</th>
+                                <th> Product name </th>
+                                <th> Product quantity </th>
+                                <th> Product price </th>
+                                <th>total</th>
+                                <th>logo</th>
+                            </tr>
 
-                <?php } 
-                $gtotal +=200;?>
+                            <?php 
+
+                            $gtotal = 0;
+                            foreach ($_SESSION['cart'] as $value) {
+                          
+                               $a = explode(",",$value);
+                               
+                                $id = $a[0];//$row['cart_id'];
+                                $qid="quant".$a[0];//$row['cart_id'];
+                                $priceid="p".$a[0];//$row['cart_id'];
+                                $totalid="t".$a[0];//$row['cart_id'];
+                                
+                                ?>
+
+                    <tr>
+                                
+                                <input type='hidden' name='pid' id='pid' value=<?php echo $a[0]; ?>>
+                                <td><img class="img-responsive" src='<?php echo images?>/1.jpg' height=150px width=100px;></td>
+                                <td><a class="link"> <?php echo $a[1] ?></a></td>
+                                <td ><button  class="btn btn-success" id="btn" onclick="subQty(document.getElementById('<?php echo $qid; ?>').innerHTML , <?php echo $id; ?>)">-</button>  <span class='qtyspan' id='<?php echo $qid; ?>'> <?php echo $a[4] ?> </span><button class="btn btn-success"  id="btn" onclick="addQty(document.getElementById('<?php echo $qid; ?>').innerHTML , <?php echo $id; ?>)">+</button></td>
+                                
+                                <td id=<?php echo $priceid; ?> ><?php echo $a[2];?></td>
+                                <td id=<?php echo $totalid; ?> ><?php echo $a[4]*$a[2];?></td>
+                                <td class="cart-dropdown-removeIcon1" id=<?php echo $a[0];?>>
+                                       <a href="#"> <span class="fa fa-trash fa-2x"></span></a>
+                                   </td>
+                                <?php $gtotal+=$a[4]*$a[2]; ?>
+                                
+                            </tr>
+
+                            <?php } 
+                            $gtotal +=200;
+                            ?>
 
 
 
-                <tr>
-                    <td colspan=3></td>
-                    <td><b>Tax </b> <br> <b>Tax </b></td>
-                    <td> 100  <br> 100 <br 100</td>
-                </tr>
+                            <tr>
+                                <td colspan=3></td>
+                                <td><b>Tax </b> <br> <b>Tax </b></td>
+                                <td> 100  <br> 100 <br 100</td>
+                            </tr>
 
 
+                            
+
+
+                                                    <tr>
+                                <td colspan=3></td>
+                                <td><font style="color:brown;font-weight:bolder;"><b>Total</td>
+                                <b><td id="total"><?php echo $gtotal ?> </td></b>
+                            </tr>
+                             <tr>
+                                <td></td>
+                                        <td colspan=2 align=left class="no-td-border cart-dropdown-button">
+                                            <span class="button"><span class="fa fa-eye"> Continue Shopping</span>
+                                        </td>
+                                        <td colspan=3 align=center class="no-td-border cart-dropdown-button">
+                                            <span class="button"><span class="fa fa-share"> Checkout</span>
+                                        </td>
+                                    </tr>
+                        </table> 
+                    </div>
                 
+           
 
 
-                                        <tr>
-                    <td colspan=3></td>
-                    <td><font style="color:brown;font-weight:bolder;"><b>Total</td>
-                    <td id="total"><b><?php echo $gtotal ?> </b></td>
-                </tr>
-                 
-            </table> 
 
-    </body>
-
-    <script>
+        <script>
         
         $(document).ready(function() {    
                 $('.navbar-inverse .navbar-nav > li.dropdown').hover(function() {
@@ -194,5 +206,36 @@
                 $(this).find('a').tab('hide');
           });
     </script>
+<script type=text/javascript>
+
+
+$(document).ready(function(){  
+$(document).on('click', '.cart-dropdown-removeIcon1', function() { 
+              alert("removeClass");
+
+              var id = $(this).attr('id');
+              //alert(id);
+
+              $.ajax({
+              type: "post",
+              url: "<?php echo url;?>/cart/deleteCartItem/"+id,
+              // data: id,
+              success: function(data){
+                alert(data);
+                  
+                  $.ajax({                    
+                      type: "post",
+                      url: "<?php echo url;?>/cart",
+                      success: function(data){
+                        alert(data);
+                        //document.getElementById('showCart').innerHTML = data;
+                  }
+                });
+              }
+              });
+
+            });
+         });
+    </body>
     </html>
 

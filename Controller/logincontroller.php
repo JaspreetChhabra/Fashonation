@@ -9,13 +9,15 @@ class login extends Controller {
     
     function index()
     {
-        $this->model->run();
+        $ans = $this->model->run();
+        if($ans == "Success"){
+            $_SESSION['registered'] = "registered";
+            
+            header('Location:'.url.'/home');
+        }
     }
 
-    function run()
-    {
-        $this->model->run();
-    }
+    
     
 
 
