@@ -148,8 +148,8 @@ $brnd = $this->getBrands;
                                 <div class="col-lg-12">
                                    <!-- <input type="radio" value=">500 and < 1500" /> -->
                                    <div class="radio">
-                                        <input id="radio1" name="pricerg1" onclick="fetchByPrice(500,1500)" type="radio">
-                                        <label for="radio3">
+                                        <input id="radio1" name="pricerg1" onclick="getProPrice(500,1500)" type="radio">
+                                        <label for="radio1">
                                             >500 and < 1500
                                         </label>
                                     </div>
@@ -157,8 +157,8 @@ $brnd = $this->getBrands;
                                 <div class="col-lg-12">
                                    <!-- <input type="radio" value=">500 and < 1500" /> -->
                                    <div class="radio">
-                                        <input id="radio2" onclick="fetchByPrice(1500,3000)" name="pricerg1" type="radio">
-                                        <label for="radio3">
+                                        <input id="radio2" onclick="getProPrice(1500,3000)" name="pricerg1" type="radio">
+                                        <label for="radio2">
                                             >1500 and < 3000
                                         </label>
                                     </div>
@@ -166,7 +166,7 @@ $brnd = $this->getBrands;
                                 <div class="col-lg-12">
                                    <!-- <input type="radio" value=">500 and < 1500" /> -->
                                    <div class="radio">
-                                        <input id="radio3" onclick="fetchByPrice(3000,10000)" name="pricerg1" type="radio">
+                                        <input id="radio3" onclick="getProPrice(3000,10000)" name="pricerg1" type="radio">
                                         <label for="radio3">
                                             >3000 and < 10000
                                         </label>
@@ -175,7 +175,7 @@ $brnd = $this->getBrands;
                                 <div class="col-lg-12">
                                    <!-- <input type="radio" value=">500 and < 1500" /> -->
                                    <div class="radio">
-                                        <input id="radio4" onclick="fetchByPrice(10000,100000)" name="pricerg1" type="radio">
+                                        <input id="radio4" onclick="getProPrice(10000,100000)" name="pricerg1" type="radio">
                                         <label for="radio4">
                                             >10000
                                         </label>
@@ -183,7 +183,7 @@ $brnd = $this->getBrands;
                                 </div>
                                 
 
-                                <br/><br/><br/><br/><br/><br/>
+                                <br/><br/><br/><br/><br/><br/><br/><br/>
                                 
                             </div>
                         </div><!--/brands_products-->
@@ -376,9 +376,9 @@ $brnd = $this->getBrands;
 
     }
 
-    function fetchByPrice(range1 , range2){
-
-        alert(window.location.href+" id: "+range1+" "+range2);
+    function getProPrice(val1 , val2)
+    {
+       alert(window.location.href+" id: "+val1+" "+val2);
 
         var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
@@ -386,10 +386,12 @@ $brnd = $this->getBrands;
                  document.getElementById("content").innerHTML = xhttp.responseText;
             }
            };
-           xhttp.open("POST", "<?php echo url;?>/catlog/getFilteredPriceInfo/"+range1+"/"+range2, true);
+           xhttp.open("POST", "<?php echo url;?>/catlog/getFilteredPrice/"+val1+"/"+val2, true);
           xhttp.send();
 
     }
+
+    
 
         $(document).ready(function(){
             $('.brands_products h2').click(function(){

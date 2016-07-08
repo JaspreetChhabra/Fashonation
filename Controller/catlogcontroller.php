@@ -29,13 +29,10 @@ class catlog extends Controller{
       
     }
 
-function getFilteredPrice($range1 , $range2)
-{
-   
-       $this->view->getProductFromBand  =  $this->model->getFilteredPriceInfo($range1,$range2); 
-       print_r($this->view->getProductFromBand);
-       // $this->view->render("getProductBrand",true);
-}
+
+
+
+
 
     function getFilteredProducts($id , $value = null)
     {
@@ -51,6 +48,12 @@ function getFilteredPrice($range1 , $range2)
 
       // $this->view->getProductFromBand  =  $this->model->getFilteredProductInfo($id,$value); 
        $this->view->render("getProductBrand",true);
+    }
+
+
+    function getFilteredPrice($val1 , $val2){
+        $this->view->getProductFromBand = $this->model->getFilteredPriceModel($val1 , $val2);
+        $this->view->render("getProductBrand",true);
     }
 
 

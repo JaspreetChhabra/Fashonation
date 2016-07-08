@@ -41,6 +41,28 @@ class catlog_model extends Model
 
     }
 
+    public function getFilteredPriceModel($val1 , $val2){
+        
+        $stmt = $this->db->prepare("SELECT product_id,product_name,product_mrp,product_selling_price FROM products where product_selling_price BETWEEN ".$val1." AND ".$val2." LIMIT 6 ");
+        if($stmt->execute())
+        {
+            if($stmt->rowCount() > 0)
+            {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
+            else
+            {
+                return "Error";
+            }
+        }
+        else
+        {
+            return "Error";
+            //print_r($stmt->errorInfo());
+        }
+
+    }
+
 	public function getProductInfo()
 	{
 		$stmt = $this->db->prepare("select product_name,product_id,product_mrp,product_selling_price from products LIMIT 9");
